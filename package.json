@@ -1,7 +1,7 @@
 {
-  "name": "dcode-denpa",
+  "name": "Ndyie-Botz",
   "version": "0.0.1",
-  "description": "bitch-boot",
+  "description": "Ndyie ft Joel",
   "main": "node index",
   "directories": {
     "lib": "lib"
@@ -20,7 +20,7 @@
   "author": "denis-putra",
   "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys": "github:adiwajshing/baileys",
+    "@adiwajshing/baileys": "^3.5.2",
     "@vitalets/google-translate-api": "^7.0.0",
     "awesome-phonenumber": "^2.54.0",
     "axios": "^0.21.1",
@@ -37,10 +37,12 @@
     "g-i-s": "^2.1.6",
     "google-it": "^1.6.2",
     "human-readable": "^0.2.1",
+    "hxz-api": "^1.0.1",
     "image-to-base64": "^2.2.0",
-    "imgbb-uploader": "^1.3.1",
+    "imgbb-uploader": "^1.3.3",
     "jsdom": "^16.5.0",
     "latest": "^0.2.0",
+    "marked": "^3.0.2",
     "marker": "^0.1.2",
     "mathjs": "^9.4.3",
     "moment-timezone": "^0.5.33",
