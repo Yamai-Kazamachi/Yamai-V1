@@ -952,7 +952,7 @@ denz.updatePresence(from, Presence.recording)
 │◦➛Mode : ${publik ? 'Public' : 'Self'}
 │◦➛Total Hit : ${cmhit.length}
 │◦➛Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}
-│◦➛Nomor Owner : @${otod.split('@')[0]}
+│◦➛Nomor Owner : "Di Private!"
 │◦➛Auto Composing : ${settings.autocomposing}
 └❏Auto Recording : ${settings.autorecording}
 
