@@ -1,0 +1,11 @@
+{
+  "name": "Dcode bots",
+  "description": "WhatsApp bot Rare fitur",
+  "repository": "https://github.com/unknowkzr/bots-new",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": [
+    "bot",
+    "whatsapp",
+    "whatsapp-bot"
+  ]
+}
