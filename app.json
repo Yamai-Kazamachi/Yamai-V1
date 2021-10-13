@@ -1,11 +1,7 @@
 {
-  "name": "Dcode bots",
-  "description": "WhatsApp bot Rare fitur",
-  "repository": "https://github.com/unknowkzr/bots-new",
+  "name": "Test-bot",
+  "description": "Giv alok bang",
+  "repository": "https://github.com/unknowkzr",
   "logo": "https://node-js-sample.herokuapp.com/node.png",
-  "keywords": [
-    "bot",
-    "whatsapp",
-    "whatsapp-bot"
-  ]
+  "keywords": ["bot", "whatsapp", "whatsapp-bot"]
 }
