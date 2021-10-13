@@ -37,6 +37,7 @@
     "terminal-kit": "^2.1.8",
     "qs": "^6.10.1",
     "qrcode": "^1.4.4",
+    "base64-img": "^1.0.4",
     "request": "^2.88.2",
     "scraper-instagram": "^1.0.17",
     "spinnies": "^0.5.1",
