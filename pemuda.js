@@ -265,19 +265,19 @@ try {
 		const dfrply = fs.readFileSync('./pemuda_1.jpg')
 		cmhit.push(command)
         mess = {
-			wait: 'Sabar yah sabarr, gak sabar Mati ajalah anjeng..!!!',
-			success: 'Nah Sukses nih',
+			wait: 'Mengeksekusi perintah....\nTunggu Sebentar!',
+			success: 'Berhasil!',
 			error: {
-				stick: 'Cannot access videos!',
-				Iv: 'Invalid link!',
-                api: 'Error Awokwow :v'
+				stick: '*Cannot access videos!*',
+				Iv: '*_Invalid link!_*',
+                api: '!<---------!ERROR 504!-------->!/nApi Server mungkin down!'
 			},
 			only: {
-				group: 'Only for within the group!',
-				ownerG: 'Only for group owners!',
-				ownerB: 'Only for bot owners!',
-				admin: 'Only for group admins!',
-				Badmin: 'Make the bot a group admin!'
+				group: '_ʜᴀɴʏᴀ ᴜɴᴛᴜᴋ ɢʀᴏᴜᴘ!_',
+				ownerG: '_ʜᴀɴʏᴀ ᴜɴᴛᴜᴋ ᴘᴇᴍɪʟɪᴋ ɢʀᴏᴜᴘ!',
+				admin: '_ʜᴀɴʏᴀ ᴜɴᴛᴜᴋ ᴀᴅᴍɪɴ ɢʀᴏᴜᴘ!_',
+				ownerB: '_ₕₐₙyₐ ᵤₙₜᵤₖ ₚₑₘᵢₗᵢₖ Bₒₜ ᵢₙᵢ!_',
+				Badmin: '_ʜᴀʀᴀᴘ ᴊᴀᴅɪᴋᴀɴ ʙᴏᴛ ᴀᴅᴍɪɴ!_'
 			}
 		}
 		const botNumber = pemuda.user.jid
@@ -342,30 +342,30 @@ try {
 			var ase = new Date();
                         var jamss = ase.getHours();
                          switch(jamss){
-                case 0: jamss = "Midnight"; break;
-                case 1: jamss = "Midnight"; break;
-                case 2: jamss = "Midnight"; break;
-                case 3: jamss = "Midnight"; break;
-                case 4: jamss = "Midnight"; break;
-                case 5: jamss = "Dawn"; break;
-                case 6: jamss = "Morning"; break;
-                case 7: jamss = "Morning"; break;
-                case 8: jamss = "Morning"; break;
-                case 9: jamss = "Morning"; break;
-                case 10: jamss = "Morning"; break;
-                case 11: jamss = "Afternoon"; break;
+                case 0: jamss = "Oyasumi😇"; break;
+                case 1: jamss = "Oyasumi😇"; break;
+                case 2: jamss = "Oyasumi😇"; break;
+                case 3: jamss = "Oyasumi😇"; break;
+                case 4: jamss = "Oyasumi😇"; break;
+                case 5: jamss = "Ohayo🖐"; break;
+                case 6: jamss = "Ohayo🖐"; break;
+                case 7: jamss = "Ohayo🖐"; break;
+                case 8: jamss = "Ohayo🖐"; break;
+                case 9: jamss = "Ohayo🖐"; break;
+                case 10: jamss = "Ohayo🖐"; break;
+                case 11: jamss = "Konnichiwa💖"; break;
                 case 12: jamss = "Zuhur"; break;
-                case 13: jamss = "Afternoon"; break;
-                case 14: jamss = "Afternoon"; break;
+                case 13: jamss = "Konnichiwa💖"; break;
+                case 14: jamss = "Konnichiwa💖"; break;
                 case 15: jamss = "Asr"; break;
-                case 16: jamss = "Afternoon"; break;
-                case 17: jamss = "Evening"; break;
+                case 16: jamss = "Konbanwa☻"; break;
+                case 17: jamss = "Konbanwa☻"; break;
                 case 18: jamss = "Maghrib"; break;
-                case 19: jamss = "Isha"; break;
-                case 20: jamss = "Night"; break;
-                case 21: jamss = "Night"; break;
-                case 22: jamss = "Midnight"; break;
-                case 23: jamss = "Midnight"; break;
+                case 19: jamss = "Isyha"; break;
+                case 20: jamss = "Oyasumi😇"; break;
+                case 21: jamss = "Oyasumi😇"; break;
+                case 22: jamss = "Oyasumi😇"; break;
+                case 23: jamss = "Oyasumi😇"; break;
             }
             var tampilUcapan = "" + jamss;
             const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
@@ -777,7 +777,7 @@ return reply(parse)
                 return `${bits.toFixed(places[unit])} ${units[unit]}bps`;
             } 
            if (budy.startsWith('>')){
-if (!isOwner)return reply(`Perintah ini tidak bisa Di lakukan oleh Jadibot sementara`)
+if (!isOwner)return //reply(`Perintah ini tidak bisa Di lakukan oleh Jadibot sementara`)
 console.log(color('[EVAL]'), color(moment(mek.messageTimestamp * 1000).format('DD/MM/YY HH:mm:ss'), 'yellow'), color(`Eval V1 brooo`))
 ras = budy.slice(1)
 function _(rem) {
@@ -875,14 +875,14 @@ reply(String(e))
 			}
 			}
 			if (bad.includes(messagesD)) {
-				reply('_Jangan Toxic!_')
+				reply('_Onii-chann, Gaboleh toxic🥺_')
 				}
-				if (m.message && !m.key.fromMe && m.isBaileys && m.quoted && m.quoted.mtype === 'orderMessage' && !(m.quoted.token && m.quoted.orderId)) {
+				/*if (m.message && !m.key.fromMe && m.isBaileys && m.quoted && m.quoted.mtype === 'orderMessage' && !(m.quoted.token && m.quoted.orderId)) {
 m.reply('Troli Detected\n\n' + require('util').format(m.key))
 await pemuda.modifyChat(m.chat, 'delete', {
  includeStarred: false
 })
-}
+}*/
 if (!isGroup && !isCmd && !command && !mek.key.fromMe && !autorespon) {
 numd = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
 	simi = await fetchJson(`https://api.simsimi.net/v2/?text=${cmd}&lc=id`)
@@ -959,324 +959,339 @@ pemuda.updatePresence(from, Presence.recording)
        stst = await pemuda.getStatus(`${sender.split('@')[0]}@c.us`)
 				stst = stst.status == 401 ? '' : stst.status
 			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
-       menu = `*Halo ${pushname}*
+       menu = `*ωιвυѕσƒт©️*
 *Kalo buttonnya gak ada*
-*ketik #allmenu*
+*Ketik #command*
 
-BOT-INFO
-- Owner : @${otod.split('@')[0]}
-- Battery : ${baterai.battery}
+¤ ${tampilUcapan} ${pushname}
+
 - Mode : ${publik ? 'Public' : 'Self'}
 - Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}
-- Total Hit : ${cmhit.length}
 
-TIME-INFO
-- ${tampilUcapan} ${pushname}
 - Wib : ${timeWib}
 - Wita : ${timeWita}
 - Wit : ${timeWit}  
 - Hari : ${week} ${weton}
 - Tanggal : ${calender}`
-sendButLocation(from, `${menu}`, `${uwu}NdaaBotz - Ketik .command untuk Simpel Menu ${uwu}`, {jpegThumbnail:ofrply}, [{buttonId:`${prefix}allmenu`,buttonText:{displayText:'MENU ALL📒'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'DEVELOPER👤'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'SCRIPT🔥'},type:1}], {contextInfo: { mentionedJid: [ptod,dtod,otod,stod]}})
+sendButLocation(from, `${menu}`, `ωιвυѕσƒт©️ - ${uwu} Release V1 ${uwu}`, {jpegThumbnail:ofrply}, [{buttonId:`${prefix}command`,buttonText:{displayText:'Ａｌｌ Ｍｅｎｕ📒'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'ᴰᵉᵛᵉˡᵒᵖᵉʳ👤'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'𝕊𝕠𝕦𝕣𝕔𝕖 𝕊𝕔𝕣𝕚𝕡𝕥🔥'},type:1}], {contextInfo: { mentionedJid: [ptod,dtod,otod,stod]}})
 break
-case 'allmenu':
+
+case 'changelog':
+let chnglog = "14 oktober V1\n
+-official Release
+-First testing\n
+15 oktober V1.0\n
+-Major update!
+-Change all Paid api to Free api!
+\nNew Update Soon!"
+
+pemuda.sendMessage(from, chnglog, text, { quoted: ftrol, thumbnail: fs.readFileSync('./pemuda_1.jpg'), contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `Changelog V1`,body:"",mediaType:"2",thumbnail:ofrply,mediaUrl:`Changelog.V1`}}})
+break
+
+case 'command':
         ptod = "6283162388082@s.whatsapp.net"
         stod = `${sender}`
-        uwu = '```'
+        //uwu = '```'
        stst = await pemuda.getStatus(`${sender.split('@')[0]}@c.us`)
 				stst = stst.status == 401 ? '' : stst.status
-			num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
-menu = `${uwu}
-╭─⬣ 「 Bot Info 」 ⬣
-│🔖Creator : @${dtod.split('@')[0]}
-│🔖Recode : @${ptod.split('@')[0]}
-│🔖Battery : ${baterai.battery}
-│🔖Mode : ${publik ? 'Public' : 'Self'}
-│🔖Total Hit : ${cmhit.length}
-│🔖Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}
-│🔖Nomor Owner : @${otod.split('@')[0]}
-│🔖Auto Composing : ${settings.autocomposing}
-└⬣Auto Recording : ${settings.autorecording}
+			//num = await fetchJson(`https://api.telnyx.com/anonymous/v2/number_lookup/${senderNumber}`, {method: 'get'})
+menu = `*${tampilUcapan} ${pushname}*
 
-╭─⬣ 「 User Info 」 ⬣
-│🔖Status : ${isOwner ? 'Owner' : 'User'}
-│🔖Nama : ${pushname}
-│🔖Bio : ${stst}
-│🔖Nomor : @${stod.split('@')[0]}
-│🔖Info Nomor : ${num.data.countrycode} - ${num.data.carrier.type} - ${num.data.carrier.name}
+╭─⬣ 「 𝙱𝚘𝚝 𝙸𝚗𝚏𝚘 」 ⬣
+│
+│
+│ッMode : ${publik ? 'Public' : 'Self'}
+│ッTotal Hit : ${cmhit.length}
+│ッPrefix : ${multi ? 'Multi Prefix' : 'No Prefix'}
+│ッNomor Owner : @${otod.split('@')[0]}
+│ッAuto Composing : ${settings.autocomposing}
+│
+│ Release V1 ketik #changelog untuk lihat update baru!
+│
+│
+└⬣
+
+╭─⬣ 「 𝐔𝐬𝐞𝐫 𝐈𝐧𝐟𝐨 」 ⬣
+│
+│ッStatus : ${isOwner ? 'Owner' : 'User'}
+│ッNama : ${pushname}
+│ッBio : ${stst}
+│ッNomor : @${stod.split('@')[0]}
+│
 └⬣
 
 ┌⬣ TO DAY
-│🔖${tampilUcapan}
-│🔖Jam : ${jmn}
-│🔖Hari : ${week} ${weton}
-└⬣Tanggal : ${calender}
-
-┌⬣ INDONESIA TIME
-│🔖Wib : ${timeWib}
-│🔖Wita : ${timeWita}
-└⬣Wit : ${timeWit}  
-
-╭─⬣ COMMAND
 │
-├─⬣ OWNER
-│🔖${prefix}autorespon [ on/off ]
-│🔖${prefix}bc [ teks/reply gif/image/video with caption ]
-│🔖${prefix}tobc [ reply sticker/audio with caption ]
-│🔖${prefix}return [ javascript ]
-│🔖${prefix}clearall
-│🔖${prefix}delchat
-│🔖${prefix}mute
-│🔖${prefix}unmute
-│🔖${prefix}public
-│🔖${prefix}self
-│🔖${prefix}spam [ teks|jumlah ]
-│🔖${prefix}demoteall
-│🔖${prefix}promoteall
-│🔖${prefix}addcmd [ teks reply stc ]
-│🔖${prefix}delcmd [ reply stc ]
-│🔖${prefix}listcmd
-│🔖${prefix}spamsw [ teks|jumlah ]
-│🔖${prefix}upswteks [ teks ]
-│🔖${prefix}upswlokasi [ teks ]
-│🔖${prefix}upswaudio [ reply audio ]
-│🔖${prefix}upswvoice [ reply audio ]
-│🔖${prefix}upswsticker [ reply sticker ]
-│🔖${prefix}upswimage [ reply image with caption ]
-│🔖${prefix}upswgif [ reply gif with caption ]
-│🔖${prefix}upswvideo [ reply video with caption ]
-│🔖${prefix}shutdown
-│🔖${prefix}offline [ alasan ]
-│🔖${prefix}online
-│🔖${prefix}exif [ nama|author ]
-│🔖${prefix}setprofile [ reply image ]
-│🔖${prefix}setname [ teks ]
-│🔖${prefix}setprefix [ multi/nopref ]
-│🔖${prefix}setbio [ teks ]
-│🔖${prefix}leave
-│🔖${prefix}restart
-│🔖${prefix}join [ link group ]
-│🔖${prefix}addrespon [ tanya|jawab ]
-│🔖${prefix}delrespon [ nama ]
-│🔖${prefix}q [ reply message ]
+│ッ${tampilUcapan}
+│ッJam.    : ${jmn}
+│ッHari     : ${week} ${weton}
+│ッTanggal : ${calender}
+│ッWib     : ${timeWib}
+│ッWita    :  ${timeWita}
+│ッWit      : ${timeWit}
+│
+└⬣ 
+
+╭─⬣ 𝘾𝙤𝙢𝙢𝙖𝙣𝙙
+│
+├─⬣ </OWNER>
+│ッ${prefix}autorespon [ on/off ]
+│ッ${prefix}bc 
+│ッ${prefix}tobc 
+│ッ${prefix}return [ javascript ]
+│ッ${prefix}clearall
+│ッ${prefix}delchat
+│ッ${prefix}mute
+│ッ${prefix}unmute
+│ッ${prefix}public
+│ッ${prefix}self
+│ッ${prefix}spam [ teks|jumlah ]
+│ッ${prefix}demoteall
+│ッ${prefix}promoteall
+│ッ${prefix}addcmd [ teks reply stc ]
+│ッ${prefix}delcmd [ reply stc ]
+│ッ${prefix}listcmd
+│ッ${prefix}spamsw [ teks|jumlah ]
+│ッ${prefix}upswteks 
+│ッ${prefix}upswlokasi 
+│ッ${prefix}upswaudio 
+│ッ${prefix}upswvoice 
+│ッ${prefix}upswsticker
+│ッ${prefix}upswimage 
+│ッ${prefix}upswgif 
+│ッ${prefix}upswvideo
+│ッ${prefix}shutdown
+│ッ${prefix}offline [ alasan ]
+│ッ${prefix}online
+│ッ${prefix}exif [ nama|author ]
+│ッ${prefix}setprofile 
+│ッ${prefix}setname 
+│ッ${prefix}setprefix [ multi/nopref ]
+│ッ${prefix}setbio [ teks ]
+│ッ${prefix}leave
+│ッ${prefix}restart
+│ッ${prefix}join [ link group ]
+│ッ${prefix}addrespon [ tanya|jawab ]
+│ッ${prefix}delrespon [ nama ]
+│ッ${prefix}q [ reply message ]
 │
 ├─⬣ VIRUS MENU
-│🔖${prefix}virtex
-│🔖${prefix}tovirgam [reply Sticker]
-│🔖${prefix}bugkatalog
-│🔖${prefix}bugloc
-│🔖${prefix}bugrow
-│🔖${prefix}buglink
-│🔖${prefix}bugbutton
-│🔖${prefix}bug [ jumlah ]
-│🔖${prefix}bugpc2 [ jumlah ]
-│🔖${prefix}bugtroli2 [ jumlah ]
-│🔖${prefix}bugtroli3
-│🔖${prefix}bugpc
-│🔖${prefix}bugcombine
-│🔖${prefix}bugtroli
-│🔖${prefix}buglokasi
-│🔖${prefix}bughole
+│ッ${prefix}virtex
+│ッ${prefix}tovirgam [reply Sticker]
+│ッ${prefix}bugkatalog
+│ッ${prefix}bugloc
+│ッ${prefix}bugrow
+│ッ${prefix}buglink
+│ッ${prefix}bugbutton
+│ッ${prefix}bug [ jumlah ]
+│ッ${prefix}bugpc2 [ jumlah ]
+│ッ${prefix}bugtroli2 [ jumlah ]
+│ッ${prefix}bugtroli3
+│ッ${prefix}bugpc
+│ッ${prefix}bugcombine
+│ッ${prefix}bugtroli
+│ッ${prefix}buglokasi
+│ッ${prefix}bughole
 │
 ├─⬣ GAME 
-│🔖${prefix}ttt [tag 1 pemain]
-│🔖${prefix}truth
-│🔖${prefix}dare
-│🔖${prefix}kapankah
-│🔖${prefix}bisakah
-│🔖${prefix}cekganteng
-│🔖${prefix}cekcantik
-│🔖${prefix}cekmati
-|
+│ッ${prefix}ttt [tag 1 pemain]
+│ッ${prefix}truth
+│ッ${prefix}dare
+│ッ${prefix}kapankah
+│ッ${prefix}bisakah
+│ッ${prefix}cekganteng
+│ッ${prefix}cekcantik
+│ッ${prefix}cekmati
+│
 ├─⬣ DOWNLOAD
-│🔖${prefix}infogempa
-│🔖${prefix}herolist
-│🔖${prefix}herodetail [ hero ]
-│🔖${prefix}google [ search ]
-│🔖${prefix}gimage [ search ]
-│🔖${prefix}wiki [ search ]
-│🔖${prefix}mediafire [ link ]
-│🔖${prefix}ytsearch [ judul ]
-│🔖${prefix}ytmp4 [ link yt ]  PERBAIKAN
-│🔖${prefix}ytmp3 [ link yt ]
-│🔖${prefix} [ judul lagu ]
-│🔖${prefix}video [ judul video ]
-│🔖${prefix}tinyurl [ link ]
-│🔖${prefix}fetch [ link ]
-│🔖${prefix}igdl [ link ]
-│🔖${prefix}tiktokdl [ link ]
-│🔖${prefix}pinterest [ search ]
-│🔖${prefix}lirik [ judul ]
-│🔖${prefix}tourl [ reply image/video ]
-│🔖${prefix}resepmasakan [ judul ]
-│🔖${prefix}artimimpi [ teks ]
-│🔖${prefix}bilangangka [ angka ]
-│🔖${prefix}kalkulator [ angka ]
-│🔖${prefix}fancytext [ teks ]
-│🔖${prefix}githubstalk [ username ]
-│🔖${prefix}translate [ kodebhs|teks ]
-│🔖${prefix}ss [ link ]
-│🔖${prefix}tiktokaudio [ link ]
-│🔖${prefix}igstory [ link ]
-│🔖${prefix}linkwa
-│🔖${prefix}store [ query ]
-│🔖${prefix}fb [ link ]
-│🔖${prefix}twitter [ link ]
+│ッ${prefix}infogempa
+│ッ${prefix}herolist
+│ッ${prefix}herodetail [ hero ]
+│ッ${prefix}google [ search ]
+│ッ${prefix}gimage [ search ]
+│ッ${prefix}wiki [ search ]
+│ッ${prefix}mediafire [ link ]
+│ッ${prefix}ytsearch [ judul ]
+│ッ${prefix}ytmp4 [ link yt ] 
+│ッ${prefix}ytmp3 [ link yt ]
+│ッ${prefix} [ judul lagu ]
+│ッ${prefix}video [ judul video ]
+│ッ${prefix}tinyurl [ link ]
+│ッ${prefix}fetch [ link ]
+│ッ${prefix}igdl [ link ]
+│ッ${prefix}tiktokdl [ link ]
+│ッ${prefix}pinterest [ search ]
+│ッ${prefix}lirik [ judul ]
+│ッ${prefix}tourl [ reply image/video ]
+│ッ${prefix}resepmasakan [ judul ]
+│ッ${prefix}artimimpi [ teks ]
+│ッ${prefix}bilangangka [ angka ]
+│ッ${prefix}kalkulator [ angka ]
+│ッ${prefix}fancytext [ teks ]
+│ッ${prefix}githubstalk [ username ]
+│ッ${prefix}translate [ kodebhs|teks ]
+│ッ${prefix}ss [ link ]
+│ッ${prefix}tiktokaudio [ link ]
+│ッ${prefix}igstory [ link ]
+│ッ${prefix}linkwa
+│ッ${prefix}store [ query ]
+│ッ${prefix}fb [ link ]
+│ッ${prefix}twitter [ link ]
 │
 ├─⬣ MAKER
-│🔖${prefix}foliokiri 「 text 」
-│🔖${prefix}foliokanan 「 text 」
-│🔖${prefix}nuliskanan 「 text 」
-│🔖${prefix}nuliskiri 「 text 」
-│🔖${prefix}matrix [ teks ]
-│🔖${prefix}googletxt [ teks ]
-│🔖${prefix}spiderman [ teks ]
-│🔖${prefix}express [ teks ]
-│🔖${prefix}dance [ teks ]
-│🔖${prefix}blackbird [ teks ]
-│🔖${prefix}halloween [ teks ]
-│🔖${prefix}vampire [ teks ]
-│🔖${prefix}codetxt [ teks ]
-│🔖${prefix}text3d [ teks ]
-│🔖${prefix}warrior [ teks ]
-│🔖${prefix}maker2d2 「 text 」
-│🔖${prefix}maker2d3 「 text 」
-│🔖${prefix}maker2d4 「 text 」
-│🔖${prefix}maker3d 「 text 」
-│🔖${prefix}maker3d2 「 text 」
-│🔖${prefix}maker3d3 「 text 」
-│🔖${prefix}maker3d4 「 text 」
-│🔖${prefix}transformer 「 text 」
-│🔖${prefix}googletxt 「 text 」
-│🔖${prefix}battlefield 「 text 」
-│🔖${prefix}coffeecup 「 text 」
-│🔖${prefix}coffeecup2 「 text 」
-│🔖${prefix}neon 「 text 」
-│🔖${prefix}glow 「 text 」
-│🔖${prefix}summer 「 text 」
-│🔖${prefix}flower 「 text 」
-│🔖${prefix}burn 「 text 」
-│🔖${prefix}quote 「 text 」
-│🔖${prefix}wooden 「 text 」
-│🔖${prefix}golden 「 text 」
+│ッ${prefix}foliokiri 「 text 」
+│ッ${prefix}foliokanan 「 text 」
+│ッ${prefix}nuliskanan 「 text 」
+│ッ${prefix}nuliskiri 「 text 」
+│ッ${prefix}matrix [ teks ]
+│ッ${prefix}googletxt [ teks ]
+│ッ${prefix}spiderman [ teks ]
+│ッ${prefix}express [ teks ]
+│ッ${prefix}dance [ teks ]
+│ッ${prefix}blackbird [ teks ]
+│ッ${prefix}halloween [ teks ]
+│ッ${prefix}vampire [ teks ]
+│ッ${prefix}codetxt [ teks ]
+│ッ${prefix}text3d [ teks ]
+│ッ${prefix}warrior [ teks ]
+│ッ${prefix}maker2d2 「 text 」
+│ッ${prefix}maker2d3 「 text 」
+│ッ${prefix}maker2d4 「 text 」
+│ッ${prefix}maker3d 「 text 」
+│ッ${prefix}maker3d2 「 text 」
+│ッ${prefix}maker3d3 「 text 」
+│ッ${prefix}maker3d4 「 text 」
+│ッ${prefix}transformer 「 text 」
+│ッ${prefix}googletxt 「 text 」
+│ッ${prefix}battlefield 「 text 」
+│ッ${prefix}coffeecup 「 text 」
+│ッ${prefix}coffeecup2 「 text 」
+│ッ${prefix}neon 「 text 」
+│ッ${prefix}glow 「 text 」
+│ッ${prefix}summer 「 text 」
+│ッ${prefix}flower 「 text 」
+│ッ${prefix}burn 「 text 」
+│ッ${prefix}quote 「 text 」
+│ッ${prefix}wooden 「 text 」
+│ッ${prefix}golden 「 text 」
 │
 ├──⬣ GROUP
-│🔖${prefix}getpict [ @tag ]
-│🔖${prefix}getname [ reply target ]
-│🔖${prefix}getbio [ reply target ]
-│🔖${prefix}promote [ @tag ]
-│🔖${prefix}demote [ @tag ]
-│🔖${prefix}antilink [ 1/0 ]
-│🔖${prefix}nsfw [ 1/0 ]
-│🔖${prefix}creategrup [ nama|@tag ]
-│🔖${prefix}tictactoe [ @tag ]
-│🔖${prefix}delttt
-│🔖${prefix}getpp
-│🔖${prefix}kick [ @tag ]
-│🔖${prefix}add [ nomor ]
-│🔖${prefix}getdeskgc
-│🔖${prefix}sider [ reply pesan bot ]
-│🔖${prefix}hacked [ teks ]
-│🔖${prefix}setnamegc [ teks ]
-│🔖${prefix}setdeskgc [ teks ]
-│🔖${prefix}fitnah [ @tag|teks1|teks2 ]
-│🔖${prefix}kontak [ @tag|nama ]
-│🔖${prefix}kontag [ @tag|nama ]
-│🔖${prefix}opengc
-│🔖${prefix}closegc
-│🔖${prefix}resetlinkgc
-│🔖${prefix}linkgrup
-│🔖${prefix}listonline
-│🔖${prefix}listadmin
-│🔖${prefix}pemudaline
-│🔖${prefix}hidetag [ teks ]
-│🔖${prefix}sticktag [ nama sticker ]
-│🔖${prefix}totag [ reply media ]
+│ッ${prefix}getpict [ @tag ]
+│ッ${prefix}getname [ reply target ]
+│ッ${prefix}getbio [ reply target ]
+│ッ${prefix}promote [ @tag ]
+│ッ${prefix}demote [ @tag ]
+│ッ${prefix}antilink [ 1/0 ]
+│ッ${prefix}nsfw [ 1/0 ]
+│ッ${prefix}creategrup [ nama|@tag ]
+│ッ${prefix}tictactoe [ @tag ]
+│ッ${prefix}delttt
+│ッ${prefix}getpp
+│ッ${prefix}kick [ @tag ]
+│ッ${prefix}add [ nomor ]
+│ッ${prefix}getdeskgc
+│ッ${prefix}sider [ reply pesan bot ]
+│ッ${prefix}hacked [ teks ]
+│ッ${prefix}setnamegc [ teks ]
+│ッ${prefix}setdeskgc [ teks ]
+│ッ${prefix}fitnah [ @tag|teks1|teks2 ]
+│ッ${prefix}kontak [ @tag|nama ]
+│ッ${prefix}kontag [ @tag|nama ]
+│ッ${prefix}opengc
+│ッ${prefix}closegc
+│ッ${prefix}resetlinkgc
+│ッ${prefix}linkgrup
+│ッ${prefix}listonline
+│ッ${prefix}listadmin
+│ッ${prefix}pemudaline
+│ッ${prefix}hidetag [ teks ]
+│ッ${prefix}sticktag [ nama sticker ]
+│ッ${prefix}totag [ reply media ]
 │
 ├─⬣ NSFW
-│🔖${prefix}trapnime
-│🔖${prefix}neko
-│🔖${prefix}megumin
-│🔖${prefix}blowjob
-│🔖${prefix}hentai
-│🔖${prefix}awoo
-│🔖${prefix}bj 
-│🔖${prefix}eroneko
-│🔖${prefix}lesbian
-│🔖${prefix}anal
-│🔖${prefix}yuri
-│🔖${prefix}baka
-│🔖${prefix}neko2
-│🔖${prefix}wallpaper
-│🔖${prefix}pussy
-│🔖${prefix}kitsune
-│🔖${prefix}keta
-│🔖${prefix}neko2
-│🔖${prefix}poke
-│🔖${prefix}slap
-│🔖${prefix}komiku [ query ]
-│🔖${prefix}otaku [ query ]
-│🔖${prefix}chara [ query ]
+│ッ${prefix}trapnime
+│ッ${prefix}neko
+│ッ${prefix}megumin
+│ッ${prefix}blowjob
+│ッ${prefix}hentai
+│ッ${prefix}awoo
+│ッ${prefix}bj 
+│ッ${prefix}eroneko
+│ッ${prefix}lesbian
+│ッ${prefix}anal
+│ッ${prefix}yuri
+│ッ${prefix}baka
+│ッ${prefix}neko2
+│ッ${prefix}wallpaper
+│ッ${prefix}pussy
+│ッ${prefix}kitsune
+│ッ${prefix}keta
+│ッ${prefix}neko2
+│ッ${prefix}poke
+│ッ${prefix}slap
+│ッ${prefix}komiku [ query ]
+│ッ${prefix}otaku [ query ]
+│ッ${prefix}chara [ query ]
 │
 ├─⬣ TOOLS
-│🔖${prefix}getscmd
-│🔖${prefix}stickerwm [ nama|author ]
-│🔖${prefix}takestick [ nama|author ]
-│🔖${prefix}colong [ reply sticker ]
-│🔖${prefix}sticker
-│🔖${prefix}semoji [ emoji ]
-│🔖${prefix}attp [ teks ]
-│🔖${prefix}toimg
-│🔖${prefix}tomp3 [ reply video ]
-│🔖${prefix}tomp4 [ reply sticker gif ]
-│🔖${prefix}robot [ reply audio ]
-│🔖${prefix}balik [ reply audio ]
-│🔖${prefix}bass [ reply audio ]
-│🔖${prefix}gemuk [ reply audio ]
-│🔖${prefix}detikvn [ reply audio caption angka ]
-│🔖${prefix}detikvideo [ reply video caption angka ]
-│🔖${prefix}tts [ kodebhs teks ]
+│ッ${prefix}getscmd
+│ッ${prefix}stickerwm [ nama|author ]
+│ッ${prefix}takestick [ nama|author ]
+│ッ${prefix}colong [ reply sticker ]
+│ッ${prefix}sticker
+│ッ${prefix}semoji [ emoji ]
+│ッ${prefix}attp [ teks ]
+│ッ${prefix}toimg
+│ッ${prefix}tomp3 [ reply video ]
+│ッ${prefix}tomp4 [ reply sticker gif ]
+│ッ${prefix}robot [ reply audio ]
+│ッ${prefix}balik [ reply audio ]
+│ッ${prefix}bass [ reply audio ]
+│ッ${prefix}gemuk [ reply audio ]
+│ッ${prefix}detikvn [ reply audio caption angka ]
+│ッ${prefix}detikvideo [ reply video caption angka ]
+│ッ${prefix}tts [ kodebhs teks ]
 │
 ├─⬣ STORAGE
-│🔖${prefix}addsticker [ nama ]
-│🔖${prefix}delsticker [ nama ]
-│🔖${prefix}addvn [ nama ]
-│🔖${prefix}delvn [ nama ]
-│🔖${prefix}addimage [ nama ]
-│🔖${prefix}delimage [ nama ]
-│🔖${prefix}listimage
-│🔖${prefix}liststicker
-│🔖${prefix}listvn
+│ッ${prefix}addsticker [ nama ]
+│ッ${prefix}delsticker [ nama ]
+│ッ${prefix}addvn [ nama ]
+│ッ${prefix}delvn [ nama ]
+│ッ${prefix}addimage [ nama ]
+│ッ${prefix}delimage [ nama ]
+│ッ${prefix}listimage
+│ッ${prefix}liststicker
+│ッ${prefix}listvn
 │
 ├─⬣ JADI BOT
-│🔖${prefix}stopjadibot
-│🔖${prefix}jadibot
+│ッ${prefix}stopjadibot
+│ッ${prefix}jadibot
 │
 ├─⬣ OTHER / FUN
-│🔖${prefix}caripesan [ teks|jumlah ]
-│🔖${prefix}slots
-│🔖${prefix}suit [ gunting/batu/kertas ]
-│🔖${prefix}tag [ nomor ]
-│🔖${prefix}tagme
-│🔖${prefix}readmore [ teks1|teks2 ]
-│🔖${prefix}fitnahpc [ nomor|teks1|teks2 ]
-│🔖${prefix}chat [ nomor|teks ]
-│🔖${prefix}fdeface [ replyimg link|teks1|teks2 ]
-│🔖${prefix}listgrup
-│🔖${prefix}baileys [ reply message ]
-│🔖${prefix}getcaption [ reply message ]
-│🔖${prefix}pantun
-│🔖${prefix}tospam [ reply audio/sticker/image|jumlah ]
-│🔖${prefix}sharelock [ teks1|teks2 ]
-│🔖${prefix}dadu
+│ッ${prefix}caripesan [ teks|jumlah ]
+│ッ${prefix}slots
+│ッ${prefix}suit [ gunting/batu/kertas ]
+│ッ${prefix}tag [ nomor ]
+│ッ${prefix}tagme
+│ッ${prefix}readmore [ teks1|teks2 ]
+│ッ${prefix}fitnahpc [ nomor|teks1|teks2 ]
+│ッ${prefix}chat [ nomor|teks ]
+│ッ${prefix}fdeface [ replyimg link|teks1|teks2 ]
+│ッ${prefix}listgrup
+│ッ${prefix}baileys [ reply message ]
+│ッ${prefix}getcaption [ reply message ]
+│ッ${prefix}pantun
+│ッ${prefix}tospam [ reply audio/sticker/image|jumlah ]
+│ッ${prefix}sharelock [ teks1|teks2 ]
+│ッ${prefix}dadu
 └─────────────────⬣
-${uwu}`
-pemuda.sendMessage(from, menu, text, { quoted: ftrol, thumbnail: fs.readFileSync('./pemuda_1.jpg'), contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${week} ${weton} - ${calender}`,body:"",mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/TaG15W_8f_s`}}})
+`
+pemuda.sendMessage(from, menu, text, { quoted: ftrol, thumbnail: fs.readFileSync('./pemuda_1.jpg'), contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${calender} - ${week} ${weton}`,body:"",mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/TaG15W_8f_s`}}})
 break
-case 'command':
+case 'allmenu':
  listMsg = {
  buttonText: 'LIST MENU',
- footerText: '*_© NdaaBotz_*',
+ footerText: '*_ωιвυѕσƒт©️_*',
  description: `Hai kak @${stod.split('@')[0]}, Silahkan pilih menu disini, Kalau lu makek Wa GB, dan gak muncul, Ketik .allmenu`,
  sections: [
                      {
@@ -1343,181 +1358,181 @@ break
 case 'ownermenu':
 menu = `⬣ 「 \`\`\`MENU OWNER\`\`\` 」
 ├────────────────────
-│🔖${prefix}autorespon [ on/off ]
-│🔖${prefix}bc [ teks/reply gif/image/video with caption ]
-│🔖${prefix}tobc [ reply sticker/audio with caption ]
-│🔖${prefix}return [ javascript ]
-│🔖${prefix}clearall
-│🔖${prefix}delchat
-│🔖${prefix}mute
-│🔖${prefix}unmute
-│🔖${prefix}public
-│🔖${prefix}self
-│🔖${prefix}spam [ teks|jumlah ]
-│🔖${prefix}demoteall
-│🔖${prefix}promoteall
-│🔖${prefix}addcmd [ teks reply stc ]
-│🔖${prefix}delcmd [ reply stc ]
-│🔖${prefix}listcmd
-│🔖${prefix}spamsw [ teks|jumlah ]
-│🔖${prefix}upswteks [ teks ]
-│🔖${prefix}upswlokasi [ teks ]
-│🔖${prefix}upswaudio [ reply audio ]
-│🔖${prefix}upswvoice [ reply audio ]
-│🔖${prefix}upswsticker [ reply sticker ]
-│🔖${prefix}upswimage [ reply image with caption ]
-│🔖${prefix}upswgif [ reply gif with caption ]
-│🔖${prefix}upswvideo [ reply video with caption ]
-│🔖${prefix}shutdown
-│🔖${prefix}offline [ alasan ]
-│🔖${prefix}online
-│🔖${prefix}exif [ nama|author ]
-│🔖${prefix}setprofile [ reply image ]
-│🔖${prefix}setname [ teks ]
-│🔖${prefix}setprefix [ multi/nopref ]
-│🔖${prefix}setbio [ teks ]
-│🔖${prefix}leave
-│🔖${prefix}restart
-│🔖${prefix}join [ link group ]
-│🔖${prefix}addrespon [ tanya|jawab ]
-│🔖${prefix}delrespon [ nama ]
-│🔖${prefix}q [ reply message ]
+│ッ${prefix}autorespon [ on/off ]
+│ッ${prefix}bc [ teks/reply gif/image/video with caption ]
+│ッ${prefix}tobc [ reply sticker/audio with caption ]
+│ッ${prefix}return [ javascript ]
+│ッ${prefix}clearall
+│ッ${prefix}delchat
+│ッ${prefix}mute
+│ッ${prefix}unmute
+│ッ${prefix}public
+│ッ${prefix}self
+│ッ${prefix}spam [ teks|jumlah ]
+│ッ${prefix}demoteall
+│ッ${prefix}promoteall
+│ッ${prefix}addcmd [ teks reply stc ]
+│ッ${prefix}delcmd [ reply stc ]
+│ッ${prefix}listcmd
+│ッ${prefix}spamsw [ teks|jumlah ]
+│ッ${prefix}upswteks [ teks ]
+│ッ${prefix}upswlokasi [ teks ]
+│ッ${prefix}upswaudio [ reply audio ]
+│ッ${prefix}upswvoice [ reply audio ]
+│ッ${prefix}upswsticker [ reply sticker ]
+│ッ${prefix}upswimage [ reply image with caption ]
+│ッ${prefix}upswgif [ reply gif with caption ]
+│ッ${prefix}upswvideo [ reply video with caption ]
+│ッ${prefix}shutdown
+│ッ${prefix}offline [ alasan ]
+│ッ${prefix}online
+│ッ${prefix}exif [ nama|author ]
+│ッ${prefix}setprofile [ reply image ]
+│ッ${prefix}setname [ teks ]
+│ッ${prefix}setprefix [ multi/nopref ]
+│ッ${prefix}setbio [ teks ]
+│ッ${prefix}leave
+│ッ${prefix}restart
+│ッ${prefix}join [ link group ]
+│ッ${prefix}addrespon [ tanya|jawab ]
+│ッ${prefix}delrespon [ nama ]
+│ッ${prefix}q [ reply message ]
 │
 ├─⬣ WAR MENU
-│🔖${prefix}virtex
-│🔖${prefix}tovirgam [reply Sticker]
-│🔖${prefix}bugkatalog
-│🔖${prefix}bugloc
-│🔖${prefix}bugrow
-│🔖${prefix}buglink
-│🔖${prefix}bugbutton
-│🔖${prefix}bug [ jumlah ]
-│🔖${prefix}bugpc2 [ jumlah ]
-│🔖${prefix}bugtroli2 [ jumlah ]
-│🔖${prefix}bugtroli3
-│🔖${prefix}bugpc
-│🔖${prefix}bugcombine
-│🔖${prefix}bugtroli
-│🔖${prefix}buglokasi
+│ッ${prefix}virtex
+│ッ${prefix}tovirgam [reply Sticker]
+│ッ${prefix}bugkatalog
+│ッ${prefix}bugloc
+│ッ${prefix}bugrow
+│ッ${prefix}buglink
+│ッ${prefix}bugbutton
+│ッ${prefix}bug [ jumlah ]
+│ッ${prefix}bugpc2 [ jumlah ]
+│ッ${prefix}bugtroli2 [ jumlah ]
+│ッ${prefix}bugtroli3
+│ッ${prefix}bugpc
+│ッ${prefix}bugcombine
+│ッ${prefix}bugtroli
+│ッ${prefix}buglokasi
 └${prefix}bughole`
 katalog(menu)
 break
 case 'downloadmenu':
 menu = `⬣ 「 \`\`\`MENU DOWNLOAD\`\`\` 」
 ├────────────────────
-│🔖${prefix}infogempa
-│🔖${prefix}herolist
-│🔖${prefix}herodetail [ hero ]
-│🔖${prefix}google [ search ]
-│🔖${prefix}gimage [ search ]
-│🔖${prefix}wiki [ search ]
-│🔖${prefix}mediafire [ link ]
-│🔖${prefix}ytsearch [ judul ]
-│🔖${prefix}ytmp4 [ link yt ]
-│🔖${prefix}ytmp3 [ link yt ]
-│🔖${prefix} [ judul lagu ]
-│🔖${prefix}video [ judul video ]
-│🔖${prefix}tinyurl [ link ]
-│🔖${prefix}fetch [ link ]
-│🔖${prefix}igdl [ link ]
-│🔖${prefix}tiktokdl [ link ]
-│🔖${prefix}pinterest [ search ]
-│🔖${prefix}lirik [ judul ]
-│🔖${prefix}tourl [ reply image/video ]
-│🔖${prefix}resepmasakan [ judul ]
-│🔖${prefix}artimimpi [ teks ]
-│🔖${prefix}bilangangka [ angka ]
-│🔖${prefix}kalkulator [ angka ]
-│🔖${prefix}fancytext [ teks ]
-│🔖${prefix}githubstalk [ username ]
-│🔖${prefix}translate [ kodebhs|teks ]
-│🔖${prefix}ss [ link ]
-│🔖${prefix}tiktokaudio [ link ]
-│🔖${prefix}igstory [ link ]
-│🔖${prefix}linkwa
-│🔖${prefix}store [ query ]
-│🔖${prefix}fb [ link ]
+│ッ${prefix}infogempa
+│ッ${prefix}herolist
+│ッ${prefix}herodetail [ hero ]
+│ッ${prefix}google [ search ]
+│ッ${prefix}gimage [ search ]
+│ッ${prefix}wiki [ search ]
+│ッ${prefix}mediafire [ link ]
+│ッ${prefix}ytsearch [ judul ]
+│ッ${prefix}ytmp4 [ link yt ]
+│ッ${prefix}ytmp3 [ link yt ]
+│ッ${prefix} [ judul lagu ]
+│ッ${prefix}video [ judul video ]
+│ッ${prefix}tinyurl [ link ]
+│ッ${prefix}fetch [ link ]
+│ッ${prefix}igdl [ link ]
+│ッ${prefix}tiktokdl [ link ]
+│ッ${prefix}pinterest [ search ]
+│ッ${prefix}lirik [ judul ]
+│ッ${prefix}tourl [ reply image/video ]
+│ッ${prefix}resepmasakan [ judul ]
+│ッ${prefix}artimimpi [ teks ]
+│ッ${prefix}bilangangka [ angka ]
+│ッ${prefix}kalkulator [ angka ]
+│ッ${prefix}fancytext [ teks ]
+│ッ${prefix}githubstalk [ username ]
+│ッ${prefix}translate [ kodebhs|teks ]
+│ッ${prefix}ss [ link ]
+│ッ${prefix}tiktokaudio [ link ]
+│ッ${prefix}igstory [ link ]
+│ッ${prefix}linkwa
+│ッ${prefix}store [ query ]
+│ッ${prefix}fb [ link ]
 └${prefix}twitter [ link ]`
 katalog(menu)
 break
 case 'makermenu':
 menu = `⬣ 「 \`\`\`MENU MAKER\`\`\` 」
 ├────────────────────
-│🔖${prefix}foliokiri 「 text 」
-│🔖${prefix}foliokanan 「 text 」
-│🔖${prefix}nulis 「 text 」
-│🔖${prefix}nuliskanan 「 text 」
-│🔖${prefix}nuliskiri 「 text 」
-│🔖${prefix}tahta 「 text 」
-│🔖${prefix}gold 「 text 」
-│🔖${prefix}silver 「 text 」
-│🔖${prefix}matrix [ teks ]
-│🔖${prefix}googletxt [ teks ]
-│🔖${prefix}spiderman [ teks ]
-│🔖${prefix}express [ teks ]
-│🔖${prefix}dance [ teks ]
-│🔖${prefix}blackbird [ teks ]
-│🔖${prefix}halloween [ teks ]
-│🔖${prefix}vampire [ teks ]
-│🔖${prefix}codetxt [ teks ]
-│🔖${prefix}text3d [ teks ]
-│🔖${prefix}warrior [ teks ]
-│🔖${prefix}maker2d2 「 text 」
-│🔖${prefix}maker2d3 「 text 」
-│🔖${prefix}maker2d4 「 text 」
-│🔖${prefix}maker3d 「 text 」
-│🔖${prefix}maker3d2 「 text 」
-│🔖${prefix}maker3d3 「 text 」
-│🔖${prefix}maker3d4 「 text 」
-│🔖${prefix}transformer 「 text 」
-│🔖${prefix}googletxt 「 text 」
-│🔖${prefix}battlefield 「 text 」
-│🔖${prefix}coffeecup 「 text 」
-│🔖${prefix}coffeecup2 「 text 」
-│🔖${prefix}neon 「 text 」
-│🔖${prefix}glow 「 text 」
-│🔖${prefix}summer 「 text 」
-│🔖${prefix}flower 「 text 」
-│🔖${prefix}burn 「 text 」
-│🔖${prefix}quote 「 text 」
-│🔖${prefix}wooden 「 text 」
+│ッ${prefix}foliokiri 「 text 」
+│ッ${prefix}foliokanan 「 text 」
+│ッ${prefix}nulis 「 text 」
+│ッ${prefix}nuliskanan 「 text 」
+│ッ${prefix}nuliskiri 「 text 」
+│ッ${prefix}tahta 「 text 」
+│ッ${prefix}gold 「 text 」
+│ッ${prefix}silver 「 text 」
+│ッ${prefix}matrix [ teks ]
+│ッ${prefix}googletxt [ teks ]
+│ッ${prefix}spiderman [ teks ]
+│ッ${prefix}express [ teks ]
+│ッ${prefix}dance [ teks ]
+│ッ${prefix}blackbird [ teks ]
+│ッ${prefix}halloween [ teks ]
+│ッ${prefix}vampire [ teks ]
+│ッ${prefix}codetxt [ teks ]
+│ッ${prefix}text3d [ teks ]
+│ッ${prefix}warrior [ teks ]
+│ッ${prefix}maker2d2 「 text 」
+│ッ${prefix}maker2d3 「 text 」
+│ッ${prefix}maker2d4 「 text 」
+│ッ${prefix}maker3d 「 text 」
+│ッ${prefix}maker3d2 「 text 」
+│ッ${prefix}maker3d3 「 text 」
+│ッ${prefix}maker3d4 「 text 」
+│ッ${prefix}transformer 「 text 」
+│ッ${prefix}googletxt 「 text 」
+│ッ${prefix}battlefield 「 text 」
+│ッ${prefix}coffeecup 「 text 」
+│ッ${prefix}coffeecup2 「 text 」
+│ッ${prefix}neon 「 text 」
+│ッ${prefix}glow 「 text 」
+│ッ${prefix}summer 「 text 」
+│ッ${prefix}flower 「 text 」
+│ッ${prefix}burn 「 text 」
+│ッ${prefix}quote 「 text 」
+│ッ${prefix}wooden 「 text 」
 └${prefix}golden 「 text 」 `
 katalog(menu)
 break
 case 'groupmenu':
 menu = `⬣ 「 \`\`\`MENU GROUP\`\`\` 」
 ├────────────────────
-│🔖${prefix}getpict [ @tag ]
-│🔖${prefix}getname [ reply target ]
-│🔖${prefix}getbio [ reply target ]
-│🔖${prefix}promote [ @tag ]
-│🔖${prefix}demote [ @tag ]
-│🔖${prefix}antilink [ 1/0 ]
-│🔖${prefix}nsfw [ 1/0 ]
-│🔖${prefix}creategrup [ nama|@tag ]
-│🔖${prefix}tictactoe [ @tag ]
-│🔖${prefix}delttt
-│🔖${prefix}getpp
-│🔖${prefix}kick [ @tag ]
-│🔖${prefix}add [ nomor ]
-│🔖${prefix}kik [ Reply Pesan Target ]
-│🔖${prefix}ad [ Reply Pesan Target ]
-│🔖${prefix}getdeskgc
-│🔖${prefix}sider [ reply pesan bot ]
-│🔖${prefix}hacked [ teks ]
-│🔖${prefix}setnamegc [ teks ]
-│🔖${prefix}setdeskgc [ teks ]
-│🔖${prefix}fitnah [ @tag|teks1|teks2 ]
-│🔖${prefix}kontak [ @tag|nama ]
-│🔖${prefix}kontag [ @tag|nama ]
-│🔖${prefix}opengc
-│🔖${prefix}closegc
-│🔖${prefix}resetlinkgc
-│🔖${prefix}linkgrup
-│🔖${prefix}listonline
-│🔖${prefix}listadmin
-│🔖${prefix}hidetag [ teks ]
-│🔖${prefix}sticktag [ nama sticker ]
+│ッ${prefix}getpict [ @tag ]
+│ッ${prefix}getname [ reply target ]
+│ッ${prefix}getbio [ reply target ]
+│ッ${prefix}promote [ @tag ]
+│ッ${prefix}demote [ @tag ]
+│ッ${prefix}antilink [ 1/0 ]
+│ッ${prefix}nsfw [ 1/0 ]
+│ッ${prefix}creategrup [ nama|@tag ]
+│ッ${prefix}tictactoe [ @tag ]
+│ッ${prefix}delttt
+│ッ${prefix}getpp
+│ッ${prefix}kick [ @tag ]
+│ッ${prefix}add [ nomor ]
+│ッ${prefix}kik [ Reply Pesan Target ]
+│ッ${prefix}ad [ Reply Pesan Target ]
+│ッ${prefix}getdeskgc
+│ッ${prefix}sider [ reply pesan bot ]
+│ッ${prefix}hacked [ teks ]
+│ッ${prefix}setnamegc [ teks ]
+│ッ${prefix}setdeskgc [ teks ]
+│ッ${prefix}fitnah [ @tag|teks1|teks2 ]
+│ッ${prefix}kontak [ @tag|nama ]
+│ッ${prefix}kontag [ @tag|nama ]
+│ッ${prefix}opengc
+│ッ${prefix}closegc
+│ッ${prefix}resetlinkgc
+│ッ${prefix}linkgrup
+│ッ${prefix}listonline
+│ッ${prefix}listadmin
+│ッ${prefix}hidetag [ teks ]
+│ッ${prefix}sticktag [ nama sticker ]
 └${prefix}totag [ reply media ]`
 katalog(menu)
 break
@@ -1525,96 +1540,96 @@ case 'Gamemenu':
 menu =`⬣ 「 \`\`\`MENU GAME\`\`\` 」
 ├────────────────────
 ├─⬣ GAME 
-│🔖${prefix}ttt [tag 1 pemain]
-│🔖${prefix}truth
-│🔖${prefix}dare
-│🔖${prefix}kapankah
-│🔖${prefix}bisakah
-│🔖${prefix}cekganteng
-│🔖${prefix}cekcantik
-│🔖${prefix}cekmati`
+│ッ${prefix}ttt [tag 1 pemain]
+│ッ${prefix}truth
+│ッ${prefix}dare
+│ッ${prefix}kapankah
+│ッ${prefix}bisakah
+│ッ${prefix}cekganteng
+│ッ${prefix}cekcantik
+│ッ${prefix}cekmati`
 katalog(menu)
 break
 case 'nsfwmenu':
 menu =`⬣ 「 \`\`\`MENU NSFW\`\`\` 」
 ├────────────────────
-│🔖${prefix}trapnime
-│🔖${prefix}neko
-│🔖${prefix}megumin
-│🔖${prefix}blowjob
-│🔖${prefix}hentai
-│🔖${prefix}awoo
-│🔖${prefix}bj 
-│🔖${prefix}eroneko
-│🔖${prefix}lesbian
-│🔖${prefix}anal
-│🔖${prefix}yuri
-│🔖${prefix}baka
-│🔖${prefix}neko2
-│🔖${prefix}wallpaper
-│🔖${prefix}pussy
-│🔖${prefix}kitsune
-│🔖${prefix}keta
-│🔖${prefix}neko2
-│🔖${prefix}poke
-│🔖${prefix}slap
-│🔖${prefix}komiku [ query ]
-│🔖${prefix}otaku [ query ]
+│ッ${prefix}trapnime
+│ッ${prefix}neko
+│ッ${prefix}megumin
+│ッ${prefix}blowjob
+│ッ${prefix}hentai
+│ッ${prefix}awoo
+│ッ${prefix}bj 
+│ッ${prefix}eroneko
+│ッ${prefix}lesbian
+│ッ${prefix}anal
+│ッ${prefix}yuri
+│ッ${prefix}baka
+│ッ${prefix}neko2
+│ッ${prefix}wallpaper
+│ッ${prefix}pussy
+│ッ${prefix}kitsune
+│ッ${prefix}keta
+│ッ${prefix}neko2
+│ッ${prefix}poke
+│ッ${prefix}slap
+│ッ${prefix}komiku [ query ]
+│ッ${prefix}otaku [ query ]
 └${prefix}chara [ query ]`
 katalog(menu)
 break
 case 'othermenu':
 menu = `⬣ 「 \`\`\`MENU OTHER\`\`\` 」
 ├────────────────────
-│🔖${prefix}getscmd
-│🔖${prefix}stickerwm [ nama|author ]
-│🔖${prefix}takestick [ nama|author ]
-│🔖${prefix}colong [ reply sticker ]
-│🔖${prefix}sticker
-│🔖${prefix}semoji [ emoji ]
-│🔖${prefix}attp [ teks ]
-│🔖${prefix}toimg
-│🔖${prefix}tomp3 [ reply video ]
-│🔖${prefix}tomp4 [ reply sticker gif ]
-│🔖${prefix}robot [ reply audio ]
-│🔖${prefix}balik [ reply audio ]
-│🔖${prefix}bass [ reply audio ]
-│🔖${prefix}gemuk [ reply audio ]
-│🔖${prefix}detikvn [ reply audio caption angka ]
-│🔖${prefix}detikvideo [ reply video caption angka ]
-│🔖${prefix}tts [ kodebhs teks ]
+│ッ${prefix}getscmd
+│ッ${prefix}stickerwm [ nama|author ]
+│ッ${prefix}takestick [ nama|author ]
+│ッ${prefix}colong [ reply sticker ]
+│ッ${prefix}sticker
+│ッ${prefix}semoji [ emoji ]
+│ッ${prefix}attp [ teks ]
+│ッ${prefix}toimg
+│ッ${prefix}tomp3 [ reply video ]
+│ッ${prefix}tomp4 [ reply sticker gif ]
+│ッ${prefix}robot [ reply audio ]
+│ッ${prefix}balik [ reply audio ]
+│ッ${prefix}bass [ reply audio ]
+│ッ${prefix}gemuk [ reply audio ]
+│ッ${prefix}detikvn [ reply audio caption angka ]
+│ッ${prefix}detikvideo [ reply video caption angka ]
+│ッ${prefix}tts [ kodebhs teks ]
 │
 ├─⬣ STORAGE
-│🔖${prefix}addsticker [ nama ]
-│🔖${prefix}delsticker [ nama ]
-│🔖${prefix}addvn [ nama ]
-│🔖${prefix}delvn [ nama ]
-│🔖${prefix}addimage [ nama ]
-│🔖${prefix}delimage [ nama ]
-│🔖${prefix}listimage
-│🔖${prefix}liststicker
-│🔖${prefix}listvn
+│ッ${prefix}addsticker [ nama ]
+│ッ${prefix}delsticker [ nama ]
+│ッ${prefix}addvn [ nama ]
+│ッ${prefix}delvn [ nama ]
+│ッ${prefix}addimage [ nama ]
+│ッ${prefix}delimage [ nama ]
+│ッ${prefix}listimage
+│ッ${prefix}liststicker
+│ッ${prefix}listvn
 │
 ├─⬣ JADI BOT
-│🔖${prefix}stopjadibot
-│🔖${prefix}jadibot
+│ッ${prefix}stopjadibot
+│ッ${prefix}jadibot
 │
 ├─⬣ OTHER / FUN
-│🔖${prefix}caripesan [ teks|jumlah ]
-│🔖${prefix}slots
-│🔖${prefix}suit [ gunting/batu/kertas ]
-│🔖${prefix}tag [ nomor ]
-│🔖${prefix}tagme
-│🔖${prefix}readmore [ teks1|teks2 ]
-│🔖${prefix}fitnahpc [ nomor|teks1|teks2 ]
-│🔖${prefix}chat [ nomor|teks ]
-│🔖${prefix}fdeface [ replyimg link|teks1|teks2 ]
-│🔖${prefix}listgrup
-│🔖${prefix}baileys [ reply message ]
-│🔖${prefix}getcaption [ reply message ]
-│🔖${prefix}pantun
-│🔖${prefix}tospam [ reply audio/sticker/image|jumlah ]
-│🔖${prefix}sharelock [ teks1|teks2 ]
+│ッ${prefix}caripesan [ teks|jumlah ]
+│ッ${prefix}slots
+│ッ${prefix}suit [ gunting/batu/kertas ]
+│ッ${prefix}tag [ nomor ]
+│ッ${prefix}tagme
+│ッ${prefix}readmore [ teks1|teks2 ]
+│ッ${prefix}fitnahpc [ nomor|teks1|teks2 ]
+│ッ${prefix}chat [ nomor|teks ]
+│ッ${prefix}fdeface [ replyimg link|teks1|teks2 ]
+│ッ${prefix}listgrup
+│ッ${prefix}baileys [ reply message ]
+│ッ${prefix}getcaption [ reply message ]
+│ッ${prefix}pantun
+│ッ${prefix}tospam [ reply audio/sticker/image|jumlah ]
+│ッ${prefix}sharelock [ teks1|teks2 ]
 └${prefix}dadu`
 katalog(menu)
 break
