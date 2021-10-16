@@ -338,7 +338,7 @@ try {
 		      } catch {
 		pporang = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 		      }
-		const ofrply = thubb
+		const ofrply = fs.readFileSync('./thub_1.jpg')
 		const thubb = fs.readFileSync('./thub_1.jpg')
 		const sekarang = new Date().getTime();
 			//-
