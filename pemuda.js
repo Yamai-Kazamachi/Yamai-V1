@@ -977,14 +977,14 @@ sendButLocation(from, `${menu}`, `ωιвυѕσƒт©️ - ${uwu} Release V1 ${uw
 break
 
 case 'changelog':
-let chnglog = "14 oktober V1\n
--official Release
--First testing\n
-15 oktober V1.0\n
--Major update!
--Change all Paid api to Free api!
-\nNew Update Soon!"
-
+  let chnglog = `14 oktober V1\n
+  -official Release
+  -First testing\n
+  15 oktober V1.0\n
+  -Major update!
+  -Change all Paid api to Free api!
+\nNew Update Soon!
+`
 pemuda.sendMessage(from, chnglog, text, { quoted: ftrol, thumbnail: fs.readFileSync('./pemuda_1.jpg'), contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `Changelog V1`,body:"",mediaType:"2",thumbnail:ofrply,mediaUrl:`Changelog.V1`}}})
 break
 
