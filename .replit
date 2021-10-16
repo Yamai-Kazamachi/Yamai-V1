@@ -1,0 +1,2 @@
+language = "nodejs"
+run = "npm i && npm i @adiwajshing/baileys@latest && node index
