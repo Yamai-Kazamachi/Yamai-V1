@@ -56,6 +56,10 @@ const { uploadimg, upload } = require('./lib/uploadimg')
 const { webp2mp4File } = require('./lib/webp2mp4')
 const { lirikLagu } = require('./lib/lirik.js')
 const { wikiSearch } = require('./lib/wiki.js')
+const { animesaran } = require('./lib/animesaran.js')
+const { animesaran2 } = require('./lib/animesaran2.js')
+const { kodenime } = require('./lib/kodenime.js')
+const { nuklir } = require('./lib/nuklir.js')
 const { herolist } = require('./lib/herolist.js')
 const { herodetails } = require('./lib/herodetail.js')
 const { mediafireDl } = require('./lib/mediafire.js')
@@ -265,7 +269,7 @@ try {
 		const dfrply = fs.readFileSync('./pemuda_1.jpg')
 		cmhit.push(command)
         mess = {
-			wait: 'Mengeksekusi perintah....\nTunggu Sebentar!',
+			wait: 'Mengeksekusi perintah....\nTunggu Sebentar!\n\nωιвυѕσƒтッ',
 			success: 'Berhasil!',
 			error: {
 				stick: '*Cannot access videos!*',
@@ -309,11 +313,11 @@ try {
 		}
 		if (antibot === true) return
 		const katalog = (teks) => {
-             res = pemuda.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "*_© Pemuda Teknologi_*", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftrol})
+             res = pemuda.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 321, "message": teks, "footerText": "*_© Wibusoft_*", "thumbnail": ofrply, "surface": 'CATALOG' }}, {quoted:ftrol})
              pemuda.relayWAMessage(res)
         }
         const grupinv = (teks) => {
-        	grup = pemuda.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/Dgt6JhzTvlmEor8Zz23fHx', "groupName": `${NamaBot}`, "footerText": "*_© Pemuda Teknologi_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
+        	grup = pemuda.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '6288213840883-1616169743@g.us', "inviteCode": 'https://chat.whatsapp.com/Dgt6JhzTvlmEor8Zz23fHx', "groupName": `${NamaBot}`, "footerText": "*_© Wibusoft_*", "jpegThumbnail": ofrply, "caption": teks}}, {quoted:finv})
             pemuda.relayWAMessage(grup)
         }
 		idttt = []
@@ -334,7 +338,7 @@ try {
 		      } catch {
 		pporang = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 		      }
-		const ofrply = await getBuffer(pporang)
+		const ofrply = thubb
 		const thubb = fs.readFileSync('./thub_1.jpg')
 		const sekarang = new Date().getTime();
 			//-
@@ -346,13 +350,13 @@ try {
                 case 1: jamss = "Oyasumi😇"; break;
                 case 2: jamss = "Oyasumi😇"; break;
                 case 3: jamss = "Oyasumi😇"; break;
-                case 4: jamss = "Oyasumi😇"; break;
-                case 5: jamss = "Ohayo🖐"; break;
-                case 6: jamss = "Ohayo🖐"; break;
-                case 7: jamss = "Ohayo🖐"; break;
-                case 8: jamss = "Ohayo🖐"; break;
-                case 9: jamss = "Ohayo🖐"; break;
-                case 10: jamss = "Ohayo🖐"; break;
+                case 4: jamss = "Subuh"; break;
+                case 5: jamss = "Ohayo"; break;
+                case 6: jamss = "Ohayo"; break;
+                case 7: jamss = "Ohayo"; break;
+                case 8: jamss = "Ohayo"; break;
+                case 9: jamss = "Ohayo"; break;
+                case 10: jamss = "Ohayo"; break;
                 case 11: jamss = "Konnichiwa💖"; break;
                 case 12: jamss = "Zuhur"; break;
                 case 13: jamss = "Konnichiwa💖"; break;
@@ -412,7 +416,7 @@ const ftrol = {
                         },
        message: {
                     orderMessage: {
-                            itemCount : 123,
+                            itemCount : 215,
                             status: 1,
                             surface : 1,
                             message: `${tampilUcapan} ${pushname}`, //Kasih namalu
@@ -614,7 +618,7 @@ pemuda.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
             if (isAfk(mek.key.remoteJid)) return
             addafk(mek.key.remoteJid)
 			heheh = ms(Date.now() - waktuafk)
-		  sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Pemuda Teknologi_*", [{buttonId: 'simi', buttonText: {disText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+		  sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Wibusoft_*", [{buttonId: 'simi', buttonText: {disText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 			}
 		}
 		if (mek.key.remoteJid.endsWith('@g.us') && offline) {
@@ -627,7 +631,7 @@ pemuda.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                         if (isAfk(mek.key.remoteJid)) return
                         addafk(mek.key.remoteJid)
 						heheh = ms(Date.now() - waktuafk)
-			       sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Pemuda Teknologi_*", [{buttonId: 'simi', buttonText: {disText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
+			       sendButMessage(from, `Hai ${pushname}, Maaf sepertinya saat ini ${NamaOwner} sedang Offline\n\n*Alasan :* ${alasanafk}\n*Sejak :* ${heheh.hours} Jam, ${heheh.minutes} Menit, ${heheh.seconds} Detik\n\nSilahkan hubungi lagi setelah Online`, "*_© Wibusoft_*", [{buttonId: 'simi', buttonText: {disText: 'Oke'}, type: 1}], {quoted:ftrol, contextInfo: { forwardingScore: 508, isForwarded: true}})
 					}
 				}
 						}
@@ -973,7 +977,7 @@ pemuda.updatePresence(from, Presence.recording)
 - Wit : ${timeWit}  
 - Hari : ${week} ${weton}
 - Tanggal : ${calender}`
-sendButLocation(from, `${menu}`, `ωιвυѕσƒт©️ - ${uwu} Release V1 ${uwu}`, {jpegThumbnail:ofrply}, [{buttonId:`${prefix}command`,buttonText:{displayText:'Ａｌｌ Ｍｅｎｕ📒'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'ᴰᵉᵛᵉˡᵒᵖᵉʳ👤'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'𝕊𝕠𝕦𝕣𝕔𝕖 𝕊𝕔𝕣𝕚𝕡𝕥🔥'},type:1}], {contextInfo: { mentionedJid: [ptod,dtod,otod,stod]}})
+sendButLocation(from, `${menu}`, `ωιвυѕσƒт©️ - ${uwu} Release V1 ${uwu}`, {jpegThumbnail:thubb}, [{buttonId:`${prefix}command`,buttonText:{displayText:'Ａｌｌ Ｍｅｎｕ📒'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'ᴰᵉᵛᵉˡᵒᵖᵉʳ👤'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'𝕊𝕠𝕦𝕣𝕔𝕖 𝕊𝕔𝕣𝕚𝕡𝕥🔥'},type:1}], {contextInfo: { mentionedJid: [ptod,dtod,otod,stod]}})
 break
 
 case 'changelog':
@@ -982,10 +986,12 @@ case 'changelog':
   -First testing\n
   15 oktober V1.0\n
   -Major update!
-  -Change all Paid api to Free api!
+  -ngubah semua api berbayar jadi Free api!
+  -sementara Fitur antilink di nonaktifkan!
+  -Fitur Jadibot juga Dinonaktifkan dlu!
 \nNew Update Soon!
 `
-pemuda.sendMessage(from, chnglog, text, { quoted: ftrol, thumbnail: fs.readFileSync('./pemuda_1.jpg'), contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `Changelog V1`,body:"",mediaType:"2",thumbnail:ofrply,mediaUrl:`Changelog.V1`}}})
+katalog(chnglog)
 break
 
 case 'command':
@@ -1000,299 +1006,299 @@ menu = `*${tampilUcapan} ${pushname}*
 ╭─⬣ 「 𝙱𝚘𝚝 𝙸𝚗𝚏𝚘 」 ⬣
 │
 │
-│ッMode : ${publik ? 'Public' : 'Self'}
-│ッTotal Hit : ${cmhit.length}
-│ッPrefix : ${multi ? 'Multi Prefix' : 'No Prefix'}
-│ッNomor Owner : @${otod.split('@')[0]}
-│ッAuto Composing : ${settings.autocomposing}
+│-Mode : ${publik ? 'Public' : 'Self'}
+│-Total Hit : ${cmhit.length}
+│-Prefix : ${multi ? 'Multi Prefix' : 'No Prefix'}
+│-Nomor Owner : @${otod.split('@')[0]}
+│-Auto Composing : ${settings.autocomposing}
 │
-│ Release V1 ketik #changelog untuk lihat update baru!
+│ Release V1.0 ketik #changelog 
+│ untuk lihat update baru!
 │
 │
 └⬣
 
 ╭─⬣ 「 𝐔𝐬𝐞𝐫 𝐈𝐧𝐟𝐨 」 ⬣
 │
-│ッStatus : ${isOwner ? 'Owner' : 'User'}
-│ッNama : ${pushname}
-│ッBio : ${stst}
-│ッNomor : @${stod.split('@')[0]}
+│-Status : ${isOwner ? 'Owner' : 'User'}
+│-Nama : ${pushname}
+│-Bio : ${stst}
+│-Nomor : @${stod.split('@')[0]}
 │
 └⬣
 
-┌⬣ TO DAY
+┌⬣ </TODAY>
 │
-│ッ${tampilUcapan}
-│ッJam.    : ${jmn}
-│ッHari     : ${week} ${weton}
-│ッTanggal : ${calender}
-│ッWib     : ${timeWib}
-│ッWita    :  ${timeWita}
-│ッWit      : ${timeWit}
+│-${tampilUcapan}
+│-Jam.    : ${jmn}
+│-Hari     : ${week} ${weton}
+│-Tanggal : ${calender}
+│-Wib     : ${timeWib}
+│-Wita    :  ${timeWita}
+│-Wit      : ${timeWit}
 │
 └⬣ 
 
 ╭─⬣ 𝘾𝙤𝙢𝙢𝙖𝙣𝙙
 │
 ├─⬣ </OWNER>
-│ッ${prefix}autorespon [ on/off ]
-│ッ${prefix}bc 
-│ッ${prefix}tobc 
-│ッ${prefix}return [ javascript ]
-│ッ${prefix}clearall
-│ッ${prefix}delchat
-│ッ${prefix}mute
-│ッ${prefix}unmute
-│ッ${prefix}public
-│ッ${prefix}self
-│ッ${prefix}spam [ teks|jumlah ]
-│ッ${prefix}demoteall
-│ッ${prefix}promoteall
-│ッ${prefix}addcmd [ teks reply stc ]
-│ッ${prefix}delcmd [ reply stc ]
-│ッ${prefix}listcmd
-│ッ${prefix}spamsw [ teks|jumlah ]
-│ッ${prefix}upswteks 
-│ッ${prefix}upswlokasi 
-│ッ${prefix}upswaudio 
-│ッ${prefix}upswvoice 
-│ッ${prefix}upswsticker
-│ッ${prefix}upswimage 
-│ッ${prefix}upswgif 
-│ッ${prefix}upswvideo
-│ッ${prefix}shutdown
-│ッ${prefix}offline [ alasan ]
-│ッ${prefix}online
-│ッ${prefix}exif [ nama|author ]
-│ッ${prefix}setprofile 
-│ッ${prefix}setname 
-│ッ${prefix}setprefix [ multi/nopref ]
-│ッ${prefix}setbio [ teks ]
-│ッ${prefix}leave
-│ッ${prefix}restart
-│ッ${prefix}join [ link group ]
-│ッ${prefix}addrespon [ tanya|jawab ]
-│ッ${prefix}delrespon [ nama ]
-│ッ${prefix}q [ reply message ]
+│-${prefix}autorespon [ on/off ]
+│-${prefix}bc 
+│-${prefix}tobc 
+│-${prefix}return [ javascript ]
+│-${prefix}clearall
+│-${prefix}delchat
+│-${prefix}mute
+│-${prefix}unmute
+│-${prefix}public
+│-${prefix}self
+│-${prefix}spam [ teks|jumlah ]
+│-${prefix}demoteall
+│-${prefix}promoteall
+│-${prefix}addcmd [ teks reply stc ]
+│-${prefix}delcmd [ reply stc ]
+│-${prefix}listcmd
+│-${prefix}spamsw [ teks|jumlah ]
+│-${prefix}upswteks 
+│-${prefix}upswlokasi 
+│-${prefix}upswaudio 
+│-${prefix}upswvoice 
+│-${prefix}upswsticker
+│-${prefix}upswimage 
+│-${prefix}upswgif 
+│-${prefix}upswvideo
+│-${prefix}shutdown
+│-${prefix}offline [ alasan ]
+│-${prefix}online
+│-${prefix}exif [ nama|author ]
+│-${prefix}setprofile 
+│-${prefix}setname 
+│-${prefix}setprefix [ multi/nopref ]
+│-${prefix}setbio [ teks ]
+│-${prefix}leave
+│-${prefix}restart
+│-${prefix}join [ link group ]
+│-${prefix}addrespon [ tanya|jawab ]
+│-${prefix}delrespon [ nama ]
+│-${prefix}q [ reply message ]
 │
-├─⬣ VIRUS MENU
-│ッ${prefix}virtex
-│ッ${prefix}tovirgam [reply Sticker]
-│ッ${prefix}bugkatalog
-│ッ${prefix}bugloc
-│ッ${prefix}bugrow
-│ッ${prefix}buglink
-│ッ${prefix}bugbutton
-│ッ${prefix}bug [ jumlah ]
-│ッ${prefix}bugpc2 [ jumlah ]
-│ッ${prefix}bugtroli2 [ jumlah ]
-│ッ${prefix}bugtroli3
-│ッ${prefix}bugpc
-│ッ${prefix}bugcombine
-│ッ${prefix}bugtroli
-│ッ${prefix}buglokasi
-│ッ${prefix}bughole
+├─⬣ </VIRUS MENU> <Dinonaktifkan/>
+│-${prefix}virtex
+│-${prefix}tovirgam [reply Sticker]
+│-${prefix}bugkatalog
+│-${prefix}bugloc
+│-${prefix}bugrow
+│-${prefix}buglink
+│-${prefix}bugbutton
+│-${prefix}bug [ jumlah ]
+│-${prefix}bugpc2 [ jumlah ]
+│-${prefix}bugtroli2 [ jumlah ]
+│-${prefix}bugtroli3
+│-${prefix}bugpc
+│-${prefix}bugcombine
+│-${prefix}bugtroli
+│-${prefix}buglokasi
+│-${prefix}bughole
 │
-├─⬣ GAME 
-│ッ${prefix}ttt [tag 1 pemain]
-│ッ${prefix}truth
-│ッ${prefix}dare
-│ッ${prefix}kapankah
-│ッ${prefix}bisakah
-│ッ${prefix}cekganteng
-│ッ${prefix}cekcantik
-│ッ${prefix}cekmati
+├─⬣ </GAME> 
+│-${prefix}ttt [tag 1 pemain]
+│-${prefix}truth
+│-${prefix}dare
+│-${prefix}kapankah
+│-${prefix}bisakah
+│-${prefix}cekganteng
+│-${prefix}cekcantik
+│-${prefix}cekmati
 │
-├─⬣ DOWNLOAD
-│ッ${prefix}infogempa
-│ッ${prefix}herolist
-│ッ${prefix}herodetail [ hero ]
-│ッ${prefix}google [ search ]
-│ッ${prefix}gimage [ search ]
-│ッ${prefix}wiki [ search ]
-│ッ${prefix}mediafire [ link ]
-│ッ${prefix}ytsearch [ judul ]
-│ッ${prefix}ytmp4 [ link yt ] 
-│ッ${prefix}ytmp3 [ link yt ]
-│ッ${prefix} [ judul lagu ]
-│ッ${prefix}video [ judul video ]
-│ッ${prefix}tinyurl [ link ]
-│ッ${prefix}fetch [ link ]
-│ッ${prefix}igdl [ link ]
-│ッ${prefix}tiktokdl [ link ]
-│ッ${prefix}pinterest [ search ]
-│ッ${prefix}lirik [ judul ]
-│ッ${prefix}tourl [ reply image/video ]
-│ッ${prefix}resepmasakan [ judul ]
-│ッ${prefix}artimimpi [ teks ]
-│ッ${prefix}bilangangka [ angka ]
-│ッ${prefix}kalkulator [ angka ]
-│ッ${prefix}fancytext [ teks ]
-│ッ${prefix}githubstalk [ username ]
-│ッ${prefix}translate [ kodebhs|teks ]
-│ッ${prefix}ss [ link ]
-│ッ${prefix}tiktokaudio [ link ]
-│ッ${prefix}igstory [ link ]
-│ッ${prefix}linkwa
-│ッ${prefix}store [ query ]
-│ッ${prefix}fb [ link ]
-│ッ${prefix}twitter [ link ]
+├─⬣ </DOWNLOAD>
+│-${prefix}infogempa
+│-${prefix}herolist
+│-${prefix}herodetail [ hero ]
+│-${prefix}google [ search ]
+│-${prefix}gimage [ search ]
+│-${prefix}wiki [ search ]
+│-${prefix}mediafire [ link ]
+│-${prefix}ytsearch [ judul ]
+│-${prefix}ytmp4 [ link yt ] 
+│-${prefix}ytmp3 [ link yt ]
+│-${prefix} [ judul lagu ]
+│-${prefix}video [ judul video ]
+│-${prefix}tinyurl [ link ]
+│-${prefix}fetch [ link ]
+│-${prefix}igdl [ link ]
+│-${prefix}tiktokdl [ link ]
+│-${prefix}pinterest [ search ]
+│-${prefix}lirik [ judul ]
+│-${prefix}tourl [ reply image/video ]
+│-${prefix}resepmasakan [ judul ]
+│-${prefix}artimimpi [ teks ]
+│-${prefix}bilangangka [ angka ]
+│-${prefix}kalkulator [ angka ]
+│-${prefix}fancytext [ teks ]
+│-${prefix}githubstalk [ username ]
+│-${prefix}translate [ kodebhs|teks ]
+│-${prefix}ss [ link ]
+│-${prefix}tiktokaudio [ link ]
+│-${prefix}igstory [ link ]
+│-${prefix}linkwa
+│-${prefix}store [ query ]
+│-${prefix}fb [ link ]
+│-${prefix}twitter [ link ]
 │
-├─⬣ MAKER
-│ッ${prefix}foliokiri 「 text 」
-│ッ${prefix}foliokanan 「 text 」
-│ッ${prefix}nuliskanan 「 text 」
-│ッ${prefix}nuliskiri 「 text 」
-│ッ${prefix}matrix [ teks ]
-│ッ${prefix}googletxt [ teks ]
-│ッ${prefix}spiderman [ teks ]
-│ッ${prefix}express [ teks ]
-│ッ${prefix}dance [ teks ]
-│ッ${prefix}blackbird [ teks ]
-│ッ${prefix}halloween [ teks ]
-│ッ${prefix}vampire [ teks ]
-│ッ${prefix}codetxt [ teks ]
-│ッ${prefix}text3d [ teks ]
-│ッ${prefix}warrior [ teks ]
-│ッ${prefix}maker2d2 「 text 」
-│ッ${prefix}maker2d3 「 text 」
-│ッ${prefix}maker2d4 「 text 」
-│ッ${prefix}maker3d 「 text 」
-│ッ${prefix}maker3d2 「 text 」
-│ッ${prefix}maker3d3 「 text 」
-│ッ${prefix}maker3d4 「 text 」
-│ッ${prefix}transformer 「 text 」
-│ッ${prefix}googletxt 「 text 」
-│ッ${prefix}battlefield 「 text 」
-│ッ${prefix}coffeecup 「 text 」
-│ッ${prefix}coffeecup2 「 text 」
-│ッ${prefix}neon 「 text 」
-│ッ${prefix}glow 「 text 」
-│ッ${prefix}summer 「 text 」
-│ッ${prefix}flower 「 text 」
-│ッ${prefix}burn 「 text 」
-│ッ${prefix}quote 「 text 」
-│ッ${prefix}wooden 「 text 」
-│ッ${prefix}golden 「 text 」
+├─⬣ </MAKER>
+│-${prefix}foliokiri 「 text 」
+│-${prefix}foliokanan 「 text 」
+│-${prefix}nuliskanan 「 text 」
+│-${prefix}nuliskiri 「 text 」
+│-${prefix}matrix [ teks ]
+│-${prefix}googletxt [ teks ]
+│-${prefix}spiderman [ teks ]
+│-${prefix}express [ teks ]
+│-${prefix}dance [ teks ]
+│-${prefix}blackbird [ teks ]
+│-${prefix}halloween [ teks ]
+│-${prefix}vampire [ teks ]
+│-${prefix}codetxt [ teks ]
+│-${prefix}text3d [ teks ]
+│-${prefix}warrior [ teks ]
+│-${prefix}maker2d2 「 text 」
+│-${prefix}maker2d3 「 text 」
+│-${prefix}maker2d4 「 text 」
+│-${prefix}maker3d 「 text 」
+│-${prefix}maker3d2 「 text 」
+│-${prefix}maker3d3 「 text 」
+│-${prefix}maker3d4 「 text 」
+│-${prefix}transformer 「 text 」
+│-${prefix}googletxt 「 text 」
+│-${prefix}battlefield 「 text 」
+│-${prefix}coffeecup 「 text 」
+│-${prefix}coffeecup2 「 text 」
+│-${prefix}neon 「 text 」
+│-${prefix}glow 「 text 」
+│-${prefix}summer 「 text 」
+│-${prefix}flower 「 text 」
+│-${prefix}burn 「 text 」
+│-${prefix}quote 「 text 」
+│-${prefix}wooden 「 text 」
+│-${prefix}golden 「 text 」
 │
-├──⬣ GROUP
-│ッ${prefix}getpict [ @tag ]
-│ッ${prefix}getname [ reply target ]
-│ッ${prefix}getbio [ reply target ]
-│ッ${prefix}promote [ @tag ]
-│ッ${prefix}demote [ @tag ]
-│ッ${prefix}antilink [ 1/0 ]
-│ッ${prefix}nsfw [ 1/0 ]
-│ッ${prefix}creategrup [ nama|@tag ]
-│ッ${prefix}tictactoe [ @tag ]
-│ッ${prefix}delttt
-│ッ${prefix}getpp
-│ッ${prefix}kick [ @tag ]
-│ッ${prefix}add [ nomor ]
-│ッ${prefix}getdeskgc
-│ッ${prefix}sider [ reply pesan bot ]
-│ッ${prefix}hacked [ teks ]
-│ッ${prefix}setnamegc [ teks ]
-│ッ${prefix}setdeskgc [ teks ]
-│ッ${prefix}fitnah [ @tag|teks1|teks2 ]
-│ッ${prefix}kontak [ @tag|nama ]
-│ッ${prefix}kontag [ @tag|nama ]
-│ッ${prefix}opengc
-│ッ${prefix}closegc
-│ッ${prefix}resetlinkgc
-│ッ${prefix}linkgrup
-│ッ${prefix}listonline
-│ッ${prefix}listadmin
-│ッ${prefix}pemudaline
-│ッ${prefix}hidetag [ teks ]
-│ッ${prefix}sticktag [ nama sticker ]
-│ッ${prefix}totag [ reply media ]
+├──⬣ </GROUP>
+│-${prefix}getpict [ @tag ]
+│-${prefix}getname [ reply target ]
+│-${prefix}getbio [ reply target ]
+│-${prefix}promote [ @tag ]
+│-${prefix}demote [ @tag ]
+│-${prefix}antilink [ 1/0 ]
+│-${prefix}nsfw [ 1/0 ]
+│-${prefix}creategrup [ nama|@tag ]
+│-${prefix}tictactoe [ @tag ]
+│-${prefix}delttt
+│-${prefix}getpp
+│-${prefix}kick [ @tag ]
+│-${prefix}add [ nomor ]
+│-${prefix}getdeskgc
+│-${prefix}sider [ reply pesan bot ]
+│-${prefix}hacked [ teks ]
+│-${prefix}setnamegc [ teks ]
+│-${prefix}setdeskgc [ teks ]
+│-${prefix}fitnah [ @tag|teks1|teks2 ]
+│-${prefix}kontak [ @tag|nama ]
+│-${prefix}kontag [ @tag|nama ]
+│-${prefix}opengc
+│-${prefix}closegc
+│-${prefix}resetlinkgc
+│-${prefix}linkgrup
+│-${prefix}listonline
+│-${prefix}listadmin
+│-${prefix}hidetag [ teks ]
+│-${prefix}sticktag [ nama sticker ]
+│-${prefix}totag [ reply media ]
 │
-├─⬣ NSFW
-│ッ${prefix}trapnime
-│ッ${prefix}neko
-│ッ${prefix}megumin
-│ッ${prefix}blowjob
-│ッ${prefix}hentai
-│ッ${prefix}awoo
-│ッ${prefix}bj 
-│ッ${prefix}eroneko
-│ッ${prefix}lesbian
-│ッ${prefix}anal
-│ッ${prefix}yuri
-│ッ${prefix}baka
-│ッ${prefix}neko2
-│ッ${prefix}wallpaper
-│ッ${prefix}pussy
-│ッ${prefix}kitsune
-│ッ${prefix}keta
-│ッ${prefix}neko2
-│ッ${prefix}poke
-│ッ${prefix}slap
-│ッ${prefix}komiku [ query ]
-│ッ${prefix}otaku [ query ]
-│ッ${prefix}chara [ query ]
+├─⬣ </ANIME>
+│-${prefix}trapnime
+│-${prefix}neko
+│-${prefix}megumin
+│-${prefix}blowjob
+│-${prefix}hentai
+│-${prefix}awoo
+│-${prefix}bj 
+│-${prefix}eroneko
+│-${prefix}lesbian
+│-${prefix}anal
+│-${prefix}yuri
+│-${prefix}baka
+│-${prefix}neko2
+│-${prefix}wallpaper
+│-${prefix}pussy
+│-${prefix}kitsune
+│-${prefix}keta
+│-${prefix}neko2
+│-${prefix}poke
+│-${prefix}slap
+│-${prefix}komiku [ query ]
+│-${prefix}otaku [ query ]
+│-${prefix}chara [ query ]
 │
-├─⬣ TOOLS
-│ッ${prefix}getscmd
-│ッ${prefix}stickerwm [ nama|author ]
-│ッ${prefix}takestick [ nama|author ]
-│ッ${prefix}colong [ reply sticker ]
-│ッ${prefix}sticker
-│ッ${prefix}semoji [ emoji ]
-│ッ${prefix}attp [ teks ]
-│ッ${prefix}toimg
-│ッ${prefix}tomp3 [ reply video ]
-│ッ${prefix}tomp4 [ reply sticker gif ]
-│ッ${prefix}robot [ reply audio ]
-│ッ${prefix}balik [ reply audio ]
-│ッ${prefix}bass [ reply audio ]
-│ッ${prefix}gemuk [ reply audio ]
-│ッ${prefix}detikvn [ reply audio caption angka ]
-│ッ${prefix}detikvideo [ reply video caption angka ]
-│ッ${prefix}tts [ kodebhs teks ]
+├─⬣ </TOOLS>
+│-${prefix}getscmd
+│-${prefix}stickerwm [ nama|author ]
+│-${prefix}takestick [ nama|author ]
+│-${prefix}colong [ reply sticker ]
+│-${prefix}sticker
+│-${prefix}semoji [ emoji ]
+│-${prefix}attp [ teks ]
+│-${prefix}toimg
+│-${prefix}tomp3 [ reply video ]
+│-${prefix}tomp4 [ reply sticker gif ]
+│-${prefix}robot [ reply audio ]
+│-${prefix}balik [ reply audio ]
+│-${prefix}bass [ reply audio ]
+│-${prefix}gemuk [ reply audio ]
+│-${prefix}detikvn [ reply audio caption angka ]
+│-${prefix}detikvideo [ reply video caption angka ]
+│-${prefix}tts [ kodebhs teks ]
 │
-├─⬣ STORAGE
-│ッ${prefix}addsticker [ nama ]
-│ッ${prefix}delsticker [ nama ]
-│ッ${prefix}addvn [ nama ]
-│ッ${prefix}delvn [ nama ]
-│ッ${prefix}addimage [ nama ]
-│ッ${prefix}delimage [ nama ]
-│ッ${prefix}listimage
-│ッ${prefix}liststicker
-│ッ${prefix}listvn
+├─⬣ </STORAGE>
+│-${prefix}addsticker [ nama ]
+│-${prefix}delsticker [ nama ]
+│-${prefix}addvn [ nama ]
+│-${prefix}delvn [ nama ]
+│-${prefix}addimage [ nama ]
+│-${prefix}delimage [ nama ]
+│-${prefix}listimage
+│-${prefix}liststicker
+│-${prefix}listvn
 │
-├─⬣ JADI BOT
-│ッ${prefix}stopjadibot
-│ッ${prefix}jadibot
+├─⬣ </JADI BOT> <Dinonaktifkan/>
+│-${prefix}stopjadibot
+│-${prefix}jadibot
 │
-├─⬣ OTHER / FUN
-│ッ${prefix}caripesan [ teks|jumlah ]
-│ッ${prefix}slots
-│ッ${prefix}suit [ gunting/batu/kertas ]
-│ッ${prefix}tag [ nomor ]
-│ッ${prefix}tagme
-│ッ${prefix}readmore [ teks1|teks2 ]
-│ッ${prefix}fitnahpc [ nomor|teks1|teks2 ]
-│ッ${prefix}chat [ nomor|teks ]
-│ッ${prefix}fdeface [ replyimg link|teks1|teks2 ]
-│ッ${prefix}listgrup
-│ッ${prefix}baileys [ reply message ]
-│ッ${prefix}getcaption [ reply message ]
-│ッ${prefix}pantun
-│ッ${prefix}tospam [ reply audio/sticker/image|jumlah ]
-│ッ${prefix}sharelock [ teks1|teks2 ]
-│ッ${prefix}dadu
+├─⬣ </OTHER / FUN>
+│-${prefix}caripesan [ teks|jumlah ]
+│-${prefix}slots
+│-${prefix}suit [ gunting/batu/kertas ]
+│-${prefix}tag [ nomor ]
+│-${prefix}tagme
+│-${prefix}readmore [ teks1|teks2 ]
+│-${prefix}fitnahpc [ nomor|teks1|teks2 ]
+│-${prefix}chat [ nomor|teks ]
+│-${prefix}fdeface [ replyimg link|teks1|teks2 ]
+│-${prefix}listgrup
+│-${prefix}baileys [ reply message ]
+│-${prefix}getcaption [ reply message ]
+│-${prefix}pantun
+│-${prefix}tospam [ reply audio/sticker/image|jumlah ]
+│-${prefix}sharelock [ teks1|teks2 ]
+│-${prefix}dadu
 └─────────────────⬣
 `
-pemuda.sendMessage(from, menu, text, { quoted: ftrol, thumbnail: fs.readFileSync('./pemuda_1.jpg'), contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${calender} - ${week} ${weton}`,body:"",mediaType:"2",thumbnail:ofrply,mediaUrl:`https://youtu.be/TaG15W_8f_s`}}})
+pemuda.sendMessage(from, menu, text, { quoted: ftrol, thumbnail: fs.readFileSync('./pemuda_1.jpg'), contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: `${jmn} - ${calender} - ${week} ${weton}`,body:"",mediaType:"2",thumbnail:thubb,mediaUrl:`https://youtu.be/TaG15W_8f_s`}}})
 break
 case 'allmenu':
  listMsg = {
  buttonText: 'LIST MENU',
  footerText: '*_ωιвυѕσƒт©️_*',
- description: `Hai kak @${stod.split('@')[0]}, Silahkan pilih menu disini, Kalau lu makek Wa GB, dan gak muncul, Ketik .allmenu`,
+ description: `Hai kak @${stod.split('@')[0]}, Silahkan pilih menu disini! `,
  sections: [
                      {
                       "title": `${jmn} - ${week} ${weton} - ${calender}`,
@@ -1338,7 +1344,7 @@ case 'allmenu':
                               "rowId": ""
                            },
                            {
-                              "title": "NsfwMenu",
+                              "title": "AnimeMenu",
                               "rowId": ""
                            },
                            {
@@ -1358,181 +1364,181 @@ break
 case 'ownermenu':
 menu = `⬣ 「 \`\`\`MENU OWNER\`\`\` 」
 ├────────────────────
-│ッ${prefix}autorespon [ on/off ]
-│ッ${prefix}bc [ teks/reply gif/image/video with caption ]
-│ッ${prefix}tobc [ reply sticker/audio with caption ]
-│ッ${prefix}return [ javascript ]
-│ッ${prefix}clearall
-│ッ${prefix}delchat
-│ッ${prefix}mute
-│ッ${prefix}unmute
-│ッ${prefix}public
-│ッ${prefix}self
-│ッ${prefix}spam [ teks|jumlah ]
-│ッ${prefix}demoteall
-│ッ${prefix}promoteall
-│ッ${prefix}addcmd [ teks reply stc ]
-│ッ${prefix}delcmd [ reply stc ]
-│ッ${prefix}listcmd
-│ッ${prefix}spamsw [ teks|jumlah ]
-│ッ${prefix}upswteks [ teks ]
-│ッ${prefix}upswlokasi [ teks ]
-│ッ${prefix}upswaudio [ reply audio ]
-│ッ${prefix}upswvoice [ reply audio ]
-│ッ${prefix}upswsticker [ reply sticker ]
-│ッ${prefix}upswimage [ reply image with caption ]
-│ッ${prefix}upswgif [ reply gif with caption ]
-│ッ${prefix}upswvideo [ reply video with caption ]
-│ッ${prefix}shutdown
-│ッ${prefix}offline [ alasan ]
-│ッ${prefix}online
-│ッ${prefix}exif [ nama|author ]
-│ッ${prefix}setprofile [ reply image ]
-│ッ${prefix}setname [ teks ]
-│ッ${prefix}setprefix [ multi/nopref ]
-│ッ${prefix}setbio [ teks ]
-│ッ${prefix}leave
-│ッ${prefix}restart
-│ッ${prefix}join [ link group ]
-│ッ${prefix}addrespon [ tanya|jawab ]
-│ッ${prefix}delrespon [ nama ]
-│ッ${prefix}q [ reply message ]
+│-${prefix}autorespon [ on/off ]
+│-${prefix}bc [ teks/reply gif/image/video with caption ]
+│-${prefix}tobc [ reply sticker/audio with caption ]
+│-${prefix}return [ javascript ]
+│-${prefix}clearall
+│-${prefix}delchat
+│-${prefix}mute
+│-${prefix}unmute
+│-${prefix}public
+│-${prefix}self
+│-${prefix}spam [ teks|jumlah ]
+│-${prefix}demoteall
+│-${prefix}promoteall
+│-${prefix}addcmd [ teks reply stc ]
+│-${prefix}delcmd [ reply stc ]
+│-${prefix}listcmd
+│-${prefix}spamsw [ teks|jumlah ]
+│-${prefix}upswteks [ teks ]
+│-${prefix}upswlokasi [ teks ]
+│-${prefix}upswaudio [ reply audio ]
+│-${prefix}upswvoice [ reply audio ]
+│-${prefix}upswsticker [ reply sticker ]
+│-${prefix}upswimage [ reply image with caption ]
+│-${prefix}upswgif [ reply gif with caption ]
+│-${prefix}upswvideo [ reply video with caption ]
+│-${prefix}shutdown
+│-${prefix}offline [ alasan ]
+│-${prefix}online
+│-${prefix}exif [ nama|author ]
+│-${prefix}setprofile [ reply image ]
+│-${prefix}setname [ teks ]
+│-${prefix}setprefix [ multi/nopref ]
+│-${prefix}setbio [ teks ]
+│-${prefix}leave
+│-${prefix}restart
+│-${prefix}join [ link group ]
+│-${prefix}addrespon [ tanya|jawab ]
+│-${prefix}delrespon [ nama ]
+│-${prefix}q [ reply message ]
 │
 ├─⬣ WAR MENU
-│ッ${prefix}virtex
-│ッ${prefix}tovirgam [reply Sticker]
-│ッ${prefix}bugkatalog
-│ッ${prefix}bugloc
-│ッ${prefix}bugrow
-│ッ${prefix}buglink
-│ッ${prefix}bugbutton
-│ッ${prefix}bug [ jumlah ]
-│ッ${prefix}bugpc2 [ jumlah ]
-│ッ${prefix}bugtroli2 [ jumlah ]
-│ッ${prefix}bugtroli3
-│ッ${prefix}bugpc
-│ッ${prefix}bugcombine
-│ッ${prefix}bugtroli
-│ッ${prefix}buglokasi
+│-${prefix}virtex
+│-${prefix}tovirgam [reply Sticker]
+│-${prefix}bugkatalog
+│-${prefix}bugloc
+│-${prefix}bugrow
+│-${prefix}buglink
+│-${prefix}bugbutton
+│-${prefix}bug [ jumlah ]
+│-${prefix}bugpc2 [ jumlah ]
+│-${prefix}bugtroli2 [ jumlah ]
+│-${prefix}bugtroli3
+│-${prefix}bugpc
+│-${prefix}bugcombine
+│-${prefix}bugtroli
+│-${prefix}buglokasi
 └${prefix}bughole`
 katalog(menu)
 break
 case 'downloadmenu':
 menu = `⬣ 「 \`\`\`MENU DOWNLOAD\`\`\` 」
 ├────────────────────
-│ッ${prefix}infogempa
-│ッ${prefix}herolist
-│ッ${prefix}herodetail [ hero ]
-│ッ${prefix}google [ search ]
-│ッ${prefix}gimage [ search ]
-│ッ${prefix}wiki [ search ]
-│ッ${prefix}mediafire [ link ]
-│ッ${prefix}ytsearch [ judul ]
-│ッ${prefix}ytmp4 [ link yt ]
-│ッ${prefix}ytmp3 [ link yt ]
-│ッ${prefix} [ judul lagu ]
-│ッ${prefix}video [ judul video ]
-│ッ${prefix}tinyurl [ link ]
-│ッ${prefix}fetch [ link ]
-│ッ${prefix}igdl [ link ]
-│ッ${prefix}tiktokdl [ link ]
-│ッ${prefix}pinterest [ search ]
-│ッ${prefix}lirik [ judul ]
-│ッ${prefix}tourl [ reply image/video ]
-│ッ${prefix}resepmasakan [ judul ]
-│ッ${prefix}artimimpi [ teks ]
-│ッ${prefix}bilangangka [ angka ]
-│ッ${prefix}kalkulator [ angka ]
-│ッ${prefix}fancytext [ teks ]
-│ッ${prefix}githubstalk [ username ]
-│ッ${prefix}translate [ kodebhs|teks ]
-│ッ${prefix}ss [ link ]
-│ッ${prefix}tiktokaudio [ link ]
-│ッ${prefix}igstory [ link ]
-│ッ${prefix}linkwa
-│ッ${prefix}store [ query ]
-│ッ${prefix}fb [ link ]
+│-${prefix}infogempa
+│-${prefix}herolist
+│-${prefix}herodetail [ hero ]
+│-${prefix}google [ search ]
+│-${prefix}gimage [ search ]
+│-${prefix}wiki [ search ]
+│-${prefix}mediafire [ link ]
+│-${prefix}ytsearch [ judul ]
+│-${prefix}ytmp4 [ link yt ]
+│-${prefix}ytmp3 [ link yt ]
+│-${prefix} [ judul lagu ]
+│-${prefix}video [ judul video ]
+│-${prefix}tinyurl [ link ]
+│-${prefix}fetch [ link ]
+│-${prefix}igdl [ link ]
+│-${prefix}tiktokdl [ link ]
+│-${prefix}pinterest [ search ]
+│-${prefix}lirik [ judul ]
+│-${prefix}tourl [ reply image/video ]
+│-${prefix}resepmasakan [ judul ]
+│-${prefix}artimimpi [ teks ]
+│-${prefix}bilangangka [ angka ]
+│-${prefix}kalkulator [ angka ]
+│-${prefix}fancytext [ teks ]
+│-${prefix}githubstalk [ username ]
+│-${prefix}translate [ kodebhs|teks ]
+│-${prefix}ss [ link ]
+│-${prefix}tiktokaudio [ link ]
+│-${prefix}igstory [ link ]
+│-${prefix}linkwa
+│-${prefix}store [ query ]
+│-${prefix}fb [ link ]
 └${prefix}twitter [ link ]`
 katalog(menu)
 break
 case 'makermenu':
 menu = `⬣ 「 \`\`\`MENU MAKER\`\`\` 」
 ├────────────────────
-│ッ${prefix}foliokiri 「 text 」
-│ッ${prefix}foliokanan 「 text 」
-│ッ${prefix}nulis 「 text 」
-│ッ${prefix}nuliskanan 「 text 」
-│ッ${prefix}nuliskiri 「 text 」
-│ッ${prefix}tahta 「 text 」
-│ッ${prefix}gold 「 text 」
-│ッ${prefix}silver 「 text 」
-│ッ${prefix}matrix [ teks ]
-│ッ${prefix}googletxt [ teks ]
-│ッ${prefix}spiderman [ teks ]
-│ッ${prefix}express [ teks ]
-│ッ${prefix}dance [ teks ]
-│ッ${prefix}blackbird [ teks ]
-│ッ${prefix}halloween [ teks ]
-│ッ${prefix}vampire [ teks ]
-│ッ${prefix}codetxt [ teks ]
-│ッ${prefix}text3d [ teks ]
-│ッ${prefix}warrior [ teks ]
-│ッ${prefix}maker2d2 「 text 」
-│ッ${prefix}maker2d3 「 text 」
-│ッ${prefix}maker2d4 「 text 」
-│ッ${prefix}maker3d 「 text 」
-│ッ${prefix}maker3d2 「 text 」
-│ッ${prefix}maker3d3 「 text 」
-│ッ${prefix}maker3d4 「 text 」
-│ッ${prefix}transformer 「 text 」
-│ッ${prefix}googletxt 「 text 」
-│ッ${prefix}battlefield 「 text 」
-│ッ${prefix}coffeecup 「 text 」
-│ッ${prefix}coffeecup2 「 text 」
-│ッ${prefix}neon 「 text 」
-│ッ${prefix}glow 「 text 」
-│ッ${prefix}summer 「 text 」
-│ッ${prefix}flower 「 text 」
-│ッ${prefix}burn 「 text 」
-│ッ${prefix}quote 「 text 」
-│ッ${prefix}wooden 「 text 」
+│-${prefix}foliokiri 「 text 」
+│-${prefix}foliokanan 「 text 」
+│-${prefix}nulis 「 text 」
+│-${prefix}nuliskanan 「 text 」
+│-${prefix}nuliskiri 「 text 」
+│-${prefix}tahta 「 text 」
+│-${prefix}gold 「 text 」
+│-${prefix}silver 「 text 」
+│-${prefix}matrix [ teks ]
+│-${prefix}googletxt [ teks ]
+│-${prefix}spiderman [ teks ]
+│-${prefix}express [ teks ]
+│-${prefix}dance [ teks ]
+│-${prefix}blackbird [ teks ]
+│-${prefix}halloween [ teks ]
+│-${prefix}vampire [ teks ]
+│-${prefix}codetxt [ teks ]
+│-${prefix}text3d [ teks ]
+│-${prefix}warrior [ teks ]
+│-${prefix}maker2d2 「 text 」
+│-${prefix}maker2d3 「 text 」
+│-${prefix}maker2d4 「 text 」
+│-${prefix}maker3d 「 text 」
+│-${prefix}maker3d2 「 text 」
+│-${prefix}maker3d3 「 text 」
+│-${prefix}maker3d4 「 text 」
+│-${prefix}transformer 「 text 」
+│-${prefix}googletxt 「 text 」
+│-${prefix}battlefield 「 text 」
+│-${prefix}coffeecup 「 text 」
+│-${prefix}coffeecup2 「 text 」
+│-${prefix}neon 「 text 」
+│-${prefix}glow 「 text 」
+│-${prefix}summer 「 text 」
+│-${prefix}flower 「 text 」
+│-${prefix}burn 「 text 」
+│-${prefix}quote 「 text 」
+│-${prefix}wooden 「 text 」
 └${prefix}golden 「 text 」 `
 katalog(menu)
 break
 case 'groupmenu':
 menu = `⬣ 「 \`\`\`MENU GROUP\`\`\` 」
 ├────────────────────
-│ッ${prefix}getpict [ @tag ]
-│ッ${prefix}getname [ reply target ]
-│ッ${prefix}getbio [ reply target ]
-│ッ${prefix}promote [ @tag ]
-│ッ${prefix}demote [ @tag ]
-│ッ${prefix}antilink [ 1/0 ]
-│ッ${prefix}nsfw [ 1/0 ]
-│ッ${prefix}creategrup [ nama|@tag ]
-│ッ${prefix}tictactoe [ @tag ]
-│ッ${prefix}delttt
-│ッ${prefix}getpp
-│ッ${prefix}kick [ @tag ]
-│ッ${prefix}add [ nomor ]
-│ッ${prefix}kik [ Reply Pesan Target ]
-│ッ${prefix}ad [ Reply Pesan Target ]
-│ッ${prefix}getdeskgc
-│ッ${prefix}sider [ reply pesan bot ]
-│ッ${prefix}hacked [ teks ]
-│ッ${prefix}setnamegc [ teks ]
-│ッ${prefix}setdeskgc [ teks ]
-│ッ${prefix}fitnah [ @tag|teks1|teks2 ]
-│ッ${prefix}kontak [ @tag|nama ]
-│ッ${prefix}kontag [ @tag|nama ]
-│ッ${prefix}opengc
-│ッ${prefix}closegc
-│ッ${prefix}resetlinkgc
-│ッ${prefix}linkgrup
-│ッ${prefix}listonline
-│ッ${prefix}listadmin
-│ッ${prefix}hidetag [ teks ]
-│ッ${prefix}sticktag [ nama sticker ]
+│-${prefix}getpict [ @tag ]
+│-${prefix}getname [ reply target ]
+│-${prefix}getbio [ reply target ]
+│-${prefix}promote [ @tag ]
+│-${prefix}demote [ @tag ]
+│-${prefix}antilink [ 1/0 ]
+│-${prefix}nsfw [ 1/0 ]
+│-${prefix}creategrup [ nama|@tag ]
+│-${prefix}tictactoe [ @tag ]
+│-${prefix}delttt
+│-${prefix}getpp
+│-${prefix}kick [ @tag ]
+│-${prefix}add [ nomor ]
+│-${prefix}kik [ Reply Pesan Target ]
+│-${prefix}ad [ Reply Pesan Target ]
+│-${prefix}getdeskgc
+│-${prefix}sider [ reply pesan bot ]
+│-${prefix}hacked [ teks ]
+│-${prefix}setnamegc [ teks ]
+│-${prefix}setdeskgc [ teks ]
+│-${prefix}fitnah [ @tag|teks1|teks2 ]
+│-${prefix}kontak [ @tag|nama ]
+│-${prefix}kontag [ @tag|nama ]
+│-${prefix}opengc
+│-${prefix}closegc
+│-${prefix}resetlinkgc
+│-${prefix}linkgrup
+│-${prefix}listonline
+│-${prefix}listadmin
+│-${prefix}hidetag [ teks ]
+│-${prefix}sticktag [ nama sticker ]
 └${prefix}totag [ reply media ]`
 katalog(menu)
 break
@@ -1540,111 +1546,127 @@ case 'Gamemenu':
 menu =`⬣ 「 \`\`\`MENU GAME\`\`\` 」
 ├────────────────────
 ├─⬣ GAME 
-│ッ${prefix}ttt [tag 1 pemain]
-│ッ${prefix}truth
-│ッ${prefix}dare
-│ッ${prefix}kapankah
-│ッ${prefix}bisakah
-│ッ${prefix}cekganteng
-│ッ${prefix}cekcantik
-│ッ${prefix}cekmati`
+│-${prefix}ttt [tag 1 pemain]
+│-${prefix}truth
+│-${prefix}dare
+│-${prefix}kapankah
+│-${prefix}bisakah
+│-${prefix}cekganteng
+│-${prefix}cekcantik
+│-${prefix}cekmati`
 katalog(menu)
 break
 case 'nsfwmenu':
 menu =`⬣ 「 \`\`\`MENU NSFW\`\`\` 」
 ├────────────────────
-│ッ${prefix}trapnime
-│ッ${prefix}neko
-│ッ${prefix}megumin
-│ッ${prefix}blowjob
-│ッ${prefix}hentai
-│ッ${prefix}awoo
-│ッ${prefix}bj 
-│ッ${prefix}eroneko
-│ッ${prefix}lesbian
-│ッ${prefix}anal
-│ッ${prefix}yuri
-│ッ${prefix}baka
-│ッ${prefix}neko2
-│ッ${prefix}wallpaper
-│ッ${prefix}pussy
-│ッ${prefix}kitsune
-│ッ${prefix}keta
-│ッ${prefix}neko2
-│ッ${prefix}poke
-│ッ${prefix}slap
-│ッ${prefix}komiku [ query ]
-│ッ${prefix}otaku [ query ]
+│-${prefix}trapnime
+│-${prefix}neko
+│-${prefix}megumin
+│-${prefix}blowjob
+│-${prefix}hentai
+│-${prefix}awoo
+│-${prefix}bj 
+│-${prefix}eroneko
+│-${prefix}lesbian
+│-${prefix}anal
+│-${prefix}yuri
+│-${prefix}baka
+│-${prefix}neko2
+│-${prefix}wallpaper
+│-${prefix}pussy
+│-${prefix}kitsune
+│-${prefix}keta
+│-${prefix}neko2
+│-${prefix}poke
+│-${prefix}slap
+│-${prefix}komiku [ query ]
+│-${prefix}otaku [ query ]
 └${prefix}chara [ query ]`
 katalog(menu)
 break
 case 'othermenu':
 menu = `⬣ 「 \`\`\`MENU OTHER\`\`\` 」
 ├────────────────────
-│ッ${prefix}getscmd
-│ッ${prefix}stickerwm [ nama|author ]
-│ッ${prefix}takestick [ nama|author ]
-│ッ${prefix}colong [ reply sticker ]
-│ッ${prefix}sticker
-│ッ${prefix}semoji [ emoji ]
-│ッ${prefix}attp [ teks ]
-│ッ${prefix}toimg
-│ッ${prefix}tomp3 [ reply video ]
-│ッ${prefix}tomp4 [ reply sticker gif ]
-│ッ${prefix}robot [ reply audio ]
-│ッ${prefix}balik [ reply audio ]
-│ッ${prefix}bass [ reply audio ]
-│ッ${prefix}gemuk [ reply audio ]
-│ッ${prefix}detikvn [ reply audio caption angka ]
-│ッ${prefix}detikvideo [ reply video caption angka ]
-│ッ${prefix}tts [ kodebhs teks ]
+│-${prefix}getscmd
+│-${prefix}stickerwm [ nama|author ]
+│-${prefix}takestick [ nama|author ]
+│-${prefix}colong [ reply sticker ]
+│-${prefix}sticker
+│-${prefix}semoji [ emoji ]
+│-${prefix}attp [ teks ]
+│-${prefix}toimg
+│-${prefix}tomp3 [ reply video ]
+│-${prefix}tomp4 [ reply sticker gif ]
+│-${prefix}robot [ reply audio ]
+│-${prefix}balik [ reply audio ]
+│-${prefix}bass [ reply audio ]
+│-${prefix}gemuk [ reply audio ]
+│-${prefix}detikvn [ reply audio caption angka ]
+│-${prefix}detikvideo [ reply video caption angka ]
+│-${prefix}tts [ kodebhs teks ]
 │
 ├─⬣ STORAGE
-│ッ${prefix}addsticker [ nama ]
-│ッ${prefix}delsticker [ nama ]
-│ッ${prefix}addvn [ nama ]
-│ッ${prefix}delvn [ nama ]
-│ッ${prefix}addimage [ nama ]
-│ッ${prefix}delimage [ nama ]
-│ッ${prefix}listimage
-│ッ${prefix}liststicker
-│ッ${prefix}listvn
+│-${prefix}addsticker [ nama ]
+│-${prefix}delsticker [ nama ]
+│-${prefix}addvn [ nama ]
+│-${prefix}delvn [ nama ]
+│-${prefix}addimage [ nama ]
+│-${prefix}delimage [ nama ]
+│-${prefix}listimage
+│-${prefix}liststicker
+│-${prefix}listvn
 │
 ├─⬣ JADI BOT
-│ッ${prefix}stopjadibot
-│ッ${prefix}jadibot
+│-${prefix}stopjadibot
+│-${prefix}jadibot
 │
 ├─⬣ OTHER / FUN
-│ッ${prefix}caripesan [ teks|jumlah ]
-│ッ${prefix}slots
-│ッ${prefix}suit [ gunting/batu/kertas ]
-│ッ${prefix}tag [ nomor ]
-│ッ${prefix}tagme
-│ッ${prefix}readmore [ teks1|teks2 ]
-│ッ${prefix}fitnahpc [ nomor|teks1|teks2 ]
-│ッ${prefix}chat [ nomor|teks ]
-│ッ${prefix}fdeface [ replyimg link|teks1|teks2 ]
-│ッ${prefix}listgrup
-│ッ${prefix}baileys [ reply message ]
-│ッ${prefix}getcaption [ reply message ]
-│ッ${prefix}pantun
-│ッ${prefix}tospam [ reply audio/sticker/image|jumlah ]
-│ッ${prefix}sharelock [ teks1|teks2 ]
+│-${prefix}caripesan [ teks|jumlah ]
+│-${prefix}slots
+│-${prefix}suit [ gunting/batu/kertas ]
+│-${prefix}tag [ nomor ]
+│-${prefix}tagme
+│-${prefix}readmore [ teks1|teks2 ]
+│-${prefix}fitnahpc [ nomor|teks1|teks2 ]
+│-${prefix}chat [ nomor|teks ]
+│-${prefix}fdeface [ replyimg link|teks1|teks2 ]
+│-${prefix}listgrup
+│-${prefix}baileys [ reply message ]
+│-${prefix}getcaption [ reply message ]
+│-${prefix}pantun
+│-${prefix}tospam [ reply audio/sticker/image|jumlah ]
+│-${prefix}sharelock [ teks1|teks2 ]
 └${prefix}dadu`
 katalog(menu)
 break
 //Hardianto nsfw
 case 'yuri':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 kon = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=yuri&apikey=hardianto`)
 anu = await getBuffer(kon)
 pemuda.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 break
+case 'listanime1':
+                    reply(mess.wait)
+					pemuda.sendMessage(from, animesaran(animesaran, NamaBot), text, {quoted: ftroli, contextInfo: { forwardingScore: 508, isForwarded: true}})
+                    break
+case 'listanime2':
+                    reply(mess.wait)
+					pemuda.sendMessage(from, animesaran2(animesaran2, NamaBot), text, {quoted: ftroli, contextInfo: { forwardingScore: 508, isForwarded: true}})
+                    break             
+case 'kodenime':
+              reply(mess.wait)
+					pemuda.sendMessage(from, kodenime(kodenime, NamaBot), text, {quoted: ftroli, contextInfo: { forwardingScore: 508, isForwarded: true}})
+                    break
+         case 'kodenime2':
+                reply(mess.wait)
+					pemuda.sendMessage(from, nuklir(nuklir, NamaBot), text, {quoted: ftroli, contextInfo: { forwardingScore: 508, isForwarded: true}})
+                    break                
 case 'anal':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 aku = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=anal&apikey=hardianto`)
 kon = await getBuffer(aku)
@@ -1652,7 +1674,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'lesbian':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 kau = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=lesbian&apikey=hardianto`)
 kon = await getBuffer(kau)
@@ -1660,7 +1682,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'eroneko':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=eroNeko&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1668,7 +1690,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'bj':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=bJ&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1676,7 +1698,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'kitsune':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=kitsune&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1684,14 +1706,14 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'pussy':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=pussy&apikey=hardianto`)
 pemuda.sendMessage(from, hai, image, { quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 break
 case 'wallpaper':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=wallpaper&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1699,7 +1721,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'neko2':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=neko&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1707,7 +1729,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'baka':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=baka&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1715,7 +1737,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'slap':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+////if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=slap&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1723,7 +1745,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'poke':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+//if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=poke&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1731,7 +1753,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'neko2':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+//if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?sfw=neko&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1739,7 +1761,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case 'keta':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+//if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 hai = (`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=keta&apikey=hardianto`)
 kon = await getBuffer(hai)
@@ -1747,7 +1769,7 @@ pemuda.sendMessage(from, kon, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 case  'awoo':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+//if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 anu = await fetchJson(`https://waifu.pics/api/sfw/awoo`)
 buffer = await getBuffer(anu.url)
@@ -1755,7 +1777,7 @@ pemuda.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSyn
 break
 case  'blowjob':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+//if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 anu = await fetchJson(`https://nekos.life/api/v2/img/blowjob`)
 buffer = await getBuffer(anu.url)
@@ -1763,15 +1785,15 @@ pemuda.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSyn
 break
 case  'hentai': 
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+//if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
-anu = await fetchJson(`https://waifu.pics/api/nsfw/neko`)
+anu = await fetchJson(`https://waifu.pics/api/nsfw/waifu`)
 buffer = await getBuffer(anu.url)
 pemuda.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 break
 case  'megumin':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+//if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 anu = await fetchJson(`https://waifu.pics/api/sfw/megumin`)
 buffer = await getBuffer(anu.url)
@@ -1779,7 +1801,7 @@ pemuda.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSyn
 break
 case  'neko':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+//if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 anu = await fetchJson(`https://waifu.pics/api/nsfw/neko`)
 buffer = await getBuffer(anu.url)
@@ -1787,7 +1809,7 @@ pemuda.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSyn
 break
 case  'trapnime':
 if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
+//if (!isNsfw) return reply(`Fitur Nsfw Belum Aktif Di Grup Ini\nKetik: ${prefix}nsfw 1 \nUntuk Mengaktifkan`)
 reply(mess.wait)
 anu = await fetchJson(`https://waifu.pics/api/nsfw/trap`)
 buffer = await getBuffer(anu.url)
@@ -1795,28 +1817,28 @@ pemuda.sendMessage(from, buffer, image, { quoted: mek, thumbnail: fs.readFileSyn
 break
 //Done
 case 'nuliskiri':
-if (!c) return reply('Textnya mana gan?')
+if (!c) return reply('Masukan text nya Onii-chan!!')
 reply(mess.wait)
 kon = (`https://hardianto-chan.herokuapp.com/api/nuliskiri?text=${c}&apikey=hardianto`)
 anu = await getBuffer(kon)
 pemuda.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 break
 case 'nuliskanan':
-if (!c) return reply('Textnya mana gan?')
+if (!c) return reply('Masukan text nya Onii-chan!!')
 reply(mess.wait)
 kon = (`https://hardianto-chan.herokuapp.com/api/nuliskanan?text=${c}&apikey=hardianto`)
 anu = await getBuffer(kon)
 pemuda.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 break
 case 'foliokanan':
-if (!c) return reply('Textnya mana gan?')
+if (!c) return reply('Masukan text nya Onii-chan!!')
 reply(mess.wait)
 kon = (`https://hardianto-chan.herokuapp.com/api/foliokanan?text=${c}&apikey=hardianto`)
 anu = await getBuffer(kon)
 pemuda.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 break
 case 'foliokiri':
-if (!c) return reply('Textnya mana gan?')
+if (!c) return reply('Masukan text nya Onii-chan!!')
 reply(mess.wait)
 kon = (`https://hardianto-chan.herokuapp.com/api/foliokiri?text=${c}&apikey=hardianto`)
 anu = await getBuffer(kon)
@@ -1824,7 +1846,7 @@ pemuda.sendMessage(from, anu, image, { quoted: mek, thumbnail: fs.readFileSync('
 break
 //Hunte
 case 'qrcode':
-if (!c) return reply('Textnya mana gan?')
+if (!c) return reply('Masukan text nya Onii-chan!!')
 reply(mess.wait)
 anu = (`https://bx-hunter.herokuapp.com/api/qrcode?text=${c}&apikey=${HunterApi}`)
 img = await getBuffer(anu)
@@ -1876,7 +1898,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 		case 'maker2d3': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3?text=${makell}&apikey=${xchillds}`)
@@ -1884,7 +1906,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 		case 'maker2d4': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker4?text=${makell}&apikey=${xchillds}`)
@@ -1892,7 +1914,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'maker3d': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = body.slice(8)
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3d?text=${makell}&apikey=${xchillds}`)
@@ -1900,7 +1922,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'maker3d2': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3d/no2?text=${makell}&apikey=${xchillds}`)
@@ -1908,7 +1930,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'maker3d3': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3d/no3?text=${makell}&apikey=${xchillds}`)
@@ -1916,7 +1938,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'maker3d4': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker3d/no4?text=${makell}&apikey=${xchillds}`)
@@ -1924,7 +1946,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'transformer': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/maker/special/transformer?text=${makell}&apikey=${xchillds}`)
@@ -1932,7 +1954,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'googletxt':
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} pemuda|chan|kawai`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Rey|chan|kawai`)
 					makell = args.join(" ")
 					ll1 = makell.split("|")[0];
 					ll2 = makell.split("|")[1];
@@ -1943,7 +1965,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'battlefield': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda|Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibu|Soft`)
 					makell = args.join(" ")
 					ll1 = makell.split("|")[0];
 					ll2 = makell.split("|")[1];
@@ -1953,7 +1975,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'coffeecup': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/senja?text=${makell}&theme=coffee-cup&apikey=${xchillds}`)
@@ -1961,7 +1983,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'coffeecup2': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/senja?text=${makell}&theme=coffee-cup2&apikey=${xchillds}`)
@@ -1969,7 +1991,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'neon': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/metallic?text=${makell}&theme=neon&apikey=${xchillds}`)
@@ -1977,7 +1999,7 @@ case 'maker2d2':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 case 'glow': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/metallic?text=${makell}&theme=glow&apikey=${xchillds}`)
@@ -1985,7 +2007,7 @@ case 'glow':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'summer': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/alam?text=${makell}&theme=summer&apikey=${xchillds}`)
@@ -1993,7 +2015,7 @@ case 'glow':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'flower': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/alam?text=${makell}&theme=flower&apikey=${xchillds}`)
@@ -2001,7 +2023,7 @@ case 'glow':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'burn': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/random?text=${makell}&theme=text-burn&apikey=${xchillds}`)
@@ -2009,7 +2031,7 @@ case 'glow':
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'quote': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/random?text=${makell}&theme=art-quote&apikey=${xchillds}`)
@@ -2043,7 +2065,7 @@ nulis = await getBuffer(`https://api.zeks.me/api/nulis?apikey=${ZeksApi}&text=${
 pemuda.sendMessage(from,nulis,image,{quoted:mek}) 
 break 
 			case 'wooden': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/roses?text=${makell}&theme=wooden-boarch&apikey=${xchillds}`)
@@ -2051,7 +2073,7 @@ break
 					pemuda.sendMessage(from, buffer1, image, {quoted: mek, thumbnail: fs.readFileSync('./pemuda_1.jpg')})
 					break
 			case 'golden': 
-                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Pemuda Teknologi`)
+                    if (args.length < 1) return reply(`*Example :*\n${prefix}${command} Wibusoft`)
 					makell = args.join(" ")
 					reply(mess.wait)
 					anu = await fetchJson(`https://api-xchillds.herokuapp.com/api/textmaker/roses?text=${makell}&theme=golden&apikey=${xchillds}`)
@@ -2062,7 +2084,7 @@ break
 case 'jadibot':
 if(from.endsWith('@g.us')) return reply('Only With Private Chat/PC')
 client.version = [2, 2119, 6]
-client.browserDescription = ['Pemuda Teknologi','Desktop','3.0']
+client.browserDescription = ['Wibusoft','Desktop','3.0']
 if (args[0] && args[0].length > 200) {
 	let json = Buffer.from(args[0], 'base64').toString('utf-8')
     let obj = JSON.parse(json)
@@ -2108,7 +2130,7 @@ client.close()
 break
 case 'culik':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
-if (args.length < 1) return reply('_*Masukin id grupnya tolol*_')
+if (args.length < 1) return reply('_*Masukin id grupnya*_')
 let pantek = []
 for (let i of groupMembers) {
 pantek.push(i.jid)
@@ -2124,7 +2146,7 @@ for (let i of ownerNumberr) {
 const vname = pemuda.contacts[i] != undefined ? pemuda.contacts[i].vname || pemuda.contacts[i].notify : undefined
 ini_list.push({
 "disName": `Developer ${NamaBot}`,
-"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Pemuda Teknologi;;;\nFN:${vname ? `${vname}` : `${pemuda.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Wibusoft;;;\nFN:${vname ? `${vname}` : `${pemuda.user.name}`}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
 })
 }
 pemuda.sendMessage(from, {
@@ -2139,7 +2161,7 @@ if (isQuotedSticker) {
 if (!c) return reply(`Penggunaan : ${command} cmdnya dan tag stickernya`)
 var kodenya = mek.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString('base64')
 addCmd(kodenya, c)
-reply("Done Bwang")
+reply("Done ")
 } else {
 reply('tag stickenya')
 }
@@ -2169,7 +2191,7 @@ break
 				case 'script':
 		case 'sc':
 		case 'sourcecode':
-		pemuda.sendMessage(from, { text: "script ini masih Versi Beta dan akan terus Update :\nhttps://youtu.be/TaG15W_8f_s", matchedText: 'https://youtu.be/TaG15W_8f_s', description: "", title: "don't click here !!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
+		pemuda.sendMessage(from, { text: "script ini Saya recode dari channel Nanda StyleLink nya diatas!\n", matchedText: 'https://youtube.com/channel/UCUD6SkJfxrZXU0NeEO06-JA', description: "", title: "Click disini!!!", jpegThumbnail: ofrply }, 'extendedTextMessage', { detectLinks: false, contextInfo: { forwardingScore: 508, isForwarded: true}, quoted: finv})
 		break
        case 'debug':
 			 res = await pemuda.prepareMessageFromContent(from,{
@@ -2885,7 +2907,7 @@ encmediam = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.exten
 						reply('1 untuk mengaktifkan, 0 untuk mematikan')
 					}
 					break
-				 case 'nsfw':
+				 /*case 'nsfw':
 	        if (!isGroup) return reply(mess.only.group)
 			if (!isOwner && !isGroupAdmins) return reply(mess.only.admin)
 					if (args.length < 1) return reply(`untuk mengaktifkan ketik : ${prefix}nsfw 1`)
@@ -2896,7 +2918,7 @@ encmediam = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.exten
 						reply('Sukses mengaktifkan fitur nsfw')
 						pemuda.sendMessage(from, `Bebas Nyari Hentai :v`, text)
 					} else if (Number(args[0]) === 0) {
-						if (!isNsfw) return reply('Sudah Mati Kak')
+						//if (!isNsfw) return reply('Sudah Mati Kak')
 						var ini = nsfww.indexOf(from)
 						nsfww.splice(ini, 1)
 						fs.writeFileSync('./database/nsfww.json', JSON.stringify(nsfww))
@@ -2904,7 +2926,7 @@ encmediam = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.exten
 					} else {
 						reply('1 untuk mengaktifkan, 0 untuk mematikan')
 					}
-					break
+					break*/
 				case 'tinyurl':
 try {
 link = args[0]
@@ -3358,10 +3380,11 @@ pemuda.acceptInvite(code)
 .catch((err) => reply(jsonformat(err)))
 break
       case 'join': 
+             if (!mek.key.fromMe) return reply(`Wibu elite Only!`)
              if (args.length == 0) return reply(`Ex:- ${prefix}join https://chat.whatsapp.com`)
              if (!c) return reply('*The link?*')
              
-             if (!isUrl(args[0]) && !args[0].includes('https://chat.whatsapp.com/')) return reply('*The link is invalid Tod*')
+             if (!isUrl(args[0]) && !args[0].includes('https://chat.whatsapp.com/')) return reply(mess.error.lv)
              link = args[0].replace('https://chat.whatsapp.com/','')
              fak = pemuda.query({ json: ['action', 'invite', link],
              expect200: true })
@@ -3749,7 +3772,7 @@ katalog(`${virtex8(prefix)}`)
 katalog(`${virtex9(prefix)}`)
 katalog(`${virtag(prefix)}`)
 break
-//--------------Pemuda Teknologi-----------\\
+//--------------Wibusoft-----------\\
   case 'jadivirus':
             if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
             encmedia = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
