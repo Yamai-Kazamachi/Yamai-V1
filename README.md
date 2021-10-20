@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/YamaiKazamachi/Image/Yamai1.jpg" alt="YuzzuKamiyaka" width="300" />
+<img src="https://github.com/Yamai-Kazamachi/Image/Yamai1.jpg" alt="YuzzuKamiyaka" width="300" />
 
 # YAMAI KAZAMICHI
 
@@ -15,14 +15,14 @@
 ## CARA INSTALL DI TERMUX
 ```bash
 > pkg install nodejs && pkg install git
-> git clone https://github.com/YamaiKazamichi/Yamai-V1
+> git clone https://github.com/Yamai-Kazamichi/Yamai-V1
 > cd Yamai-V1
 > bash install.sh
 > npm start/node index.js
 ```
 ## CARA INSTALL DI LAPTOP
 ```bash
-> git clone https://github.com/YamaiKazamichi/Yamai-1
+> git clone https://github.com/Yamai-Kazamichi/Yamai-1
 > cd Yamai-V1
 > npm i
 > npm start/node index.js
@@ -38,6 +38,6 @@
 * [`Baileys`](https://github.com/adiwajshing/Baileys)
 * [`MhankBarBar`](https://github.com/MhankBarBar)
 * [`DcodeDenpa`](https://github.com/dcode-denpa)
-* [`YuzzuKamiyaka`](https://github.com/YuzzuKamiyaka)
+* [`YuzzuKamiyaka`](https://github.com/Yuzzu-Kamiyaka)
   
   
