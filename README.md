@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/Yamai-Kazamachi/Image/Yamai1.jpg" alt="YuzzuKamiyaka" width="300" />
+<img src="https://github.com/Yamai-Kazamachi/Yamai-V1/Image/Yamai1.jpg" alt="YuzzuKamiyaka" width="300" />
 
 # YAMAI KAZAMICHI
 
@@ -38,6 +38,6 @@
 * [`Baileys`](https://github.com/adiwajshing/Baileys)
 * [`MhankBarBar`](https://github.com/MhankBarBar)
 * [`DcodeDenpa`](https://github.com/dcode-denpa)
-* [`YuzzuKamiyaka`](https://github.com/Yuzzu-Kamiyaka)
+* [`YuzzuKamiyaka`](https://github.com/YuzzuKamiyaka)
   
   
