@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/Yamai-Kazamachi/Yamai-V1/Image/Yamai1.jpg" alt="YuzzuKamiyaka" width="300" />
+<img src="https://github.com/YamaiKazamachi/Yamai-V1/Image/Yamai1.jpg" alt="YamaiKazamachi" width="300" />
 
 # YAMAI KAZAMICHI
 
