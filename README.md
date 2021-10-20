@@ -1,7 +1,7 @@
 <div align="center">
-<img src="https://github.com/YuzzuKamiyaka/image/blob/main/20210903_185931.jpg" alt="YuzzuKamiyaka" width="300" />
+<img src="https://github.com/YamaiKazamachi/Image/Yamai1.jpg" alt="YuzzuKamiyaka" width="300" />
 
-# YUZZU KAMIYAKA
+# YAMAI KAZAMICHI
 
 >
 >
@@ -9,21 +9,21 @@
 </div>
 <p align="center">
   <a href="https://instagram.com/bala.dasa_"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/> 
-  <a href="https://wa.me/6281337541779"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+  <a href="https://wa.me/6283844009539"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 </p>
 
 ## CARA INSTALL DI TERMUX
 ```bash
 > pkg install nodejs && pkg install git
-> git clone https://github.com/YuzzuKamiyaka/bitch-bot
-> cd bitch-bot
+> git clone https://github.com/YamaiKazamichi/Yamai-V1
+> cd Yamai-V1
 > bash install.sh
 > npm start/node index.js
 ```
 ## CARA INSTALL DI LAPTOP
 ```bash
-> git clone https://github.com/YuzzuKamiyaka/bitch-bot
-> cd bitch-bot
+> git clone https://github.com/YamaiKazamichi/Yamai-1
+> cd Yamai-V1
 > npm i
 > npm start/node index.js
 ```
@@ -38,5 +38,6 @@
 * [`Baileys`](https://github.com/adiwajshing/Baileys)
 * [`MhankBarBar`](https://github.com/MhankBarBar)
 * [`DcodeDenpa`](https://github.com/dcode-denpa)
+* [`YuzzuKamiyaka`](https://github.com/YuzzuKamiyaka)
   
   
